@@ -29,7 +29,6 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchCliente = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.btnDeleteCliente = New System.Windows.Forms.Button()
         Me.btnUpdateCliente = New System.Windows.Forms.Button()
         Me.btnAddCliente = New System.Windows.Forms.Button()
         Me.btnNewCliente = New System.Windows.Forms.Button()
@@ -140,7 +139,6 @@ Partial Class Form1
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.btnDeleteCliente)
         Me.GroupBox2.Controls.Add(Me.btnUpdateCliente)
         Me.GroupBox2.Controls.Add(Me.btnAddCliente)
         Me.GroupBox2.Controls.Add(Me.btnNewCliente)
@@ -150,18 +148,9 @@ Partial Class Form1
         Me.GroupBox2.TabIndex = 15
         Me.GroupBox2.TabStop = False
         '
-        'btnDeleteCliente
-        '
-        Me.btnDeleteCliente.Location = New System.Drawing.Point(27, 174)
-        Me.btnDeleteCliente.Name = "btnDeleteCliente"
-        Me.btnDeleteCliente.Size = New System.Drawing.Size(141, 30)
-        Me.btnDeleteCliente.TabIndex = 3
-        Me.btnDeleteCliente.Text = "Eliminar"
-        Me.btnDeleteCliente.UseVisualStyleBackColor = True
-        '
         'btnUpdateCliente
         '
-        Me.btnUpdateCliente.Location = New System.Drawing.Point(27, 128)
+        Me.btnUpdateCliente.Location = New System.Drawing.Point(27, 157)
         Me.btnUpdateCliente.Name = "btnUpdateCliente"
         Me.btnUpdateCliente.Size = New System.Drawing.Size(141, 30)
         Me.btnUpdateCliente.TabIndex = 2
@@ -170,7 +159,7 @@ Partial Class Form1
         '
         'btnAddCliente
         '
-        Me.btnAddCliente.Location = New System.Drawing.Point(27, 80)
+        Me.btnAddCliente.Location = New System.Drawing.Point(27, 101)
         Me.btnAddCliente.Name = "btnAddCliente"
         Me.btnAddCliente.Size = New System.Drawing.Size(141, 30)
         Me.btnAddCliente.TabIndex = 1
@@ -179,7 +168,7 @@ Partial Class Form1
         '
         'btnNewCliente
         '
-        Me.btnNewCliente.Location = New System.Drawing.Point(27, 28)
+        Me.btnNewCliente.Location = New System.Drawing.Point(27, 44)
         Me.btnNewCliente.Name = "btnNewCliente"
         Me.btnNewCliente.Size = New System.Drawing.Size(141, 30)
         Me.btnNewCliente.TabIndex = 0
@@ -377,7 +366,6 @@ Partial Class Form1
     Friend WithEvents TableClientes As DataGridView
     Friend WithEvents btnSearchCliente As Button
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents btnDeleteCliente As Button
     Friend WithEvents btnUpdateCliente As Button
     Friend WithEvents btnAddCliente As Button
     Friend WithEvents btnNewCliente As Button
