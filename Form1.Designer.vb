@@ -47,45 +47,58 @@ Partial Class Form1
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableClientes = New System.Windows.Forms.DataGridView()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProveedoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmpleadosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EmpleadosToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RolesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.TabControl1)
+        Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Location = New System.Drawing.Point(3, 1)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1002, 612)
+        Me.Panel1.Size = New System.Drawing.Size(1002, 688)
         Me.Panel1.TabIndex = 0
         '
         'TabControl1
         '
-        Me.TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 26)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1002, 612)
+        Me.TabControl1.Size = New System.Drawing.Size(1000, 660)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
         '
         Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TabPage1.Location = New System.Drawing.Point(23, 4)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TabPage1.Size = New System.Drawing.Size(975, 604)
+        Me.TabPage1.Size = New System.Drawing.Size(992, 653)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Inicio"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -94,11 +107,11 @@ Partial Class Form1
         '
         Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
         Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(23, 4)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(975, 604)
+        Me.TabPage2.Size = New System.Drawing.Size(992, 634)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Clientes"
         '
@@ -123,7 +136,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.TableClientes)
         Me.GroupBox1.Location = New System.Drawing.Point(151, 7)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(819, 592)
+        Me.GroupBox1.Size = New System.Drawing.Size(819, 557)
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Cliente"
@@ -324,24 +337,105 @@ Partial Class Form1
         Me.TableClientes.Name = "TableClientes"
         Me.TableClientes.ReadOnly = True
         Me.TableClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TableClientes.Size = New System.Drawing.Size(807, 289)
+        Me.TableClientes.Size = New System.Drawing.Size(807, 257)
         Me.TableClientes.TabIndex = 99
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ClientesToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.EmpleadosToolStripMenuItem, Me.VentasToolStripMenuItem, Me.PedidosToolStripMenuItem, Me.ReportesToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1002, 24)
+        Me.MenuStrip1.TabIndex = 1
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ProductosToolStripMenuItem
+        '
+        Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductosToolStripMenuItem1, Me.CategoriasToolStripMenuItem, Me.ProveedoresToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.ProductosToolStripMenuItem.Text = "Productos"
+        '
+        'ProductosToolStripMenuItem1
+        '
+        Me.ProductosToolStripMenuItem1.Name = "ProductosToolStripMenuItem1"
+        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ProductosToolStripMenuItem1.Text = "Productos"
+        '
+        'CategoriasToolStripMenuItem
+        '
+        Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CategoriasToolStripMenuItem.Text = "Categorias"
+        '
+        'ProveedoresToolStripMenuItem
+        '
+        Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
+        '
+        'EmpleadosToolStripMenuItem
+        '
+        Me.EmpleadosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpleadosToolStripMenuItem1, Me.RolesToolStripMenuItem})
+        Me.EmpleadosToolStripMenuItem.Name = "EmpleadosToolStripMenuItem"
+        Me.EmpleadosToolStripMenuItem.Size = New System.Drawing.Size(77, 20)
+        Me.EmpleadosToolStripMenuItem.Text = "Empleados"
+        '
+        'EmpleadosToolStripMenuItem1
+        '
+        Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
+        '
+        'RolesToolStripMenuItem
+        '
+        Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RolesToolStripMenuItem.Text = "Roles"
+        '
+        'ClientesToolStripMenuItem
+        '
+        Me.ClientesToolStripMenuItem.Name = "ClientesToolStripMenuItem"
+        Me.ClientesToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.ClientesToolStripMenuItem.Text = "Clientes"
+        '
+        'VentasToolStripMenuItem
+        '
+        Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.VentasToolStripMenuItem.Text = "Ventas"
+        '
+        'PedidosToolStripMenuItem
+        '
+        Me.PedidosToolStripMenuItem.Name = "PedidosToolStripMenuItem"
+        Me.PedidosToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
+        Me.PedidosToolStripMenuItem.Text = "Pedidos"
+        '
+        'ReportesToolStripMenuItem
+        '
+        Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
+        Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
+        Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1006, 613)
+        Me.ClientSize = New System.Drawing.Size(1025, 700)
         Me.Controls.Add(Me.Panel1)
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -371,4 +465,16 @@ Partial Class Form1
     Friend WithEvents btnNewCliente As Button
     Friend WithEvents txtidCliente As TextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents ProductosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProductosToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ClientesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ProveedoresToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmpleadosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EmpleadosToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents RolesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents VentasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PedidosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ReportesToolStripMenuItem As ToolStripMenuItem
 End Class
