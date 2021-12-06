@@ -21,7 +21,7 @@ Module Connection
             con = New OdbcConnection("DSN=ProyectoDB;")
             If con.State = ConnectionState.Closed Then
                 con.Open()
-                MsgBox("Conexión exitosa")
+                'MsgBox("Conexión exitosa")
             End If
         Catch ex As Exception
             MsgBox("Error al tratar de conectar a la base de datos: " & ex.Message)
