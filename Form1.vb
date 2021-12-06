@@ -136,7 +136,6 @@ Public Class Form1
                 comando_save.ExecuteNonQuery()
                 con.Close()
                 btnNewCliente_Click(sender, e)
-                llenarTablaClientes()
                 ' MsgBox("Cliente registrado exitosamente")
 
             Catch ex As Exception
@@ -204,7 +203,6 @@ Public Class Form1
                 comando_save.ExecuteNonQuery()
                 con.Close()
                 btnNewCliente_Click(sender, e)
-                llenarTablaClientes()
                 ' MsgBox("Cliente Actualizado")
 
             Catch ex As Exception
@@ -245,7 +243,6 @@ Public Class Form1
         Else
             'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
             btnNewCliente_Click(sender, e)
-            llenarTablaClientes()
         End If
     End Sub
 End Class

@@ -161,9 +161,9 @@ Partial Class Form1
         '
         'btnUpdateCliente
         '
-        Me.btnUpdateCliente.Location = New System.Drawing.Point(34, 128)
+        Me.btnUpdateCliente.Location = New System.Drawing.Point(27, 128)
         Me.btnUpdateCliente.Name = "btnUpdateCliente"
-        Me.btnUpdateCliente.Size = New System.Drawing.Size(134, 30)
+        Me.btnUpdateCliente.Size = New System.Drawing.Size(141, 30)
         Me.btnUpdateCliente.TabIndex = 2
         Me.btnUpdateCliente.Text = "Actualizar"
         Me.btnUpdateCliente.UseVisualStyleBackColor = True
