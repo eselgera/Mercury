@@ -5,7 +5,6 @@ Public Class Form1
         connection_sql()
         obtenerNuevoIdCliente()
         llenarTablaClientes()
-        AjustarTabla()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -45,14 +44,18 @@ Public Class Form1
         Dim lista As String
 
         sql = "Select * From cliente"
-
-        adapt = New Odbc.OdbcDataAdapter(sql, Connection.con)
-        Connection.reg = New DataSet
-        adapt.Fill(reg, "Tabla1")
-        lista = reg.Tables("Tabla1").Rows.Count
-        If lista <> 0 Then
-            TableClientes.DataSource = reg.Tables(0)
-        End If
+        Try
+            adapt = New Odbc.OdbcDataAdapter(sql, Connection.con)
+            Connection.reg = New DataSet
+            adapt.Fill(reg, "Tabla1")
+            lista = reg.Tables("Tabla1").Rows.Count
+            If lista <> 0 Then
+                TableClientes.DataSource = reg.Tables(0)
+                AjustarTabla()
+            End If
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
 
     End Function
 
@@ -150,17 +153,18 @@ Public Class Form1
 
 
     Function AjustarTabla()
-
-        TableClientes.Columns(0).Width = 30
-        TableClientes.Columns(2).Width = 110
-        TableClientes.Columns(3).Width = 110
-        TableClientes.Columns(4).Width = 300
-        TableClientes.Columns(5).Width = 110
-        TableClientes.Columns(6).Visible = False
-        TableClientes.Columns(0).HeaderText = "ID"
-        TableClientes.Columns(1).HeaderText = "Nombre"
-        TableClientes.Columns(2).HeaderText = "Apellido Paterno"
-        TableClientes.Columns(3).HeaderText = "Apellido Materno"
+        If (TableClientes.RowCount > 0) Then
+            TableClientes.Columns(0).Width = 30
+            TableClientes.Columns(2).Width = 110
+            TableClientes.Columns(3).Width = 110
+            TableClientes.Columns(4).Width = 300
+            TableClientes.Columns(5).Width = 110
+            TableClientes.Columns(6).Visible = False
+            TableClientes.Columns(0).HeaderText = "ID"
+            TableClientes.Columns(1).HeaderText = "Nombre"
+            TableClientes.Columns(2).HeaderText = "Apellido Paterno"
+            TableClientes.Columns(3).HeaderText = "Apellido Materno"
+        End If
 
     End Function
 
