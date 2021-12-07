@@ -6,6 +6,7 @@ Public Class Form1
         obtenerNuevoIdCliente()
         llenarTablaClientes()
         AjustarTabla()
+
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar

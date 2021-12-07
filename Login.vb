@@ -1,4 +1,5 @@
 ﻿Imports System.Runtime.InteropServices
+
 Public Class Login
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
@@ -13,5 +14,9 @@ Public Class Login
     Private Sub Panel2_MouseMove(sender As Object, e As MouseEventArgs) Handles Panel2.MouseMove
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ConnectionMY()
     End Sub
 End Class
