@@ -1,8 +1,5 @@
-﻿Imports System.Data.Odbc
-
-Public Class Form1
+﻿Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection_sql()
         obtenerNuevoIdCliente()
         llenarTablaClientes()
     End Sub
@@ -10,23 +7,21 @@ Public Class Form1
     'Metodo para obtener el siguiente ID cliente por insertar
     Function obtenerNuevoIdCliente()
 
-        connection_sql()
         Dim query As String
         Dim lista As String
         Dim NewID As String
 
         Try
             query = "SELECT count(*)+1 as ID FROM Cliente"
-            adapt = New Odbc.OdbcDataAdapter(query, Connection.con)
-            Connection.reg = New DataSet
-            adapt.Fill(reg, "Tabla1")
-            lista = reg.Tables("Tabla1").Rows.Count
+            Dim Rsdatos = Seleccion_de_datos(query)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
             If lista <> 0 Then
-                NewID = reg.Tables("Tabla1").Rows(0).Item("ID")
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("ID")
                 txtidCliente.Text = NewID
             End If
 
-            con.Close()
+            Conexion.Close()
 
         Catch ex As Exception
             MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
@@ -36,73 +31,27 @@ Public Class Form1
 
     Function llenarTablaClientes()
 
-        connection_sql()
-
-        Dim ds As DataSet = New DataSet
-        Dim adapter As New OleDb.OleDbDataAdapter
         Dim sql As String
         Dim lista As String
 
-        sql = "Select * From cliente"
+        sql = "Select * From Cliente"
         Try
-            adapt = New Odbc.OdbcDataAdapter(sql, Connection.con)
-            Connection.reg = New DataSet
-            adapt.Fill(reg, "Tabla1")
-            lista = reg.Tables("Tabla1").Rows.Count
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
             If lista <> 0 Then
-                TableClientes.DataSource = reg.Tables(0)
+                TableClientes.DataSource = Rsdatos.Tables(0)
                 AjustarTabla()
+
             End If
+
+            Conexion.Close()
+
         Catch ex As Exception
             MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
         End Try
 
     End Function
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-
-        connection_sql()
-
-        Try
-            'Leer tabla de usuarios
-
-            Dim consulta As String
-            Dim lista As String
-            Dim Nombre As String
-
-            consulta = "SELECT Nombre_Cliente FROM Cliente where idcliente = 1"
-
-            'MsgBox("usario es" & consulta)
-
-            adapt = New Odbc.OdbcDataAdapter(consulta, Connection.con)
-            Connection.reg = New DataSet
-            adapt.Fill(reg, "Tabla1")
-            lista = reg.Tables("Tabla1").Rows.Count
-
-            If lista <> 0 Then
-                Nombre = reg.Tables("Tabla1").Rows(0).Item("Nombre_Cliente")
-
-                txtNombreCliente.Text = Nombre
-
-                MsgBox("Hola " & Nombre)
-
-                con.Close()
-
-            Else
-
-                MsgBox("Usuario no existe")
-
-                Return
-
-            End If
-        Catch ex As Exception
-            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
-        End Try
-
-        con.Close()
-
-
-    End Sub
 
     'Metodo para limpiar el formulario y dejarlo listo para insertar un nuevo registro
     Private Sub btnNewCliente_Click(sender As Object, e As EventArgs) Handles btnNewCliente.Click
@@ -130,20 +79,17 @@ Public Class Form1
             Dim correo = txtCorreoCliente.Text
             Dim mytimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
 
-            connection_sql()
-
             Try
-                query = "INSERT INTO cliente (Nombre,Apellido_Paterno,Apellido_Materno,Direccion,Correo,DateCreated)values('" & nombre & "','" & apPat & "','" & apMat & "','" & direccion & "','" & correo & "','" & mytimestamp & "' )"
-                Dim comando_save As OdbcCommand
-                comando_save = New OdbcCommand(query, Connection.con)
-                comando_save.ExecuteNonQuery()
-                con.Close()
+                query = "INSERT INTO Cliente (Nombre,Apellido_Paterno,Apellido_Materno,Direccion,Correo,DateCreated)values('" & nombre & "','" & apPat & "','" & apMat & "','" & direccion & "','" & correo & "','" & mytimestamp & "' )"
+                Ejecutar_Query(query)
+
                 btnNewCliente_Click(sender, e)
                 ' MsgBox("Cliente registrado exitosamente")
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
+            Conexion.Close()
         Else
             MsgBox("Se deben llenar todos los campos")
         End If
@@ -191,10 +137,8 @@ Public Class Form1
             Dim direccion = txtDireccionCliente.Text
             Dim correo = txtCorreoCliente.Text
 
-            connection_sql()
-
             Try
-                query = "UPDATE cliente SET
+                query = "UPDATE Cliente SET
                               Nombre ='" & nombre & "',
                               Apellido_Paterno ='" & apPat & "',
                               Apellido_Materno ='" & apMat & "',
@@ -202,16 +146,15 @@ Public Class Form1
                               Correo ='" & correo & "' 
                               WHERE idCliente = '" & txtidCliente.Text & "'"
 
-                Dim comando_save As OdbcCommand
-                comando_save = New OdbcCommand(query, Connection.con)
-                comando_save.ExecuteNonQuery()
-                con.Close()
+                Ejecutar_Query(query)
                 btnNewCliente_Click(sender, e)
                 ' MsgBox("Cliente Actualizado")
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
+            Conexion.Close()
+
         Else
             MsgBox("Se deben llenar todos los campos")
         End If
@@ -221,15 +164,14 @@ Public Class Form1
     Private Sub btnSearchCliente_Click(sender As Object, e As EventArgs) Handles btnSearchCliente.Click
         If txtBuscarCliente.Text <> "" Then
             Dim NombreCliente = txtBuscarCliente.Text
-            Dim sql = "Select * From cliente WHERE nombre LIKE '%" & NombreCliente & "%'  OR correo LIKE '%" & NombreCliente & "%'"
+            Dim sql = "Select * From Cliente WHERE nombre LIKE '%" & NombreCliente & "%'  OR correo LIKE '%" & NombreCliente & "%'"
 
             Try
-                adapt = New Odbc.OdbcDataAdapter(sql, Connection.con)
-                Connection.reg = New DataSet
-                adapt.Fill(reg, "Tabla1")
-                Dim lista = reg.Tables("Tabla1").Rows.Count
+                Dim Rsdatos = Seleccion_de_datos(sql)
+                Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+
                 If lista <> 0 Then
-                    TableClientes.DataSource = reg.Tables(0)
+                    TableClientes.DataSource = Rsdatos.Tables(0)
                     'Si se encuentra un resultado, seleccionar
                     If TableClientes.SelectedCells.Count > 0 Then
                         TableClientes.Rows(0).Selected = True
@@ -243,10 +185,21 @@ Public Class Form1
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
 
+            Conexion.Close()
 
         Else
             'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
             btnNewCliente_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub EmpleadosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles EmpleadosToolStripMenuItem1.Click
+        Dim Empleados = New EmpleadosForm()
+        Empleados.Show()
+    End Sub
+
+    Private Sub RolesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RolesToolStripMenuItem.Click
+        Dim Roles = New RolesForm()
+        Roles.Show()
     End Sub
 End Class
