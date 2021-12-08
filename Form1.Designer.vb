@@ -23,6 +23,8 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9_Nombre = New System.Windows.Forms.Label()
+        Me.Label8_Bienv = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -63,8 +65,6 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Label8_Bienv = New System.Windows.Forms.Label()
-        Me.Label9_Nombre = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -86,6 +86,24 @@ Partial Class Form1
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1002, 688)
         Me.Panel1.TabIndex = 0
+        '
+        'Label9_Nombre
+        '
+        Me.Label9_Nombre.AutoSize = True
+        Me.Label9_Nombre.Location = New System.Drawing.Point(894, 4)
+        Me.Label9_Nombre.Name = "Label9_Nombre"
+        Me.Label9_Nombre.Size = New System.Drawing.Size(102, 13)
+        Me.Label9_Nombre.TabIndex = 3
+        Me.Label9_Nombre.Text = "nombre_del_usuario"
+        '
+        'Label8_Bienv
+        '
+        Me.Label8_Bienv.AutoSize = True
+        Me.Label8_Bienv.Location = New System.Drawing.Point(824, 4)
+        Me.Label8_Bienv.Name = "Label8_Bienv"
+        Me.Label8_Bienv.Size = New System.Drawing.Size(63, 13)
+        Me.Label8_Bienv.TabIndex = 2
+        Me.Label8_Bienv.Text = "Bienvenido:"
         '
         'TabControl1
         '
@@ -415,19 +433,19 @@ Partial Class Form1
         'ProductosToolStripMenuItem1
         '
         Me.ProductosToolStripMenuItem1.Name = "ProductosToolStripMenuItem1"
-        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
+        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.ProductosToolStripMenuItem1.Text = "Productos"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'EmpleadosToolStripMenuItem
@@ -466,24 +484,6 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
-        '
-        'Label8_Bienv
-        '
-        Me.Label8_Bienv.AutoSize = True
-        Me.Label8_Bienv.Location = New System.Drawing.Point(824, 4)
-        Me.Label8_Bienv.Name = "Label8_Bienv"
-        Me.Label8_Bienv.Size = New System.Drawing.Size(63, 13)
-        Me.Label8_Bienv.TabIndex = 2
-        Me.Label8_Bienv.Text = "Bienvenido:"
-        '
-        'Label9_Nombre
-        '
-        Me.Label9_Nombre.AutoSize = True
-        Me.Label9_Nombre.Location = New System.Drawing.Point(894, 4)
-        Me.Label9_Nombre.Name = "Label9_Nombre"
-        Me.Label9_Nombre.Size = New System.Drawing.Size(102, 13)
-        Me.Label9_Nombre.TabIndex = 3
-        Me.Label9_Nombre.Text = "nombre_del_usuario"
         '
         'Form1
         '

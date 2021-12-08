@@ -82,20 +82,30 @@ Public Class Login
         Form.Show()
         Form.Label9_Nombre.Text = Nombre
 
-        If Acceso = 1 Then
-            'Permite cargar normalmente dado que es nivel 1 Administrador
-        Else
-            If Acceso = 2 Then
+        Select Case Acceso
+            Case 1
+                'Acceso libre
+            Case 2
                 ' Deja solo los tab de ventanas activos
                 Form.EmpleadosToolStripMenuItem.Enabled = False
-            Else
+                Form.ProductosToolStripMenuItem.Enabled = False
+                Form.PedidosToolStripMenuItem.Enabled = False
+                Form.TabPage4.Enabled = False
+            Case 3
                 ' Deja solo los tab de Almacen activos
                 Form.EmpleadosToolStripMenuItem.Enabled = False
                 Form.ClientesToolStripMenuItem.Enabled = False
                 Form.TabPage2.Enabled = False
-            End If
-
-        End If
+                Form.TabPage5.Enabled = False
+                Form.TabPage3.Enabled = False
+            Case 4
+                ' Deja solo los tab de RH activos
+                Form.ProductosToolStripMenuItem.Enabled = False
+                Form.PedidosToolStripMenuItem.Enabled = False
+                Form.VentasToolStripMenuItem.Enabled = False
+                Form.TabPage4.Enabled = False
+                Form.TabPage3.Enabled = False
+        End Select
 
     End Function
 End Class

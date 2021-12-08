@@ -203,4 +203,7 @@
         Roles.Show()
     End Sub
 
+    Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(1)
+    End Sub
 End Class
