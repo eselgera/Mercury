@@ -63,6 +63,8 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Label8_Bienv = New System.Windows.Forms.Label()
+        Me.Label9_Nombre = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -75,6 +77,8 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Label9_Nombre)
+        Me.Panel1.Controls.Add(Me.Label8_Bienv)
         Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Location = New System.Drawing.Point(3, 1)
@@ -436,13 +440,13 @@ Partial Class Form1
         'EmpleadosToolStripMenuItem1
         '
         Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
-        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
         '
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'VentasToolStripMenuItem
@@ -462,6 +466,24 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem"
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
+        '
+        'Label8_Bienv
+        '
+        Me.Label8_Bienv.AutoSize = True
+        Me.Label8_Bienv.Location = New System.Drawing.Point(824, 4)
+        Me.Label8_Bienv.Name = "Label8_Bienv"
+        Me.Label8_Bienv.Size = New System.Drawing.Size(63, 13)
+        Me.Label8_Bienv.TabIndex = 2
+        Me.Label8_Bienv.Text = "Bienvenido:"
+        '
+        'Label9_Nombre
+        '
+        Me.Label9_Nombre.AutoSize = True
+        Me.Label9_Nombre.Location = New System.Drawing.Point(894, 4)
+        Me.Label9_Nombre.Name = "Label9_Nombre"
+        Me.Label9_Nombre.Size = New System.Drawing.Size(102, 13)
+        Me.Label9_Nombre.TabIndex = 3
+        Me.Label9_Nombre.Text = "nombre_del_usuario"
         '
         'Form1
         '
@@ -528,4 +550,6 @@ Partial Class Form1
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label9_Nombre As Label
+    Friend WithEvents Label8_Bienv As Label
 End Class

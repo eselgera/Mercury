@@ -1,6 +1,9 @@
 ﻿Imports System.Runtime.InteropServices
 
 Public Class Login
+    Public Property Nombre As String
+    Public Property Acceso As String
+
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
     Private Shared Sub ReleaseCapture()
     End Sub
@@ -21,7 +24,7 @@ Public Class Login
 
         If TextBox1_user.Text <> "" And TextBox2_pass.Text <> "" Then
             Dim Usuario = TextBox1_user.Text
-            Dim sql = "Select Password From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
+            Dim sql = "Select Password, Nombre, Rol_idRol From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
 
             Try
                 Dim Rsdatos = Seleccion_de_datos(sql)
@@ -30,11 +33,12 @@ Public Class Login
 
                 If lista <> 0 Then
                     pass = Rsdatos.Tables("DATOS").Rows(0).Item("Password")
+                    Nombre = Rsdatos.Tables("DATOS").Rows(0).Item("Nombre")
+                    Acceso = Rsdatos.Tables("DATOS").Rows(0).Item("Rol_idRol")
                 End If
 
                 If pass = TextBox2_pass.Text Then
-                    Dim Form = New Form1()
-                    Form.Show()
+                    ControlForm()
                     Me.Close()
                 Else
                     MessageBox.Show("El usario o contraseña son incorrectos ", " Error de autenticación")
@@ -70,6 +74,28 @@ Public Class Login
                 Return
             End If
         End If
-
     End Sub
+
+    'Esto hace posible el control de accesos por tipo de ROL de usuario
+    Function ControlForm()
+        Dim Form = New Form1()
+        Form.Show()
+        Form.Label9_Nombre.Text = Nombre
+
+        If Acceso = 1 Then
+            'Permite cargar normalmente dado que es nivel 1 Administrador
+        Else
+            If Acceso = 2 Then
+                ' Deja solo los tab de ventanas activos
+                Form.EmpleadosToolStripMenuItem.Enabled = False
+            Else
+                ' Deja solo los tab de Almacen activos
+                Form.EmpleadosToolStripMenuItem.Enabled = False
+                Form.ClientesToolStripMenuItem.Enabled = False
+                Form.TabPage2.Enabled = False
+            End If
+
+        End If
+
+    End Function
 End Class
