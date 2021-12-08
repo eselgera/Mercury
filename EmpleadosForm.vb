@@ -31,6 +31,7 @@ Public Class EmpleadosForm
             Dim ap = txtApEmpleado.Text
             Dim tel = txtTelefonoEmpleado.Text
             Dim user = txtUserEmpleado.Text
+            'Me parece hay que actualizar el password, es decir quelo tome del textbox correcto
             Dim pass = txtCorreoEmpleado.Text
             Dim correo = txtCorreoEmpleado.Text
             Dim estatus = cbEstatus.SelectedValue

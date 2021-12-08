@@ -25,9 +25,9 @@ Partial Class Login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button2_acceder = New System.Windows.Forms.Button()
+        Me.TextBox2_pass = New System.Windows.Forms.TextBox()
+        Me.TextBox1_user = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -54,9 +54,9 @@ Partial Class Login
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.White
-        Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Controls.Add(Me.TextBox1)
+        Me.Panel1.Controls.Add(Me.Button2_acceder)
+        Me.Panel1.Controls.Add(Me.TextBox2_pass)
+        Me.Panel1.Controls.Add(Me.TextBox1_user)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Controls.Add(Me.PictureBox1)
@@ -65,41 +65,41 @@ Partial Class Login
         Me.Panel1.Size = New System.Drawing.Size(436, 279)
         Me.Panel1.TabIndex = 1
         '
-        'Button2
+        'Button2_acceder
         '
-        Me.Button2.BackColor = System.Drawing.Color.SteelBlue
-        Me.Button2.FlatAppearance.BorderColor = System.Drawing.Color.Red
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
-        Me.Button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(279, 227)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(131, 38)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "ACCEDER"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Button2_acceder.BackColor = System.Drawing.Color.SteelBlue
+        Me.Button2_acceder.FlatAppearance.BorderColor = System.Drawing.Color.Red
+        Me.Button2_acceder.FlatAppearance.BorderSize = 0
+        Me.Button2_acceder.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver
+        Me.Button2_acceder.FlatAppearance.MouseOverBackColor = System.Drawing.Color.CadetBlue
+        Me.Button2_acceder.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2_acceder.Font = New System.Drawing.Font("Verdana", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2_acceder.ForeColor = System.Drawing.Color.White
+        Me.Button2_acceder.Location = New System.Drawing.Point(279, 227)
+        Me.Button2_acceder.Name = "Button2_acceder"
+        Me.Button2_acceder.Size = New System.Drawing.Size(131, 38)
+        Me.Button2_acceder.TabIndex = 1
+        Me.Button2_acceder.Text = "ACCEDER"
+        Me.Button2_acceder.UseVisualStyleBackColor = False
         '
-        'TextBox2
+        'TextBox2_pass
         '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.TextBox2.Location = New System.Drawing.Point(191, 156)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.TextBox2.Size = New System.Drawing.Size(219, 29)
-        Me.TextBox2.TabIndex = 4
+        Me.TextBox2_pass.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2_pass.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.TextBox2_pass.Location = New System.Drawing.Point(191, 156)
+        Me.TextBox2_pass.Name = "TextBox2_pass"
+        Me.TextBox2_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.TextBox2_pass.Size = New System.Drawing.Size(219, 29)
+        Me.TextBox2_pass.TabIndex = 4
         '
-        'TextBox1
+        'TextBox1_user
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.TextBox1.Location = New System.Drawing.Point(191, 84)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(219, 29)
-        Me.TextBox1.TabIndex = 3
+        Me.TextBox1_user.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1_user.ForeColor = System.Drawing.SystemColors.WindowFrame
+        Me.TextBox1_user.Location = New System.Drawing.Point(191, 84)
+        Me.TextBox1_user.Name = "TextBox1_user"
+        Me.TextBox1_user.Size = New System.Drawing.Size(219, 29)
+        Me.TextBox1_user.TabIndex = 3
         '
         'Label2
         '
@@ -164,8 +164,8 @@ Partial Class Login
     Friend WithEvents Panel2 As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label1 As Label
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TextBox2_pass As TextBox
+    Friend WithEvents TextBox1_user As TextBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents Button2_acceder As Button
 End Class
