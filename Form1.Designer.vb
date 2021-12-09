@@ -22,6 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9_Nombre = New System.Windows.Forms.Label()
         Me.Label8_Bienv = New System.Windows.Forms.Label()
@@ -55,6 +56,23 @@ Partial Class Form1
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TextBox1_idprov = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox2_buscprov = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.TextBox3_mailprov = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.TextBox4_telprov = New System.Windows.Forms.TextBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.TextBox5_descprov = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.TextBox6_nomprov = New System.Windows.Forms.TextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
@@ -71,6 +89,7 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataGridView1_prov = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -79,9 +98,12 @@ Partial Class Form1
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
         Me.TabPage6.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
         Me.TabPage7.SuspendLayout()
         Me.TabPage8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
+        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -434,13 +456,195 @@ Partial Class Form1
         '
         'GroupBox4
         '
-        Me.GroupBox4.ForeColor = System.Drawing.Color.White
-        Me.GroupBox4.Location = New System.Drawing.Point(102, 45)
+        Me.GroupBox4.Controls.Add(Me.TextBox1_idprov)
+        Me.GroupBox4.Controls.Add(Me.Label8)
+        Me.GroupBox4.Controls.Add(Me.TextBox2_buscprov)
+        Me.GroupBox4.Controls.Add(Me.Label9)
+        Me.GroupBox4.Controls.Add(Me.Button4)
+        Me.GroupBox4.Controls.Add(Me.GroupBox7)
+        Me.GroupBox4.Controls.Add(Me.TextBox3_mailprov)
+        Me.GroupBox4.Controls.Add(Me.Label10)
+        Me.GroupBox4.Controls.Add(Me.TextBox4_telprov)
+        Me.GroupBox4.Controls.Add(Me.Label11)
+        Me.GroupBox4.Controls.Add(Me.TextBox5_descprov)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.TextBox6_nomprov)
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.DataGridView1_prov)
+        Me.GroupBox4.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox4.Location = New System.Drawing.Point(77, 24)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(788, 544)
+        Me.GroupBox4.Size = New System.Drawing.Size(837, 565)
         Me.GroupBox4.TabIndex = 1
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Formulario de Proveedores"
+        '
+        'TextBox1_idprov
+        '
+        Me.TextBox1_idprov.Enabled = False
+        Me.TextBox1_idprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1_idprov.Location = New System.Drawing.Point(144, 23)
+        Me.TextBox1_idprov.Name = "TextBox1_idprov"
+        Me.TextBox1_idprov.ReadOnly = True
+        Me.TextBox1_idprov.Size = New System.Drawing.Size(80, 22)
+        Me.TextBox1_idprov.TabIndex = 111
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(19, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(21, 16)
+        Me.Label8.TabIndex = 110
+        Me.Label8.Text = "ID"
+        '
+        'TextBox2_buscprov
+        '
+        Me.TextBox2_buscprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2_buscprov.Location = New System.Drawing.Point(70, 250)
+        Me.TextBox2_buscprov.Name = "TextBox2_buscprov"
+        Me.TextBox2_buscprov.Size = New System.Drawing.Size(424, 22)
+        Me.TextBox2_buscprov.TabIndex = 109
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(14, 253)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(50, 16)
+        Me.Label9.TabIndex = 108
+        Me.Label9.Text = "Buscar"
+        '
+        'Button4
+        '
+        Me.Button4.ForeColor = System.Drawing.Color.Black
+        Me.Button4.Location = New System.Drawing.Point(500, 249)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(101, 23)
+        Me.Button4.TabIndex = 113
+        Me.Button4.Text = "Buscar"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'GroupBox7
+        '
+        Me.GroupBox7.Controls.Add(Me.Button1)
+        Me.GroupBox7.Controls.Add(Me.Button2)
+        Me.GroupBox7.Controls.Add(Me.Button3)
+        Me.GroupBox7.Location = New System.Drawing.Point(628, 47)
+        Me.GroupBox7.Name = "GroupBox7"
+        Me.GroupBox7.Size = New System.Drawing.Size(193, 225)
+        Me.GroupBox7.TabIndex = 112
+        Me.GroupBox7.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(27, 157)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(141, 30)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Actualizar"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(27, 101)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(141, 30)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Agregar"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.ForeColor = System.Drawing.Color.Black
+        Me.Button3.Location = New System.Drawing.Point(27, 44)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(141, 30)
+        Me.Button3.TabIndex = 0
+        Me.Button3.Text = "Nuevo"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'TextBox3_mailprov
+        '
+        Me.TextBox3_mailprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox3_mailprov.Location = New System.Drawing.Point(144, 170)
+        Me.TextBox3_mailprov.Name = "TextBox3_mailprov"
+        Me.TextBox3_mailprov.Size = New System.Drawing.Size(424, 22)
+        Me.TextBox3_mailprov.TabIndex = 104
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(19, 173)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(118, 16)
+        Me.Label10.TabIndex = 107
+        Me.Label10.Text = "Correo electrónico"
+        '
+        'TextBox4_telprov
+        '
+        Me.TextBox4_telprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4_telprov.Location = New System.Drawing.Point(144, 133)
+        Me.TextBox4_telprov.Name = "TextBox4_telprov"
+        Me.TextBox4_telprov.Size = New System.Drawing.Size(424, 22)
+        Me.TextBox4_telprov.TabIndex = 103
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.ForeColor = System.Drawing.Color.White
+        Me.Label11.Location = New System.Drawing.Point(19, 136)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(62, 16)
+        Me.Label11.TabIndex = 106
+        Me.Label11.Text = "Teléfono"
+        '
+        'TextBox5_descprov
+        '
+        Me.TextBox5_descprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox5_descprov.Location = New System.Drawing.Point(144, 95)
+        Me.TextBox5_descprov.Name = "TextBox5_descprov"
+        Me.TextBox5_descprov.Size = New System.Drawing.Size(424, 22)
+        Me.TextBox5_descprov.TabIndex = 101
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(19, 98)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(80, 16)
+        Me.Label12.TabIndex = 105
+        Me.Label12.Text = "Descripción"
+        '
+        'TextBox6_nomprov
+        '
+        Me.TextBox6_nomprov.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6_nomprov.Location = New System.Drawing.Point(144, 58)
+        Me.TextBox6_nomprov.Name = "TextBox6_nomprov"
+        Me.TextBox6_nomprov.Size = New System.Drawing.Size(424, 22)
+        Me.TextBox6_nomprov.TabIndex = 100
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(19, 58)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(57, 16)
+        Me.Label13.TabIndex = 102
+        Me.Label13.Text = "Nombre"
         '
         'TabPage7
         '
@@ -534,13 +738,13 @@ Partial Class Form1
         'EmpleadosToolStripMenuItem1
         '
         Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
-        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
         Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
         '
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'VentasToolStripMenuItem
@@ -561,6 +765,32 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
+        'DataGridView1_prov
+        '
+        Me.DataGridView1_prov.AllowUserToAddRows = False
+        Me.DataGridView1_prov.AllowUserToDeleteRows = False
+        Me.DataGridView1_prov.AllowUserToOrderColumns = True
+        Me.DataGridView1_prov.AllowUserToResizeColumns = False
+        Me.DataGridView1_prov.AllowUserToResizeRows = False
+        Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DataGridView1_prov.Location = New System.Drawing.Point(14, 283)
+        Me.DataGridView1_prov.MultiSelect = False
+        Me.DataGridView1_prov.Name = "DataGridView1_prov"
+        Me.DataGridView1_prov.ReadOnly = True
+        Me.DataGridView1_prov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1_prov.Size = New System.Drawing.Size(807, 257)
+        Me.DataGridView1_prov.TabIndex = 114
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -580,10 +810,14 @@ Partial Class Form1
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage6.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox7.ResumeLayout(False)
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage8.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
+        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -637,4 +871,22 @@ Partial Class Form1
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents TabPage8 As TabPage
     Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents TextBox1_idprov As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents TextBox2_buscprov As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Button4 As Button
+    Friend WithEvents GroupBox7 As GroupBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents TextBox3_mailprov As TextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents TextBox4_telprov As TextBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents TextBox5_descprov As TextBox
+    Friend WithEvents Label12 As Label
+    Friend WithEvents TextBox6_nomprov As TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents DataGridView1_prov As DataGridView
 End Class

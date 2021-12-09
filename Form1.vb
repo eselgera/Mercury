@@ -2,6 +2,8 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         obtenerNuevoIdCliente()
         llenarTablaClientes()
+        obtenerNuevoIdProveedor()
+        llenarTablaProveedores()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -29,6 +31,31 @@
 
     End Function
 
+    'Metodo para obtener el siguiente ID del Proveedor por insertar
+    Function obtenerNuevoIdProveedor()
+
+        Dim query As String
+        Dim lista As String
+        Dim NewID As String
+
+        Try
+            query = "SELECT count(*)+1 as ID FROM Proveedor"
+            Dim Rsdatos = Seleccion_de_datos(query)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("ID")
+                TextBox1_idprov.Text = NewID
+            End If
+
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
     Function llenarTablaClientes()
 
         Dim sql As String
@@ -41,6 +68,30 @@
             lista = Rsdatos.Tables("DATOS").Rows.Count
             If lista <> 0 Then
                 TableClientes.DataSource = Rsdatos.Tables(0)
+                AjustarTabla()
+
+            End If
+
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarTablaProveedores()
+
+        Dim sql As String
+        Dim lista As String
+
+        sql = "Select * From Proveedor"
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                DataGridView1_prov.DataSource = Rsdatos.Tables(0)
                 AjustarTabla()
 
             End If
@@ -229,5 +280,115 @@
 
     Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
         TabControl1.SelectedTab = TabControl1.TabPages(4)
+    End Sub
+
+    Private Sub DataGridView1_prov_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DataGridView1_prov.CellMouseClick
+        If (e.RowIndex > -1) Then
+            DataGridView1_prov.CurrentRow.Selected = True
+            TextBox1_idprov.Text = DataGridView1_prov.Rows(e.RowIndex).Cells("idProveedor").FormattedValue.ToString()
+            TextBox6_nomprov.Text = DataGridView1_prov.Rows(e.RowIndex).Cells("Nombre").FormattedValue.ToString()
+            TextBox5_descprov.Text = DataGridView1_prov.Rows(e.RowIndex).Cells("Descripcion").FormattedValue.ToString()
+            TextBox4_telprov.Text = DataGridView1_prov.Rows(e.RowIndex).Cells("Telefono").FormattedValue.ToString()
+            TextBox3_mailprov.Text = DataGridView1_prov.Rows(e.RowIndex).Cells("Correo").FormattedValue.ToString()
+        End If
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        TextBox1_idprov.Clear()
+        TextBox6_nomprov.Clear()
+        TextBox5_descprov.Clear()
+        TextBox4_telprov.Clear()
+        TextBox3_mailprov.Clear()
+        TextBox2_buscprov.Clear()
+
+        obtenerNuevoIdProveedor()
+        llenarTablaProveedores()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        If TextBox6_nomprov.Text.Trim.Length > 0 And TextBox5_descprov.Text.Trim.Length > 0 And TextBox4_telprov.Text.Trim.Length > 0 And TextBox3_mailprov.Text.Trim.Length > 0 Then
+            Dim query As String
+            Dim nombre = TextBox6_nomprov.Text
+            Dim descProv = TextBox5_descprov.Text
+            Dim telProv = TextBox4_telprov.Text
+            Dim mailProv = TextBox3_mailprov.Text
+
+            Try
+                query = "INSERT INTO Proveedor (Nombre,Descripcion,Telefono,Correo)values('" & nombre & "','" & descProv & "','" & telProv & "','" & mailProv & "')"
+                Ejecutar_Query(query)
+
+                Button3_Click(sender, e)
+                ' MsgBox("Proveedor registrado exitosamente")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+            Conexion.Close()
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If TextBox6_nomprov.Text.Trim.Length > 0 And TextBox5_descprov.Text.Trim.Length > 0 And TextBox4_telprov.Text.Trim.Length > 0 And TextBox3_mailprov.Text.Trim.Length > 0 Then
+            Dim query As String
+            Dim nombre = TextBox6_nomprov.Text
+            Dim descProv = TextBox5_descprov.Text
+            Dim telProv = TextBox4_telprov.Text
+            Dim mailProv = TextBox3_mailprov.Text
+
+            Try
+                query = "UPDATE Proveedor SET
+                              Nombre ='" & nombre & "',
+                              Descripcion ='" & descProv & "',
+                              Telefono ='" & telProv & "',
+                              Correo ='" & mailProv & "'
+                              WHERE idProveedor = '" & TextBox1_idprov.Text & "'"
+
+                Ejecutar_Query(query)
+
+                Button3_Click(sender, e)
+                ' MsgBox("Proveedor actualizado exitosamente")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+            Conexion.Close()
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        If TextBox2_buscprov.Text <> "" Then
+            Dim NombreProveedor = TextBox2_buscprov.Text
+            Dim sql = "Select * From Proveedor WHERE nombre LIKE '%" & NombreProveedor & "%'  OR correo LIKE '%" & NombreProveedor & "%'"
+
+            Try
+                Dim Rsdatos = Seleccion_de_datos(sql)
+                Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+
+                If lista <> 0 Then
+                    DataGridView1_prov.DataSource = Rsdatos.Tables(0)
+                    'Si se encuentra un resultado, seleccionar
+                    If DataGridView1_prov.SelectedCells.Count > 0 Then
+                        DataGridView1_prov.Rows(0).Selected = True
+                        Dim i_rowindex As Integer = DataGridView1_prov.SelectedCells(0).RowIndex
+                        Dim i_colIndex As Integer = DataGridView1_prov.SelectedCells(0).ColumnIndex
+                        DataGridView1_prov_CellMouseClick(sender, New DataGridViewCellMouseEventArgs(i_colIndex, i_rowindex, 0, 0, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0)))
+                    End If
+
+                End If
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+
+            Conexion.Close()
+
+        Else
+            'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
+            btnNewCliente_Click(sender, e)
+        End If
     End Sub
 End Class
