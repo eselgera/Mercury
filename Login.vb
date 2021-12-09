@@ -88,23 +88,25 @@ Public Class Login
             Case 2
                 ' Deja solo los tab de ventanas activos
                 Form.EmpleadosToolStripMenuItem.Enabled = False
-                Form.ProductosToolStripMenuItem.Enabled = False
                 Form.PedidosToolStripMenuItem.Enabled = False
-                Form.TabPage4.Enabled = False
+                Form.TabPage3.Enabled = False
             Case 3
                 ' Deja solo los tab de Almacen activos
                 Form.EmpleadosToolStripMenuItem.Enabled = False
+                Form.VentasToolStripMenuItem.Enabled = False
                 Form.ClientesToolStripMenuItem.Enabled = False
                 Form.TabPage2.Enabled = False
-                Form.TabPage5.Enabled = False
-                Form.TabPage3.Enabled = False
+                Form.TabPage1.Enabled = False
             Case 4
                 ' Deja solo los tab de RH activos
+                Form.VentasToolStripMenuItem.Enabled = False
                 Form.ProductosToolStripMenuItem.Enabled = False
                 Form.PedidosToolStripMenuItem.Enabled = False
-                Form.VentasToolStripMenuItem.Enabled = False
-                Form.TabPage4.Enabled = False
+                Form.TabPage1.Enabled = False
+                Form.TabPage7.Enabled = False
+                Form.TabPage5.Enabled = False
                 Form.TabPage3.Enabled = False
+                Form.TabPage6.Enabled = False
         End Select
 
     End Function

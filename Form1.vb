@@ -206,4 +206,28 @@
     Private Sub ClientesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ClientesToolStripMenuItem.Click
         TabControl1.SelectedTab = TabControl1.TabPages(1)
     End Sub
+
+    Private Sub ProductosToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ProductosToolStripMenuItem1.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(7)
+    End Sub
+
+    Private Sub CategoriasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CategoriasToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(6)
+    End Sub
+
+    Private Sub ProveedoresToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProveedoresToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(5)
+    End Sub
+
+    Private Sub VentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles VentasToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(2)
+    End Sub
+
+    Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(3)
+    End Sub
+
+    Private Sub ReportesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ReportesToolStripMenuItem.Click
+        TabControl1.SelectedTab = TabControl1.TabPages(4)
+    End Sub
 End Class

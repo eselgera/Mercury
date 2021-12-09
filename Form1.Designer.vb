@@ -53,6 +53,12 @@ Partial Class Form1
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -72,6 +78,9 @@ Partial Class Form1
         Me.GroupBox2.SuspendLayout()
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -112,6 +121,9 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
+        Me.TabControl1.Controls.Add(Me.TabPage6)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
+        Me.TabControl1.Controls.Add(Me.TabPage8)
         Me.TabControl1.Location = New System.Drawing.Point(0, 26)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabControl1.Multiline = True
@@ -119,6 +131,7 @@ Partial Class Form1
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(1000, 660)
         Me.TabControl1.TabIndex = 0
+        Me.TabControl1.Tag = ""
         '
         'TabPage1
         '
@@ -383,7 +396,7 @@ Partial Class Form1
         'GroupBox3
         '
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(109, 25)
+        Me.GroupBox3.Location = New System.Drawing.Point(105, 46)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(788, 544)
         Me.GroupBox3.TabIndex = 0
@@ -407,6 +420,69 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Reportes"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'TabPage6
+        '
+        Me.TabPage6.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage6.Controls.Add(Me.GroupBox4)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.Name = "TabPage6"
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage6.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage6.TabIndex = 5
+        Me.TabPage6.Text = "Proveedores"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.ForeColor = System.Drawing.Color.White
+        Me.GroupBox4.Location = New System.Drawing.Point(102, 45)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(788, 544)
+        Me.GroupBox4.TabIndex = 1
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Formulario de Proveedores"
+        '
+        'TabPage7
+        '
+        Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage7.Controls.Add(Me.GroupBox5)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage7.TabIndex = 6
+        Me.TabPage7.Text = "Categorias"
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.ForeColor = System.Drawing.Color.White
+        Me.GroupBox5.Location = New System.Drawing.Point(102, 45)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(788, 544)
+        Me.GroupBox5.TabIndex = 1
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Formulario de Categorías"
+        '
+        'TabPage8
+        '
+        Me.TabPage8.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage8.Controls.Add(Me.GroupBox6)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage8.TabIndex = 7
+        Me.TabPage8.Text = "Productos"
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.ForeColor = System.Drawing.Color.White
+        Me.GroupBox6.Location = New System.Drawing.Point(102, 45)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(788, 544)
+        Me.GroupBox6.TabIndex = 1
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Formulario de Productos"
         '
         'MenuStrip1
         '
@@ -433,19 +509,19 @@ Partial Class Form1
         'ProductosToolStripMenuItem1
         '
         Me.ProductosToolStripMenuItem1.Name = "ProductosToolStripMenuItem1"
-        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
+        Me.ProductosToolStripMenuItem1.Size = New System.Drawing.Size(139, 22)
         Me.ProductosToolStripMenuItem1.Text = "Productos"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'ProveedoresToolStripMenuItem
         '
         Me.ProveedoresToolStripMenuItem.Name = "ProveedoresToolStripMenuItem"
-        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProveedoresToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.ProveedoresToolStripMenuItem.Text = "Proveedores"
         '
         'EmpleadosToolStripMenuItem
@@ -503,6 +579,9 @@ Partial Class Form1
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage6.ResumeLayout(False)
+        Me.TabPage7.ResumeLayout(False)
+        Me.TabPage8.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
@@ -552,4 +631,10 @@ Partial Class Form1
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label9_Nombre As Label
     Friend WithEvents Label8_Bienv As Label
+    Friend WithEvents TabPage6 As TabPage
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents TabPage7 As TabPage
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents TabPage8 As TabPage
+    Friend WithEvents GroupBox6 As GroupBox
 End Class
