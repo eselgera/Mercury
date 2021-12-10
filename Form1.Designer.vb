@@ -22,7 +22,7 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label9_Nombre = New System.Windows.Forms.Label()
         Me.Label8_Bienv = New System.Windows.Forms.Label()
@@ -73,8 +73,23 @@ Partial Class Form1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TextBox6_nomprov = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.DataGridView1_prov = New System.Windows.Forms.DataGridView()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.txtidCat = New System.Windows.Forms.TextBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtApCat = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.txtNombreCat = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.btnSearchCat = New System.Windows.Forms.Button()
+        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.btnUpdateCat = New System.Windows.Forms.Button()
+        Me.btnAgregarCat = New System.Windows.Forms.Button()
+        Me.btnNewCat = New System.Windows.Forms.Button()
+        Me.txtBuscarCat = New System.Windows.Forms.TextBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.Table_Categoria = New System.Windows.Forms.DataGridView()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
@@ -89,7 +104,6 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataGridView1_prov = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -100,10 +114,13 @@ Partial Class Form1
         Me.TabPage6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        CType(Me.Table_Categoria, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -646,6 +663,32 @@ Partial Class Form1
         Me.Label13.TabIndex = 102
         Me.Label13.Text = "Nombre"
         '
+        'DataGridView1_prov
+        '
+        Me.DataGridView1_prov.AllowUserToAddRows = False
+        Me.DataGridView1_prov.AllowUserToDeleteRows = False
+        Me.DataGridView1_prov.AllowUserToOrderColumns = True
+        Me.DataGridView1_prov.AllowUserToResizeColumns = False
+        Me.DataGridView1_prov.AllowUserToResizeRows = False
+        Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.DataGridView1_prov.Location = New System.Drawing.Point(14, 283)
+        Me.DataGridView1_prov.MultiSelect = False
+        Me.DataGridView1_prov.Name = "DataGridView1_prov"
+        Me.DataGridView1_prov.ReadOnly = True
+        Me.DataGridView1_prov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1_prov.Size = New System.Drawing.Size(807, 257)
+        Me.DataGridView1_prov.TabIndex = 114
+        '
         'TabPage7
         '
         Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
@@ -659,13 +702,169 @@ Partial Class Form1
         '
         'GroupBox5
         '
-        Me.GroupBox5.ForeColor = System.Drawing.Color.White
-        Me.GroupBox5.Location = New System.Drawing.Point(102, 45)
+        Me.GroupBox5.Controls.Add(Me.txtidCat)
+        Me.GroupBox5.Controls.Add(Me.Label14)
+        Me.GroupBox5.Controls.Add(Me.txtApCat)
+        Me.GroupBox5.Controls.Add(Me.Label15)
+        Me.GroupBox5.Controls.Add(Me.txtNombreCat)
+        Me.GroupBox5.Controls.Add(Me.Label16)
+        Me.GroupBox5.Controls.Add(Me.btnSearchCat)
+        Me.GroupBox5.Controls.Add(Me.GroupBox8)
+        Me.GroupBox5.Controls.Add(Me.txtBuscarCat)
+        Me.GroupBox5.Controls.Add(Me.Label17)
+        Me.GroupBox5.Controls.Add(Me.Table_Categoria)
+        Me.GroupBox5.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox5.Location = New System.Drawing.Point(245, 27)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(788, 544)
+        Me.GroupBox5.Size = New System.Drawing.Size(499, 544)
         Me.GroupBox5.TabIndex = 1
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Formulario de Categorías"
+        '
+        'txtidCat
+        '
+        Me.txtidCat.Enabled = False
+        Me.txtidCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtidCat.Location = New System.Drawing.Point(145, 91)
+        Me.txtidCat.Name = "txtidCat"
+        Me.txtidCat.ReadOnly = True
+        Me.txtidCat.Size = New System.Drawing.Size(80, 22)
+        Me.txtidCat.TabIndex = 61
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Black
+        Me.Label14.Location = New System.Drawing.Point(49, 97)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(21, 16)
+        Me.Label14.TabIndex = 60
+        Me.Label14.Text = "ID"
+        '
+        'txtApCat
+        '
+        Me.txtApCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApCat.Location = New System.Drawing.Point(145, 148)
+        Me.txtApCat.Multiline = True
+        Me.txtApCat.Name = "txtApCat"
+        Me.txtApCat.Size = New System.Drawing.Size(179, 72)
+        Me.txtApCat.TabIndex = 57
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Black
+        Me.Label15.Location = New System.Drawing.Point(49, 151)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(80, 16)
+        Me.Label15.TabIndex = 59
+        Me.Label15.Text = "Descripcion"
+        '
+        'txtNombreCat
+        '
+        Me.txtNombreCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCat.Location = New System.Drawing.Point(145, 119)
+        Me.txtNombreCat.Name = "txtNombreCat"
+        Me.txtNombreCat.Size = New System.Drawing.Size(179, 22)
+        Me.txtNombreCat.TabIndex = 56
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.Black
+        Me.Label16.Location = New System.Drawing.Point(49, 125)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(57, 16)
+        Me.Label16.TabIndex = 58
+        Me.Label16.Text = "Nombre"
+        '
+        'btnSearchCat
+        '
+        Me.btnSearchCat.Location = New System.Drawing.Point(340, 240)
+        Me.btnSearchCat.Name = "btnSearchCat"
+        Me.btnSearchCat.Size = New System.Drawing.Size(101, 25)
+        Me.btnSearchCat.TabIndex = 55
+        Me.btnSearchCat.Text = "Buscar"
+        Me.btnSearchCat.UseVisualStyleBackColor = True
+        '
+        'GroupBox8
+        '
+        Me.GroupBox8.Controls.Add(Me.btnUpdateCat)
+        Me.GroupBox8.Controls.Add(Me.btnAgregarCat)
+        Me.GroupBox8.Controls.Add(Me.btnNewCat)
+        Me.GroupBox8.Location = New System.Drawing.Point(330, 91)
+        Me.GroupBox8.Name = "GroupBox8"
+        Me.GroupBox8.Size = New System.Drawing.Size(111, 129)
+        Me.GroupBox8.TabIndex = 54
+        Me.GroupBox8.TabStop = False
+        '
+        'btnUpdateCat
+        '
+        Me.btnUpdateCat.Location = New System.Drawing.Point(6, 88)
+        Me.btnUpdateCat.Name = "btnUpdateCat"
+        Me.btnUpdateCat.Size = New System.Drawing.Size(98, 30)
+        Me.btnUpdateCat.TabIndex = 2
+        Me.btnUpdateCat.Text = "Actualizar"
+        Me.btnUpdateCat.UseVisualStyleBackColor = True
+        '
+        'btnAgregarCat
+        '
+        Me.btnAgregarCat.Location = New System.Drawing.Point(6, 51)
+        Me.btnAgregarCat.Name = "btnAgregarCat"
+        Me.btnAgregarCat.Size = New System.Drawing.Size(98, 30)
+        Me.btnAgregarCat.TabIndex = 1
+        Me.btnAgregarCat.Text = "Agregar"
+        Me.btnAgregarCat.UseVisualStyleBackColor = True
+        '
+        'btnNewCat
+        '
+        Me.btnNewCat.Location = New System.Drawing.Point(6, 15)
+        Me.btnNewCat.Name = "btnNewCat"
+        Me.btnNewCat.Size = New System.Drawing.Size(98, 30)
+        Me.btnNewCat.TabIndex = 0
+        Me.btnNewCat.Text = "Nuevo"
+        Me.btnNewCat.UseVisualStyleBackColor = True
+        '
+        'txtBuscarCat
+        '
+        Me.txtBuscarCat.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarCat.Location = New System.Drawing.Point(98, 242)
+        Me.txtBuscarCat.Name = "txtBuscarCat"
+        Me.txtBuscarCat.Size = New System.Drawing.Size(236, 22)
+        Me.txtBuscarCat.TabIndex = 62
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label17.ForeColor = System.Drawing.Color.Black
+        Me.Label17.Location = New System.Drawing.Point(42, 244)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(50, 16)
+        Me.Label17.TabIndex = 53
+        Me.Label17.Text = "Buscar"
+        '
+        'Table_Categoria
+        '
+        Me.Table_Categoria.AllowUserToAddRows = False
+        Me.Table_Categoria.AllowUserToDeleteRows = False
+        Me.Table_Categoria.AllowUserToResizeColumns = False
+        Me.Table_Categoria.AllowUserToResizeRows = False
+        Me.Table_Categoria.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.Table_Categoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Table_Categoria.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Table_Categoria.Location = New System.Drawing.Point(44, 274)
+        Me.Table_Categoria.Margin = New System.Windows.Forms.Padding(2)
+        Me.Table_Categoria.MultiSelect = False
+        Me.Table_Categoria.Name = "Table_Categoria"
+        Me.Table_Categoria.ReadOnly = True
+        Me.Table_Categoria.RowTemplate.Height = 24
+        Me.Table_Categoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.Table_Categoria.Size = New System.Drawing.Size(397, 193)
+        Me.Table_Categoria.TabIndex = 52
         '
         'TabPage8
         '
@@ -765,32 +964,6 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
-        'DataGridView1_prov
-        '
-        Me.DataGridView1_prov.AllowUserToAddRows = False
-        Me.DataGridView1_prov.AllowUserToDeleteRows = False
-        Me.DataGridView1_prov.AllowUserToOrderColumns = True
-        Me.DataGridView1_prov.AllowUserToResizeColumns = False
-        Me.DataGridView1_prov.AllowUserToResizeRows = False
-        Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.DataGridView1_prov.Location = New System.Drawing.Point(14, 283)
-        Me.DataGridView1_prov.MultiSelect = False
-        Me.DataGridView1_prov.Name = "DataGridView1_prov"
-        Me.DataGridView1_prov.ReadOnly = True
-        Me.DataGridView1_prov.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1_prov.Size = New System.Drawing.Size(807, 257)
-        Me.DataGridView1_prov.TabIndex = 114
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -813,11 +986,15 @@ Partial Class Form1
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox7.ResumeLayout(False)
+        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox8.ResumeLayout(False)
+        CType(Me.Table_Categoria, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.DataGridView1_prov, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -889,4 +1066,18 @@ Partial Class Form1
     Friend WithEvents TextBox6_nomprov As TextBox
     Friend WithEvents Label13 As Label
     Friend WithEvents DataGridView1_prov As DataGridView
+    Friend WithEvents txtidCat As TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents txtApCat As TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents txtNombreCat As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents btnSearchCat As Button
+    Friend WithEvents GroupBox8 As GroupBox
+    Friend WithEvents btnUpdateCat As Button
+    Friend WithEvents btnAgregarCat As Button
+    Friend WithEvents btnNewCat As Button
+    Friend WithEvents txtBuscarCat As TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents Table_Categoria As DataGridView
 End Class

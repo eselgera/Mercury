@@ -129,4 +129,8 @@
 
         End If
     End Sub
+
+    Private Sub btnSearchRol_Click(sender As Object, e As EventArgs) Handles btnSearchRol.Click
+
+    End Sub
 End Class

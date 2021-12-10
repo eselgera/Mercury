@@ -4,6 +4,8 @@
         llenarTablaClientes()
         obtenerNuevoIdProveedor()
         llenarTablaProveedores()
+        obtenerNuevoIdCat()
+        llenarTablaCategorias()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -389,6 +391,150 @@
         Else
             'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
             btnNewCliente_Click(sender, e)
+        End If
+    End Sub
+
+    Function llenarTablaCategorias()
+
+        Dim sql As String
+        Dim lista As String
+        sql = "Select * From Categoria"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                Table_Categoria.DataSource = Rsdatos.Tables(0)
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    'Metodo para obtener el siguiente ID de categoria para insertar nuevo registro
+    Function obtenerNuevoIdCat()
+
+        Dim sql As String
+        Dim lista As String
+        Dim NewID As String
+
+        Try
+            sql = "SELECT count(*)+1 as idCategoria FROM Categoria"
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("idCategoria")
+                txtidCat.Text = NewID
+            End If
+
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Private Sub btnNewCat_Click(sender As Object, e As EventArgs) Handles btnNewCat.Click
+        txtidCat.Clear()
+        txtNombreCat.Clear()
+        txtApCat.Clear()
+        txtBuscarCat.Clear()
+
+        obtenerNuevoIdCat()
+        llenarTablaCategorias()
+    End Sub
+
+    Private Sub btnAgregarCat_Click(sender As Object, e As EventArgs) Handles btnAgregarCat.Click
+        If txtNombreCat.Text.Trim.Length > 0 And txtApCat.Text.Trim.Length > 0 Then
+            Dim query As String
+            Dim nombre = txtNombreCat.Text
+            Dim desc = txtApCat.Text
+
+            Try
+                query = "INSERT INTO Categoria (Nombre,Descripcion)values('" & nombre & "','" & desc & "' )"
+                Ejecutar_Query(query)
+
+                btnNewCat_Click(sender, e)
+                MsgBox("Categoria agregada exitosamente")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+            Conexion.Close()
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub btnUpdateCat_Click(sender As Object, e As EventArgs) Handles btnUpdateCat.Click
+        If txtNombreCat.Text.Trim.Length > 0 And txtApCat.Text.Trim.Length > 0 Then
+            Dim query As String
+            Dim nombre = txtNombreCat.Text
+            Dim desc = txtApCat.Text
+
+            Try
+                query = "UPDATE Categoria SET
+                              Nombre ='" & nombre & "',
+                              Descripcion ='" & desc & "'
+                              WHERE idCategoria = '" & txtidCat.Text & "'"
+
+                Ejecutar_Query(query)
+                btnNewCat_Click(sender, e)
+                MsgBox("Categoria Actualizada")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+            Conexion.Close()
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub btnSearchCat_Click(sender As Object, e As EventArgs) Handles btnSearchCat.Click
+        If txtBuscarCat.Text <> "" Then
+            Dim NombreCategoria = txtBuscarCat.Text
+            Dim sql = "Select * From Categoria WHERE Nombre LIKE '%" & NombreCategoria & "%'  OR Descripcion LIKE '%" & NombreCategoria & "%'"
+
+            Try
+                Dim Rsdatos = Seleccion_de_datos(sql)
+                Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+
+                If lista <> 0 Then
+                    Table_Categoria.DataSource = Rsdatos.Tables(0)
+                    'Si se encuentra un resultado, seleccionar
+                    If Table_Categoria.SelectedCells.Count > 0 Then
+                        Table_Categoria.Rows(0).Selected = True
+                        Dim i_rowindex As Integer = Table_Categoria.SelectedCells(0).RowIndex
+                        Dim i_colIndex As Integer = Table_Categoria.SelectedCells(0).ColumnIndex
+                        Table_Categoria_CellMouseClick(sender, New DataGridViewCellMouseEventArgs(i_colIndex, i_rowindex, 0, 0, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0)))
+                    End If
+
+                End If
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+
+            Conexion.Close()
+
+        Else
+            'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
+            btnNewCliente_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub Table_Categoria_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles Table_Categoria.CellMouseClick
+        If (e.RowIndex > -1) Then
+            Table_Categoria.CurrentRow.Selected = True
+            txtidCat.Text = Table_Categoria.Rows(e.RowIndex).Cells("idCategoria").FormattedValue.ToString()
+            txtNombreCat.Text = Table_Categoria.Rows(e.RowIndex).Cells("Nombre").FormattedValue.ToString()
+            txtApCat.Text = Table_Categoria.Rows(e.RowIndex).Cells("Descripcion").FormattedValue.ToString()
         End If
     End Sub
 End Class
