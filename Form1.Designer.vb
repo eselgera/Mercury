@@ -22,17 +22,18 @@ Partial Class Form1
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
+        Dim TabPage2 As System.Windows.Forms.TabPage
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Label9_Nombre = New System.Windows.Forms.Label()
-        Me.Label8_Bienv = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.btnSearchCliente = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnUpdateCliente = New System.Windows.Forms.Button()
+        Me.ImagenesButtons = New System.Windows.Forms.ImageList(Me.components)
         Me.btnAddCliente = New System.Windows.Forms.Button()
         Me.btnNewCliente = New System.Windows.Forms.Button()
         Me.txtidCliente = New System.Windows.Forms.TextBox()
@@ -50,9 +51,35 @@ Partial Class Form1
         Me.txtNombreCliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TableClientes = New System.Windows.Forms.DataGridView()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label9_Nombre = New System.Windows.Forms.Label()
+        Me.Label8_Bienv = New System.Windows.Forms.Label()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.label26 = New System.Windows.Forms.Label()
+        Me.label24 = New System.Windows.Forms.Label()
+        Me.txtNombreProductoPedido = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
+        Me.GroupBox10 = New System.Windows.Forms.GroupBox()
+        Me.btnAgregarProductoPedido = New System.Windows.Forms.Button()
+        Me.btnBorrarProductoPedido = New System.Windows.Forms.Button()
+        Me.btnActualizarProductoPedido = New System.Windows.Forms.Button()
+        Me.btnGuardarProductosPedido = New System.Windows.Forms.Button()
+        Me.DetallesPedidoTable = New System.Windows.Forms.DataGridView()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.dateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.btnEliminarPedido = New System.Windows.Forms.Button()
+        Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.btnCancelarPedido = New System.Windows.Forms.Button()
+        Me.btnCompletarPedido = New System.Windows.Forms.Button()
+        Me.btnEnviarPedido = New System.Windows.Forms.Button()
+        Me.PedidosTable = New System.Windows.Forms.DataGridView()
+        Me.btnCrearPedido = New System.Windows.Forms.Button()
+        Me.cbProveedor = New System.Windows.Forms.ComboBox()
+        Me.label22 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
@@ -92,6 +119,7 @@ Partial Class Form1
         Me.Table_Categoria = New System.Windows.Forms.DataGridView()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.ImagenesTab = New System.Windows.Forms.ImageList(Me.components)
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -104,6 +132,7 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+<<<<<<< HEAD
         Me.txtCunitPdcto = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.cbCat = New System.Windows.Forms.ComboBox()
@@ -133,10 +162,21 @@ Partial Class Form1
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+=======
+        TabPage2 = New System.Windows.Forms.TabPage()
+        TabPage2.SuspendLayout()
+>>>>>>> 22aa2041da54fa36ea766c053d0556d68676fe8b
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel1.SuspendLayout()
+        Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        CType(Me.DetallesPedidoTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox9.SuspendLayout()
+        CType(Me.PedidosTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
@@ -152,6 +192,301 @@ Partial Class Form1
         CType(Me.TableProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
+        'TabPage2
+        '
+        TabPage2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        TabPage2.Controls.Add(Me.Label19)
+        TabPage2.Controls.Add(Me.Label18)
+        TabPage2.Controls.Add(Me.GroupBox1)
+        TabPage2.ImageIndex = 4
+        TabPage2.Location = New System.Drawing.Point(4, 37)
+        TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        TabPage2.Name = "TabPage2"
+        TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        TabPage2.Size = New System.Drawing.Size(992, 619)
+        TabPage2.TabIndex = 1
+        TabPage2.Text = "Clientes"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Font = New System.Drawing.Font("Arial Narrow", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(13, 349)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(125, 31)
+        Me.Label19.TabIndex = 2
+        Me.Label19.Text = "CLIENTES"
+        '
+        'Label18
+        '
+        Me.Label18.ImageIndex = 0
+        Me.Label18.ImageList = Me.ImagenesGrandes
+        Me.Label18.Location = New System.Drawing.Point(4, 194)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(142, 154)
+        Me.Label18.TabIndex = 1
+        '
+        'ImagenesGrandes
+        '
+        Me.ImagenesGrandes.ImageStream = CType(resources.GetObject("ImagenesGrandes.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImagenesGrandes.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImagenesGrandes.Images.SetKeyName(0, "clientes.png")
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GroupBox1.Controls.Add(Me.btnSearchCliente)
+        Me.GroupBox1.Controls.Add(Me.GroupBox2)
+        Me.GroupBox1.Controls.Add(Me.txtidCliente)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.txtBuscarCliente)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.txtCorreoCliente)
+        Me.GroupBox1.Controls.Add(Me.Label5)
+        Me.GroupBox1.Controls.Add(Me.txtDireccionCliente)
+        Me.GroupBox1.Controls.Add(Me.Label4)
+        Me.GroupBox1.Controls.Add(Me.txtApMatCliente)
+        Me.GroupBox1.Controls.Add(Me.Label3)
+        Me.GroupBox1.Controls.Add(Me.txtApPatCliente)
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.txtNombreCliente)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.TableClientes)
+        Me.GroupBox1.Location = New System.Drawing.Point(151, 5)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(833, 598)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Datos del Cliente"
+        '
+        'btnSearchCliente
+        '
+        Me.btnSearchCliente.Location = New System.Drawing.Point(431, 262)
+        Me.btnSearchCliente.Name = "btnSearchCliente"
+        Me.btnSearchCliente.Size = New System.Drawing.Size(101, 23)
+        Me.btnSearchCliente.TabIndex = 16
+        Me.btnSearchCliente.Text = "Buscar"
+        Me.btnSearchCliente.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.btnUpdateCliente)
+        Me.GroupBox2.Controls.Add(Me.btnAddCliente)
+        Me.GroupBox2.Controls.Add(Me.btnNewCliente)
+        Me.GroupBox2.Location = New System.Drawing.Point(583, 55)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(170, 225)
+        Me.GroupBox2.TabIndex = 15
+        Me.GroupBox2.TabStop = False
+        '
+        'btnUpdateCliente
+        '
+        Me.btnUpdateCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnUpdateCliente.ImageIndex = 4
+        Me.btnUpdateCliente.ImageList = Me.ImagenesButtons
+        Me.btnUpdateCliente.Location = New System.Drawing.Point(27, 149)
+        Me.btnUpdateCliente.Name = "btnUpdateCliente"
+        Me.btnUpdateCliente.Padding = New System.Windows.Forms.Padding(0, 0, 15, 0)
+        Me.btnUpdateCliente.Size = New System.Drawing.Size(109, 38)
+        Me.btnUpdateCliente.TabIndex = 2
+        Me.btnUpdateCliente.Text = "Actualizar"
+        Me.btnUpdateCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnUpdateCliente.UseVisualStyleBackColor = True
+        '
+        'ImagenesButtons
+        '
+        Me.ImagenesButtons.ImageStream = CType(resources.GetObject("ImagenesButtons.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImagenesButtons.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImagenesButtons.Images.SetKeyName(0, "añadrcliente (1).png")
+        Me.ImagenesButtons.Images.SetKeyName(1, "ARCHIVO-iloveimg-resized.png")
+        Me.ImagenesButtons.Images.SetKeyName(2, "delete.png")
+        Me.ImagenesButtons.Images.SetKeyName(3, "eraser_46865-iloveimg-resized.png")
+        Me.ImagenesButtons.Images.SetKeyName(4, "modificar.png")
+        Me.ImagenesButtons.Images.SetKeyName(5, "ARCHIVO-iloveimg-resized.png")
+        Me.ImagenesButtons.Images.SetKeyName(6, "vacio.png")
+        '
+        'btnAddCliente
+        '
+        Me.btnAddCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAddCliente.ImageIndex = 0
+        Me.btnAddCliente.ImageList = Me.ImagenesButtons
+        Me.btnAddCliente.Location = New System.Drawing.Point(27, 93)
+        Me.btnAddCliente.Name = "btnAddCliente"
+        Me.btnAddCliente.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
+        Me.btnAddCliente.Size = New System.Drawing.Size(109, 38)
+        Me.btnAddCliente.TabIndex = 1
+        Me.btnAddCliente.Text = "Agregar"
+        Me.btnAddCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAddCliente.UseVisualStyleBackColor = True
+        '
+        'btnNewCliente
+        '
+        Me.btnNewCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnNewCliente.ImageIndex = 6
+        Me.btnNewCliente.ImageList = Me.ImagenesButtons
+        Me.btnNewCliente.Location = New System.Drawing.Point(27, 36)
+        Me.btnNewCliente.Name = "btnNewCliente"
+        Me.btnNewCliente.Padding = New System.Windows.Forms.Padding(0, 0, 20, 0)
+        Me.btnNewCliente.Size = New System.Drawing.Size(109, 38)
+        Me.btnNewCliente.TabIndex = 0
+        Me.btnNewCliente.Text = "Nuevo"
+        Me.btnNewCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnNewCliente.UseVisualStyleBackColor = True
+        '
+        'txtidCliente
+        '
+        Me.txtidCliente.Enabled = False
+        Me.txtidCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtidCliente.Location = New System.Drawing.Point(110, 37)
+        Me.txtidCliente.Name = "txtidCliente"
+        Me.txtidCliente.ReadOnly = True
+        Me.txtidCliente.Size = New System.Drawing.Size(80, 22)
+        Me.txtidCliente.TabIndex = 14
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(24, 37)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(21, 16)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "ID"
+        '
+        'txtBuscarCliente
+        '
+        Me.txtBuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBuscarCliente.Location = New System.Drawing.Point(62, 264)
+        Me.txtBuscarCliente.Name = "txtBuscarCliente"
+        Me.txtBuscarCliente.Size = New System.Drawing.Size(356, 22)
+        Me.txtBuscarCliente.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Black
+        Me.Label6.Location = New System.Drawing.Point(6, 267)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(50, 16)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Buscar"
+        '
+        'txtCorreoCliente
+        '
+        Me.txtCorreoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCorreoCliente.Location = New System.Drawing.Point(110, 222)
+        Me.txtCorreoCliente.Name = "txtCorreoCliente"
+        Me.txtCorreoCliente.Size = New System.Drawing.Size(424, 22)
+        Me.txtCorreoCliente.TabIndex = 4
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Black
+        Me.Label5.Location = New System.Drawing.Point(24, 225)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(42, 16)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Email"
+        '
+        'txtDireccionCliente
+        '
+        Me.txtDireccionCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDireccionCliente.Location = New System.Drawing.Point(110, 184)
+        Me.txtDireccionCliente.Name = "txtDireccionCliente"
+        Me.txtDireccionCliente.Size = New System.Drawing.Size(424, 22)
+        Me.txtDireccionCliente.TabIndex = 3
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.Black
+        Me.Label4.Location = New System.Drawing.Point(24, 187)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 16)
+        Me.Label4.TabIndex = 7
+        Me.Label4.Text = "Direccion"
+        '
+        'txtApMatCliente
+        '
+        Me.txtApMatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApMatCliente.Location = New System.Drawing.Point(110, 147)
+        Me.txtApMatCliente.Name = "txtApMatCliente"
+        Me.txtApMatCliente.Size = New System.Drawing.Size(424, 22)
+        Me.txtApMatCliente.TabIndex = 2
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(24, 150)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(110, 16)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "Apellido Materno"
+        '
+        'txtApPatCliente
+        '
+        Me.txtApPatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtApPatCliente.Location = New System.Drawing.Point(110, 109)
+        Me.txtApPatCliente.Name = "txtApPatCliente"
+        Me.txtApPatCliente.Size = New System.Drawing.Size(424, 22)
+        Me.txtApPatCliente.TabIndex = 1
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Black
+        Me.Label2.Location = New System.Drawing.Point(24, 112)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 16)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Apellido Paterno"
+        '
+        'txtNombreCliente
+        '
+        Me.txtNombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreCliente.Location = New System.Drawing.Point(110, 72)
+        Me.txtNombreCliente.Name = "txtNombreCliente"
+        Me.txtNombreCliente.Size = New System.Drawing.Size(424, 22)
+        Me.txtNombreCliente.TabIndex = 0
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Black
+        Me.Label1.Location = New System.Drawing.Point(24, 72)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(57, 16)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Nombre"
+        '
+        'TableClientes
+        '
+        Me.TableClientes.AllowUserToAddRows = False
+        Me.TableClientes.AllowUserToDeleteRows = False
+        Me.TableClientes.AllowUserToOrderColumns = True
+        Me.TableClientes.AllowUserToResizeColumns = False
+        Me.TableClientes.AllowUserToResizeRows = False
+        Me.TableClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.TableClientes.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.TableClientes.Location = New System.Drawing.Point(6, 297)
+        Me.TableClientes.MultiSelect = False
+        Me.TableClientes.Name = "TableClientes"
+        Me.TableClientes.ReadOnly = True
+        Me.TableClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.TableClientes.Size = New System.Drawing.Size(807, 282)
+        Me.TableClientes.TabIndex = 99
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.Label9_Nombre)
@@ -159,7 +494,7 @@ Partial Class Form1
         Me.Panel1.Controls.Add(Me.TabControl1)
         Me.Panel1.Controls.Add(Me.MenuStrip1)
         Me.Panel1.Location = New System.Drawing.Point(3, 1)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1002, 688)
         Me.Panel1.TabIndex = 0
@@ -185,15 +520,17 @@ Partial Class Form1
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Controls.Add(TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage5)
         Me.TabControl1.Controls.Add(Me.TabPage6)
         Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Controls.Add(Me.TabPage8)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 26)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabControl1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.TabControl1.ImageList = Me.ImagenesTab
+        Me.TabControl1.Location = New System.Drawing.Point(1, 25)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -203,261 +540,26 @@ Partial Class Form1
         '
         'TabPage1
         '
-        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.ImageIndex = 6
+        Me.TabPage1.Location = New System.Drawing.Point(4, 37)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.TabPage1.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage1.Size = New System.Drawing.Size(992, 619)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Inicio"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'TabPage2
-        '
-        Me.TabPage2.BackColor = System.Drawing.Color.SteelBlue
-        Me.TabPage2.Controls.Add(Me.GroupBox1)
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(992, 634)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Clientes"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.btnSearchCliente)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.txtidCliente)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.txtBuscarCliente)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.txtCorreoCliente)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txtDireccionCliente)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.txtApMatCliente)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.txtApPatCliente)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.txtNombreCliente)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.TableClientes)
-        Me.GroupBox1.Location = New System.Drawing.Point(151, 7)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(819, 557)
-        Me.GroupBox1.TabIndex = 0
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Datos del Cliente"
-        '
-        'btnSearchCliente
-        '
-        Me.btnSearchCliente.Location = New System.Drawing.Point(492, 263)
-        Me.btnSearchCliente.Name = "btnSearchCliente"
-        Me.btnSearchCliente.Size = New System.Drawing.Size(101, 23)
-        Me.btnSearchCliente.TabIndex = 16
-        Me.btnSearchCliente.Text = "Buscar"
-        Me.btnSearchCliente.UseVisualStyleBackColor = True
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.btnUpdateCliente)
-        Me.GroupBox2.Controls.Add(Me.btnAddCliente)
-        Me.GroupBox2.Controls.Add(Me.btnNewCliente)
-        Me.GroupBox2.Location = New System.Drawing.Point(620, 61)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(193, 225)
-        Me.GroupBox2.TabIndex = 15
-        Me.GroupBox2.TabStop = False
-        '
-        'btnUpdateCliente
-        '
-        Me.btnUpdateCliente.Location = New System.Drawing.Point(27, 157)
-        Me.btnUpdateCliente.Name = "btnUpdateCliente"
-        Me.btnUpdateCliente.Size = New System.Drawing.Size(141, 30)
-        Me.btnUpdateCliente.TabIndex = 2
-        Me.btnUpdateCliente.Text = "Actualizar"
-        Me.btnUpdateCliente.UseVisualStyleBackColor = True
-        '
-        'btnAddCliente
-        '
-        Me.btnAddCliente.Location = New System.Drawing.Point(27, 101)
-        Me.btnAddCliente.Name = "btnAddCliente"
-        Me.btnAddCliente.Size = New System.Drawing.Size(141, 30)
-        Me.btnAddCliente.TabIndex = 1
-        Me.btnAddCliente.Text = "Agregar"
-        Me.btnAddCliente.UseVisualStyleBackColor = True
-        '
-        'btnNewCliente
-        '
-        Me.btnNewCliente.Location = New System.Drawing.Point(27, 44)
-        Me.btnNewCliente.Name = "btnNewCliente"
-        Me.btnNewCliente.Size = New System.Drawing.Size(141, 30)
-        Me.btnNewCliente.TabIndex = 0
-        Me.btnNewCliente.Text = "Nuevo"
-        Me.btnNewCliente.UseVisualStyleBackColor = True
-        '
-        'txtidCliente
-        '
-        Me.txtidCliente.Enabled = False
-        Me.txtidCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtidCliente.Location = New System.Drawing.Point(136, 37)
-        Me.txtidCliente.Name = "txtidCliente"
-        Me.txtidCliente.ReadOnly = True
-        Me.txtidCliente.Size = New System.Drawing.Size(80, 22)
-        Me.txtidCliente.TabIndex = 14
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(24, 37)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(21, 16)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "ID"
-        '
-        'txtBuscarCliente
-        '
-        Me.txtBuscarCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscarCliente.Location = New System.Drawing.Point(62, 264)
-        Me.txtBuscarCliente.Name = "txtBuscarCliente"
-        Me.txtBuscarCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtBuscarCliente.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(6, 267)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(50, 16)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Buscar"
-        '
-        'txtCorreoCliente
-        '
-        Me.txtCorreoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorreoCliente.Location = New System.Drawing.Point(136, 222)
-        Me.txtCorreoCliente.Name = "txtCorreoCliente"
-        Me.txtCorreoCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtCorreoCliente.TabIndex = 4
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(24, 225)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 16)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Email"
-        '
-        'txtDireccionCliente
-        '
-        Me.txtDireccionCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccionCliente.Location = New System.Drawing.Point(136, 184)
-        Me.txtDireccionCliente.Name = "txtDireccionCliente"
-        Me.txtDireccionCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtDireccionCliente.TabIndex = 3
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(24, 187)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(65, 16)
-        Me.Label4.TabIndex = 7
-        Me.Label4.Text = "Direccion"
-        '
-        'txtApMatCliente
-        '
-        Me.txtApMatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtApMatCliente.Location = New System.Drawing.Point(136, 147)
-        Me.txtApMatCliente.Name = "txtApMatCliente"
-        Me.txtApMatCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtApMatCliente.TabIndex = 2
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(24, 150)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(110, 16)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "Apellido Materno"
-        '
-        'txtApPatCliente
-        '
-        Me.txtApPatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtApPatCliente.Location = New System.Drawing.Point(136, 109)
-        Me.txtApPatCliente.Name = "txtApPatCliente"
-        Me.txtApPatCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtApPatCliente.TabIndex = 1
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(24, 112)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(108, 16)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Apellido Paterno"
-        '
-        'txtNombreCliente
-        '
-        Me.txtNombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCliente.Location = New System.Drawing.Point(136, 72)
-        Me.txtNombreCliente.Name = "txtNombreCliente"
-        Me.txtNombreCliente.Size = New System.Drawing.Size(424, 22)
-        Me.txtNombreCliente.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(24, 72)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 16)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Nombre"
-        '
-        'TableClientes
-        '
-        Me.TableClientes.AllowUserToAddRows = False
-        Me.TableClientes.AllowUserToDeleteRows = False
-        Me.TableClientes.AllowUserToOrderColumns = True
-        Me.TableClientes.AllowUserToResizeColumns = False
-        Me.TableClientes.AllowUserToResizeRows = False
-        Me.TableClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TableClientes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.TableClientes.Location = New System.Drawing.Point(6, 297)
-        Me.TableClientes.MultiSelect = False
-        Me.TableClientes.Name = "TableClientes"
-        Me.TableClientes.ReadOnly = True
-        Me.TableClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.TableClientes.Size = New System.Drawing.Size(807, 257)
-        Me.TableClientes.TabIndex = 99
         '
         'TabPage3
         '
-        Me.TabPage3.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage3.Controls.Add(Me.GroupBox3)
-        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.ImageIndex = 0
+        Me.TabPage3.Location = New System.Drawing.Point(4, 37)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage3.Size = New System.Drawing.Size(992, 619)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ventas"
         '
@@ -473,30 +575,330 @@ Partial Class Form1
         '
         'TabPage4
         '
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.TabPage4.Controls.Add(Me.label26)
+        Me.TabPage4.Controls.Add(Me.label24)
+        Me.TabPage4.Controls.Add(Me.txtNombreProductoPedido)
+        Me.TabPage4.Controls.Add(Me.txtcantidad)
+        Me.TabPage4.Controls.Add(Me.GroupBox10)
+        Me.TabPage4.Controls.Add(Me.btnGuardarProductosPedido)
+        Me.TabPage4.Controls.Add(Me.DetallesPedidoTable)
+        Me.TabPage4.Controls.Add(Me.DateTimePicker2)
+        Me.TabPage4.Controls.Add(Me.dateTimePicker1)
+        Me.TabPage4.Controls.Add(Me.btnEliminarPedido)
+        Me.TabPage4.Controls.Add(Me.GroupBox9)
+        Me.TabPage4.Controls.Add(Me.PedidosTable)
+        Me.TabPage4.Controls.Add(Me.btnCrearPedido)
+        Me.TabPage4.Controls.Add(Me.cbProveedor)
+        Me.TabPage4.Controls.Add(Me.label22)
+        Me.TabPage4.ImageIndex = 2
+        Me.TabPage4.Location = New System.Drawing.Point(4, 37)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage4.Size = New System.Drawing.Size(992, 619)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Pedidos"
-        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'label26
+        '
+        Me.label26.AutoSize = True
+        Me.label26.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label26.Location = New System.Drawing.Point(21, 325)
+        Me.label26.Name = "label26"
+        Me.label26.Size = New System.Drawing.Size(142, 20)
+        Me.label26.TabIndex = 81
+        Me.label26.Text = "Nombre del Producto:"
+        '
+        'label24
+        '
+        Me.label24.AutoSize = True
+        Me.label24.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label24.Location = New System.Drawing.Point(393, 325)
+        Me.label24.Name = "label24"
+        Me.label24.Size = New System.Drawing.Size(65, 20)
+        Me.label24.TabIndex = 80
+        Me.label24.Text = "Cantidad:"
+        '
+        'txtNombreProductoPedido
+        '
+        Me.txtNombreProductoPedido.Enabled = False
+        Me.txtNombreProductoPedido.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNombreProductoPedido.Location = New System.Drawing.Point(23, 348)
+        Me.txtNombreProductoPedido.Name = "txtNombreProductoPedido"
+        Me.txtNombreProductoPedido.Size = New System.Drawing.Size(355, 26)
+        Me.txtNombreProductoPedido.TabIndex = 79
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Font = New System.Drawing.Font("Arial Narrow", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcantidad.Location = New System.Drawing.Point(397, 348)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(105, 26)
+        Me.txtcantidad.TabIndex = 78
+        '
+        'GroupBox10
+        '
+        Me.GroupBox10.Controls.Add(Me.btnAgregarProductoPedido)
+        Me.GroupBox10.Controls.Add(Me.btnBorrarProductoPedido)
+        Me.GroupBox10.Controls.Add(Me.btnActualizarProductoPedido)
+        Me.GroupBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox10.Location = New System.Drawing.Point(527, 325)
+        Me.GroupBox10.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox10.Name = "GroupBox10"
+        Me.GroupBox10.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox10.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.GroupBox10.Size = New System.Drawing.Size(235, 275)
+        Me.GroupBox10.TabIndex = 73
+        Me.GroupBox10.TabStop = False
+        Me.GroupBox10.Text = "Acciones"
+        '
+        'btnAgregarProductoPedido
+        '
+        Me.btnAgregarProductoPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnAgregarProductoPedido.Enabled = False
+        Me.btnAgregarProductoPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnAgregarProductoPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnAgregarProductoPedido.ImageIndex = 0
+        Me.btnAgregarProductoPedido.ImageList = Me.ImagenesButtons
+        Me.btnAgregarProductoPedido.Location = New System.Drawing.Point(20, 49)
+        Me.btnAgregarProductoPedido.Name = "btnAgregarProductoPedido"
+        Me.btnAgregarProductoPedido.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnAgregarProductoPedido.Size = New System.Drawing.Size(189, 54)
+        Me.btnAgregarProductoPedido.TabIndex = 54
+        Me.btnAgregarProductoPedido.Text = "Agregar Producto   "
+        Me.btnAgregarProductoPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnAgregarProductoPedido.UseVisualStyleBackColor = False
+        '
+        'btnBorrarProductoPedido
+        '
+        Me.btnBorrarProductoPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnBorrarProductoPedido.Enabled = False
+        Me.btnBorrarProductoPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnBorrarProductoPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnBorrarProductoPedido.ImageKey = "eraser_46865-iloveimg-resized.png"
+        Me.btnBorrarProductoPedido.ImageList = Me.ImagenesButtons
+        Me.btnBorrarProductoPedido.Location = New System.Drawing.Point(20, 171)
+        Me.btnBorrarProductoPedido.Name = "btnBorrarProductoPedido"
+        Me.btnBorrarProductoPedido.Padding = New System.Windows.Forms.Padding(4, 0, 8, 0)
+        Me.btnBorrarProductoPedido.Size = New System.Drawing.Size(189, 54)
+        Me.btnBorrarProductoPedido.TabIndex = 55
+        Me.btnBorrarProductoPedido.Text = "Borrar Producto"
+        Me.btnBorrarProductoPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnBorrarProductoPedido.UseVisualStyleBackColor = False
+        '
+        'btnActualizarProductoPedido
+        '
+        Me.btnActualizarProductoPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnActualizarProductoPedido.Enabled = False
+        Me.btnActualizarProductoPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnActualizarProductoPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnActualizarProductoPedido.ImageKey = "modificar.png"
+        Me.btnActualizarProductoPedido.ImageList = Me.ImagenesButtons
+        Me.btnActualizarProductoPedido.Location = New System.Drawing.Point(20, 110)
+        Me.btnActualizarProductoPedido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnActualizarProductoPedido.Name = "btnActualizarProductoPedido"
+        Me.btnActualizarProductoPedido.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnActualizarProductoPedido.Size = New System.Drawing.Size(189, 54)
+        Me.btnActualizarProductoPedido.TabIndex = 53
+        Me.btnActualizarProductoPedido.Text = "Actualizar Producto"
+        Me.btnActualizarProductoPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnActualizarProductoPedido.UseVisualStyleBackColor = False
+        '
+        'btnGuardarProductosPedido
+        '
+        Me.btnGuardarProductosPedido.BackColor = System.Drawing.Color.White
+        Me.btnGuardarProductosPedido.Enabled = False
+        Me.btnGuardarProductosPedido.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardarProductosPedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnGuardarProductosPedido.ImageKey = "ARCHIVO-iloveimg-resized.png"
+        Me.btnGuardarProductosPedido.ImageList = Me.ImagenesButtons
+        Me.btnGuardarProductosPedido.Location = New System.Drawing.Point(799, 426)
+        Me.btnGuardarProductosPedido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnGuardarProductosPedido.Name = "btnGuardarProductosPedido"
+        Me.btnGuardarProductosPedido.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnGuardarProductosPedido.Size = New System.Drawing.Size(183, 72)
+        Me.btnGuardarProductosPedido.TabIndex = 53
+        Me.btnGuardarProductosPedido.Text = "Guardar Pedido "
+        Me.btnGuardarProductosPedido.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnGuardarProductosPedido.UseVisualStyleBackColor = False
+        '
+        'DetallesPedidoTable
+        '
+        Me.DetallesPedidoTable.AllowUserToAddRows = False
+        Me.DetallesPedidoTable.AllowUserToDeleteRows = False
+        Me.DetallesPedidoTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DetallesPedidoTable.Location = New System.Drawing.Point(23, 385)
+        Me.DetallesPedidoTable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DetallesPedidoTable.MultiSelect = False
+        Me.DetallesPedidoTable.Name = "DetallesPedidoTable"
+        Me.DetallesPedidoTable.ReadOnly = True
+        Me.DetallesPedidoTable.RowHeadersWidth = 51
+        Me.DetallesPedidoTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DetallesPedidoTable.Size = New System.Drawing.Size(479, 228)
+        Me.DetallesPedidoTable.TabIndex = 77
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.CustomFormat = "yyyy/MM/dd"
+        Me.DateTimePicker2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker2.Location = New System.Drawing.Point(750, 30)
+        Me.DateTimePicker2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.DateTimePicker2.Size = New System.Drawing.Size(222, 26)
+        Me.DateTimePicker2.TabIndex = 76
+        Me.DateTimePicker2.Value = New Date(2019, 5, 12, 14, 48, 59, 0)
+        '
+        'dateTimePicker1
+        '
+        Me.dateTimePicker1.CustomFormat = "yyyy/MM/dd"
+        Me.dateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dateTimePicker1.Location = New System.Drawing.Point(465, 27)
+        Me.dateTimePicker1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.dateTimePicker1.Name = "dateTimePicker1"
+        Me.dateTimePicker1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dateTimePicker1.Size = New System.Drawing.Size(223, 26)
+        Me.dateTimePicker1.TabIndex = 75
+        Me.dateTimePicker1.Value = New Date(2019, 5, 12, 14, 48, 59, 0)
+        '
+        'btnEliminarPedido
+        '
+        Me.btnEliminarPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnEliminarPedido.Enabled = False
+        Me.btnEliminarPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnEliminarPedido.Location = New System.Drawing.Point(232, 81)
+        Me.btnEliminarPedido.Name = "btnEliminarPedido"
+        Me.btnEliminarPedido.Size = New System.Drawing.Size(198, 41)
+        Me.btnEliminarPedido.TabIndex = 53
+        Me.btnEliminarPedido.Text = "Eliminar Pedido"
+        Me.btnEliminarPedido.UseVisualStyleBackColor = False
+        '
+        'GroupBox9
+        '
+        Me.GroupBox9.Controls.Add(Me.btnCancelarPedido)
+        Me.GroupBox9.Controls.Add(Me.btnCompletarPedido)
+        Me.GroupBox9.Controls.Add(Me.btnEnviarPedido)
+        Me.GroupBox9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox9.Location = New System.Drawing.Point(23, 156)
+        Me.GroupBox9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox9.Name = "GroupBox9"
+        Me.GroupBox9.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.GroupBox9.Size = New System.Drawing.Size(407, 122)
+        Me.GroupBox9.TabIndex = 72
+        Me.GroupBox9.TabStop = False
+        Me.GroupBox9.Text = "Cambiar Estatus"
+        '
+        'btnCancelarPedido
+        '
+        Me.btnCancelarPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCancelarPedido.Enabled = False
+        Me.btnCancelarPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnCancelarPedido.Location = New System.Drawing.Point(285, 43)
+        Me.btnCancelarPedido.Name = "btnCancelarPedido"
+        Me.btnCancelarPedido.Size = New System.Drawing.Size(115, 54)
+        Me.btnCancelarPedido.TabIndex = 52
+        Me.btnCancelarPedido.Text = "Cancelar"
+        Me.btnCancelarPedido.UseVisualStyleBackColor = False
+        '
+        'btnCompletarPedido
+        '
+        Me.btnCompletarPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnCompletarPedido.Enabled = False
+        Me.btnCompletarPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnCompletarPedido.Location = New System.Drawing.Point(138, 43)
+        Me.btnCompletarPedido.Name = "btnCompletarPedido"
+        Me.btnCompletarPedido.Size = New System.Drawing.Size(141, 54)
+        Me.btnCompletarPedido.TabIndex = 51
+        Me.btnCompletarPedido.Text = "Completado"
+        Me.btnCompletarPedido.UseVisualStyleBackColor = False
+        '
+        'btnEnviarPedido
+        '
+        Me.btnEnviarPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnEnviarPedido.Enabled = False
+        Me.btnEnviarPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnEnviarPedido.Location = New System.Drawing.Point(8, 43)
+        Me.btnEnviarPedido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnEnviarPedido.Name = "btnEnviarPedido"
+        Me.btnEnviarPedido.Size = New System.Drawing.Size(123, 54)
+        Me.btnEnviarPedido.TabIndex = 50
+        Me.btnEnviarPedido.Text = "Enviar a Proveedor"
+        Me.btnEnviarPedido.UseVisualStyleBackColor = False
+        '
+        'PedidosTable
+        '
+        Me.PedidosTable.AllowUserToAddRows = False
+        Me.PedidosTable.AllowUserToDeleteRows = False
+        Me.PedidosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PedidosTable.Location = New System.Drawing.Point(465, 81)
+        Me.PedidosTable.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PedidosTable.MultiSelect = False
+        Me.PedidosTable.Name = "PedidosTable"
+        Me.PedidosTable.ReadOnly = True
+        Me.PedidosTable.RowHeadersWidth = 51
+        Me.PedidosTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.PedidosTable.Size = New System.Drawing.Size(507, 197)
+        Me.PedidosTable.TabIndex = 71
+        '
+        'btnCrearPedido
+        '
+        Me.btnCrearPedido.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnCrearPedido.Enabled = False
+        Me.btnCrearPedido.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnCrearPedido.ImageAlign = System.Drawing.ContentAlignment.TopRight
+        Me.btnCrearPedido.Location = New System.Drawing.Point(23, 81)
+        Me.btnCrearPedido.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.btnCrearPedido.Name = "btnCrearPedido"
+        Me.btnCrearPedido.Padding = New System.Windows.Forms.Padding(0, 0, 11, 0)
+        Me.btnCrearPedido.Size = New System.Drawing.Size(187, 41)
+        Me.btnCrearPedido.TabIndex = 48
+        Me.btnCrearPedido.Text = "Crear Pedido"
+        Me.btnCrearPedido.UseVisualStyleBackColor = False
+        '
+        'cbProveedor
+        '
+        Me.cbProveedor.DisplayMember = "0"
+        Me.cbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbProveedor.Font = New System.Drawing.Font("Arial", 14.0!, System.Drawing.FontStyle.Bold)
+        Me.cbProveedor.FormattingEnabled = True
+        Me.cbProveedor.Location = New System.Drawing.Point(150, 30)
+        Me.cbProveedor.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.cbProveedor.Name = "cbProveedor"
+        Me.cbProveedor.Size = New System.Drawing.Size(280, 30)
+        Me.cbProveedor.TabIndex = 70
+        Me.cbProveedor.ValueMember = "0"
+        '
+        'label22
+        '
+        Me.label22.AutoSize = True
+        Me.label22.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.label22.Location = New System.Drawing.Point(10, 33)
+        Me.label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.label22.Name = "label22"
+        Me.label22.Size = New System.Drawing.Size(99, 19)
+        Me.label22.TabIndex = 69
+        Me.label22.Text = " Proveedor:"
         '
         'TabPage5
         '
-        Me.TabPage5.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage5.ImageIndex = 3
+        Me.TabPage5.Location = New System.Drawing.Point(4, 37)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage5.Size = New System.Drawing.Size(992, 619)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Reportes"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'TabPage6
         '
-        Me.TabPage6.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage6.Controls.Add(Me.GroupBox4)
-        Me.TabPage6.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage6.ImageIndex = 7
+        Me.TabPage6.Location = New System.Drawing.Point(4, 37)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage6.Size = New System.Drawing.Size(992, 619)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "Proveedores"
         '
@@ -720,12 +1122,13 @@ Partial Class Form1
         '
         'TabPage7
         '
-        Me.TabPage7.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage7.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage7.Controls.Add(Me.GroupBox5)
-        Me.TabPage7.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage7.ImageIndex = 5
+        Me.TabPage7.Location = New System.Drawing.Point(4, 37)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage7.Size = New System.Drawing.Size(992, 619)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "Categorias"
         '
@@ -886,7 +1289,7 @@ Partial Class Form1
         Me.Table_Categoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Table_Categoria.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Table_Categoria.Location = New System.Drawing.Point(44, 274)
-        Me.Table_Categoria.Margin = New System.Windows.Forms.Padding(2)
+        Me.Table_Categoria.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Table_Categoria.MultiSelect = False
         Me.Table_Categoria.Name = "Table_Categoria"
         Me.Table_Categoria.ReadOnly = True
@@ -897,12 +1300,13 @@ Partial Class Form1
         '
         'TabPage8
         '
-        Me.TabPage8.BackColor = System.Drawing.Color.SteelBlue
+        Me.TabPage8.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage8.Controls.Add(Me.GroupBox6)
-        Me.TabPage8.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage8.ImageIndex = 1
+        Me.TabPage8.Location = New System.Drawing.Point(4, 37)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(992, 634)
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage8.Size = New System.Drawing.Size(992, 619)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "Productos"
         '
@@ -938,6 +1342,19 @@ Partial Class Form1
         Me.GroupBox6.TabIndex = 1
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Formulario de Productos"
+        '
+        'ImagenesTab
+        '
+        Me.ImagenesTab.ImageStream = CType(resources.GetObject("ImagenesTab.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImagenesTab.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImagenesTab.Images.SetKeyName(0, "caja2-iloveimg-resized.png")
+        Me.ImagenesTab.Images.SetKeyName(1, "inventario-iloveimg-resized.png")
+        Me.ImagenesTab.Images.SetKeyName(2, "verpedidos.png")
+        Me.ImagenesTab.Images.SetKeyName(3, "compras.png")
+        Me.ImagenesTab.Images.SetKeyName(4, "Clientes.jpg")
+        Me.ImagenesTab.Images.SetKeyName(5, "category.png")
+        Me.ImagenesTab.Images.SetKeyName(6, "home.png")
+        Me.ImagenesTab.Images.SetKeyName(7, "proveedor.png")
         '
         'MenuStrip1
         '
@@ -1287,20 +1704,28 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1025, 700)
+        Me.ClientSize = New System.Drawing.Size(1004, 694)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "Form1"
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
-        Me.TabPage2.ResumeLayout(False)
+        TabPage2.ResumeLayout(False)
+        TabPage2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
+        Me.GroupBox10.ResumeLayout(False)
+        CType(Me.DetallesPedidoTable, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox9.ResumeLayout(False)
+        CType(Me.PedidosTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -1325,7 +1750,6 @@ Partial Class Form1
     Friend WithEvents Panel1 As Panel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents txtBuscarCliente As TextBox
     Friend WithEvents Label6 As Label
@@ -1403,6 +1827,7 @@ Partial Class Form1
     Friend WithEvents txtBuscarCat As TextBox
     Friend WithEvents Label17 As Label
     Friend WithEvents Table_Categoria As DataGridView
+<<<<<<< HEAD
     Friend WithEvents txtCunitPdcto As TextBox
     Friend WithEvents Label18 As Label
     Friend WithEvents cbCat As ComboBox
@@ -1429,4 +1854,32 @@ Partial Class Form1
     Friend WithEvents Label27 As Label
     Friend WithEvents TableProductos As DataGridView
     Friend WithEvents CBactive As ComboBox
+=======
+    Friend WithEvents btnEliminarPedido As Button
+    Private WithEvents GroupBox9 As GroupBox
+    Friend WithEvents btnCancelarPedido As Button
+    Friend WithEvents btnCompletarPedido As Button
+    Private WithEvents btnEnviarPedido As Button
+    Friend WithEvents PedidosTable As DataGridView
+    Private WithEvents btnCrearPedido As Button
+    Private WithEvents cbProveedor As ComboBox
+    Private WithEvents label22 As Label
+    Private WithEvents DateTimePicker2 As DateTimePicker
+    Private WithEvents dateTimePicker1 As DateTimePicker
+    Friend WithEvents btnBorrarProductoPedido As Button
+    Friend WithEvents btnAgregarProductoPedido As Button
+    Private WithEvents btnActualizarProductoPedido As Button
+    Private WithEvents GroupBox10 As GroupBox
+    Private WithEvents btnGuardarProductosPedido As Button
+    Private WithEvents label26 As Label
+    Private WithEvents label24 As Label
+    Private WithEvents txtNombreProductoPedido As TextBox
+    Private WithEvents txtcantidad As TextBox
+    Public WithEvents DetallesPedidoTable As DataGridView
+    Friend WithEvents ImagenesButtons As ImageList
+    Private WithEvents ImagenesTab As ImageList
+    Friend WithEvents Label19 As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents ImagenesGrandes As ImageList
+>>>>>>> 22aa2041da54fa36ea766c053d0556d68676fe8b
 End Class

@@ -170,6 +170,12 @@
     <Compile Include="RolesForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SeleccionarProductosForm.Designer.vb">
+      <DependentUpon>SeleccionarProductosForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SeleccionarProductosForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="EmpleadosForm.resx">
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RolesForm.resx">
       <DependentUpon>RolesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SeleccionarProductosForm.resx">
+      <DependentUpon>SeleccionarProductosForm.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
