@@ -6,6 +6,10 @@
         llenarTablaProveedores()
         obtenerNuevoIdCat()
         llenarTablaCategorias()
+        obtenerNuevoIdProducto()
+        llenarTablaProducto()
+        llenarCBCat()
+        llenarCBProveedor()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -537,4 +541,117 @@
             txtApCat.Text = Table_Categoria.Rows(e.RowIndex).Cells("Descripcion").FormattedValue.ToString()
         End If
     End Sub
+
+    Function obtenerNuevoIdProducto()
+
+        Dim sql As String
+        Dim lista As String
+        Dim NewID As String
+
+        Try
+            sql = "SELECT count(*)+1 as IDPdcto FROM Producto"
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("IDPdcto")
+                txtidPdcto.Text = NewID
+            End If
+
+            Conexion.Close()
+
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarTablaProducto()
+
+        Dim sql As String
+        Dim lista As String
+        sql = "Select * From Producto"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                TableProductos.DataSource = Rsdatos.Tables(0)
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarCBCat()
+
+        Dim sql As String
+        sql = "Select * From Categoria"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                cbCat.DataSource = Rsdatos.Tables("DATOS")
+                cbCat.ValueMember = "idCategoria"
+                cbCat.DisplayMember = "Nombre"
+                cbCat.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarCBProveedor()
+
+        Dim sql As String
+        sql = "Select * From Proveedor"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                cbProveedor.DataSource = Rsdatos.Tables("DATOS")
+                cbProveedor.ValueMember = "idProveedor"
+                cbProveedor.DisplayMember = "Nombre"
+                cbProveedor.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Private Sub btnNewPdcto_Click(sender As Object, e As EventArgs) Handles btnNewPdcto.Click
+        txtidPdcto.Clear()
+        txtNombrePdcto.Clear()
+        txtDescPdcto.Clear()
+        txtstockPdcto.Clear()
+        txtCunitPdcto.Clear()
+        txtPdescuentoPdcto.Clear()
+        txtBuscarPdcto.Clear()
+        CBactive.SelectedIndex = -1
+        cbCat.SelectedIndex = -1
+        cbProveedor.SelectedIndex = -1
+        obtenerNuevoIdProducto()
+        llenarTablaProducto()
+    End Sub
 End Class
+
+
