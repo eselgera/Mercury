@@ -11,7 +11,6 @@
 
     'Metodo para obtener el siguiente ID cliente por insertar
     Function obtenerNuevoIdCliente()
-
         Dim query As String
         Dim lista As String
         Dim NewID As String
