@@ -7,7 +7,10 @@
         obtenerNuevoIdCat()
         llenarTablaCategorias()
         llenarCBProveedores()
-        '
+        obtenerNuevoIdProducto()
+        llenarTablaProducto()
+        llenarCBCat()
+        llenarCBProveedor()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -886,5 +889,255 @@
         End If
 
 
+    End Sub
+
+    Function obtenerNuevoIdProducto()
+
+        Dim sql As String
+        Dim lista As String
+        Dim NewID As String
+
+        Try
+            sql = "SELECT max(idProducto) + 1 as IDPdcto FROM b8hrt3nyyisdb1zuqz9i.Producto"
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("IDPdcto")
+                txtidPdcto.Text = NewID
+            End If
+
+            Conexion.Close()
+
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarTablaProducto()
+
+        Dim sql As String
+        Dim lista As String
+        sql = "Select * From Producto"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                TableProductos.DataSource = Rsdatos.Tables(0)
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarCBCat()
+
+        Dim sql As String
+        sql = "Select * From Categoria"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                CBCat.DataSource = Rsdatos.Tables("DATOS")
+                CBCat.ValueMember = "idCategoria"
+                CBCat.DisplayMember = "Nombre"
+                CBCat.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarCBProveedor()
+
+        Dim sql As String
+        sql = "Select * From Proveedor"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                CBPdcto_Prov.DataSource = Rsdatos.Tables("DATOS")
+                CBPdcto_Prov.ValueMember = "idProveedor"
+                CBPdcto_Prov.DisplayMember = "Nombre"
+                CBPdcto_Prov.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Private Sub btnNewPdcto_Click(sender As Object, e As EventArgs) Handles btnNewPdcto.Click
+        txtidPdcto.Clear()
+        txtNombrePdcto.Clear()
+        txtDescPdcto.Clear()
+        txtstockPdcto.Clear()
+        txtCunitPdcto.Clear()
+        txtPdescuentoPdcto.Clear()
+        txtBuscarPdcto.Clear()
+        CBactive.SelectedIndex = -1
+        CBCat.SelectedIndex = -1
+        CBPdcto_Prov.SelectedIndex = -1
+        obtenerNuevoIdProducto()
+        llenarTablaProducto()
+    End Sub
+
+    Private Sub btnAgregarPdcto_Click(sender As Object, e As EventArgs) Handles btnAgregarPdcto.Click
+        If txtNombrePdcto.Text.Trim.Length > 0 And txtDescPdcto.Text.Trim.Length > 0 And txtstockPdcto.Text.Trim.Length > 0 And txtCunitPdcto.Text.Trim.Length > 0 And txtPdescuentoPdcto.Text.Trim.Length > 0 And CBactive.SelectedIndex <> -1 And CBCat.SelectedIndex <> -1 And CBPdcto_Prov.SelectedIndex <> -1 Then
+            Dim query As String
+            Dim nombre = txtNombrePdcto.Text
+            Dim desc = txtDescPdcto.Text
+            Dim stock = txtstockPdcto.Text
+            Dim precio_unit = txtCunitPdcto.Text
+            Dim precio_descuen = txtPdescuentoPdcto.Text
+            Dim desc_status = CBactive.SelectedValue
+            If desc_status = "SI" Then
+                desc_status = 1
+            Else
+                desc_status = 0
+            End If
+            Dim cat = CBCat.SelectedValue
+            Dim prov = CBPdcto_Prov.SelectedValue
+            Dim mytimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            Try
+                query = "INSERT INTO Producto (Nombre, Descripcion, Stock, Precio_Unitario, Precio_Descuento, DescuentoEnable, DateCreated ,Categoria_idCategoria, Proveedor_idProveedor) values
+                                        ('" & nombre & "','" & desc & "','" & stock & "','" & precio_unit & "','" & precio_descuen & "','" & desc_status & "','" & mytimestamp & "','" & cat & "','" & prov & "')"
+                Ejecutar_Query(query)
+                btnNewPdcto_Click(sender, e)
+                MsgBox("Producto registrado exitosamente")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub Bt_uppdctolist_Click(sender As Object, e As EventArgs) Handles Bt_uppdctolist.Click
+        llenarCBCat()
+        llenarCBProveedor()
+    End Sub
+
+    Private Sub btnUpdatePdcto_Click(sender As Object, e As EventArgs) Handles btnUpdatePdcto.Click
+
+        If txtNombrePdcto.Text.Trim.Length > 0 And txtDescPdcto.Text.Trim.Length > 0 And txtstockPdcto.Text.Trim.Length > 0 And txtCunitPdcto.Text.Trim.Length > 0 And txtPdescuentoPdcto.Text.Trim.Length > 0 And CBactive.SelectedIndex <> -1 And CBCat.SelectedIndex <> -1 And CBPdcto_Prov.SelectedIndex <> -1 Then
+            Dim query As String
+            Dim nombre = txtNombrePdcto.Text
+            Dim desc = txtDescPdcto.Text
+            Dim stock = txtstockPdcto.Text
+            Dim precio_unit = txtCunitPdcto.Text
+            Dim precio_descuen = txtPdescuentoPdcto.Text
+            Dim desc_status = CBactive.Text
+            If desc_status = "SI" Then
+                desc_status = 1
+            Else
+                desc_status = 0
+            End If
+            Dim cat = CBCat.SelectedValue
+            Dim prov = CBPdcto_Prov.SelectedValue
+            Dim mytimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+
+            Try
+
+                query = "UPDATE Producto SET
+                              Nombre ='" & nombre & "',
+                              Descripcion ='" & desc & "',
+                              Stock ='" & stock & "',
+                              Precio_Unitario ='" & precio_unit & "',
+                              Precio_Descuento ='" & precio_descuen & "',
+                              DescuentoEnable ='" & desc_status & "', 
+                              DateCreated ='" & mytimestamp & "',
+                              Categoria_idCategoria ='" & cat & "' ,
+                              Proveedor_idProveedor ='" & prov & "' 
+                              WHERE idProducto = '" & txtidPdcto.Text & "'"
+                MsgBox("tu consulta es:  " & query)
+                Ejecutar_Query(query)
+                btnNewPdcto_Click(sender, e)
+                MsgBox("Producto Actualizado")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+            Conexion.Close()
+
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+    End Sub
+
+    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click
+        If txtBuscarPdcto.Text <> "" Then
+            Dim NombrePdcto = txtBuscarPdcto.Text
+            Dim sql = "Select * From Producto WHERE nombre LIKE '%" & NombrePdcto & "%'  OR Descripcion LIKE '%" & NombrePdcto & "%'"
+
+            Try
+                Dim Rsdatos = Seleccion_de_datos(sql)
+                Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+
+                If lista <> 0 Then
+                    TableProductos.DataSource = Rsdatos.Tables(0)
+                    'Si se encuentra un resultado, seleccionar
+                    If TableProductos.SelectedCells.Count > 0 Then
+                        TableProductos.Rows(0).Selected = True
+                        Dim i_rowindex As Integer = TableProductos.SelectedCells(0).RowIndex
+                        Dim i_colIndex As Integer = TableProductos.SelectedCells(0).ColumnIndex
+                        TableProductos_CellMouseClick(sender, New DataGridViewCellMouseEventArgs(i_colIndex, i_rowindex, 0, 0, New MouseEventArgs(MouseButtons.Left, 1, 0, 0, 0)))
+                    End If
+
+                End If
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+
+            Conexion.Close()
+
+        Else
+            'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
+            btnNewPdcto_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub TableProductos_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles TableProductos.CellMouseClick
+        If (e.RowIndex > -1) Then
+            TableProductos.CurrentRow.Selected = True
+            txtidPdcto.Text = TableProductos.Rows(e.RowIndex).Cells("idProducto").FormattedValue.ToString()
+            txtNombrePdcto.Text = TableProductos.Rows(e.RowIndex).Cells("Nombre").FormattedValue.ToString()
+            txtDescPdcto.Text = TableProductos.Rows(e.RowIndex).Cells("Descripcion").FormattedValue.ToString()
+            txtstockPdcto.Text = TableProductos.Rows(e.RowIndex).Cells("Stock").FormattedValue.ToString()
+            txtCunitPdcto.Text = TableProductos.Rows(e.RowIndex).Cells("Precio_Unitario").FormattedValue.ToString()
+            txtPdescuentoPdcto.Text = TableProductos.Rows(e.RowIndex).Cells("Precio_Descuento").FormattedValue.ToString()
+            Dim enable = TableProductos.Rows(e.RowIndex).Cells("DescuentoEnable").FormattedValue.ToString()
+            If enable = "1" Then
+                CBactive.Text = "SI"
+            Else
+                CBactive.Text = "NO"
+            End If
+            CBCat.SelectedValue = TableProductos.Rows(e.RowIndex).Cells("Categoria_idCategoria").FormattedValue.ToString()
+            CBPdcto_Prov.SelectedValue = TableProductos.Rows(e.RowIndex).Cells("Proveedor_idProveedor").FormattedValue.ToString()
+
+
+        End If
     End Sub
 End Class
