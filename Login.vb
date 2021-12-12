@@ -95,7 +95,7 @@ Public Class Login
                 Form.EmpleadosToolStripMenuItem.Enabled = False
                 Form.VentasToolStripMenuItem.Enabled = False
                 Form.ClientesToolStripMenuItem.Enabled = False
-                Form.TabPage2.Enabled = False
+                'Form.TabPage2.Enabled = False 'Por alguna razon desconocida genera error  
                 Form.TabPage1.Enabled = False
             Case 4
                 ' Deja solo los tab de RH activos
