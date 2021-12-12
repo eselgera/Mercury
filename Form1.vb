@@ -633,6 +633,7 @@
         btnBorrarProductoPedido.Enabled = False
         btnActualizarProductoPedido.Enabled = False
         btnGuardarProductosPedido.Enabled = False
+        DetallesPedidoTable.Enabled = False
 
         txtcantidad.Clear()
         txtNombreProductoPedido.Clear()
@@ -648,6 +649,7 @@
                     btnEnviarPedido.Enabled = True
                     btnAgregarProductoPedido.Enabled = True
                     btnCancelarPedido.Enabled = True
+                    DetallesPedidoTable.Enabled = True
                 Case "Enviado"
                     btnCompletarPedido.Enabled = True
                     btnCancelarPedido.Enabled = True
@@ -743,6 +745,14 @@
                 query = "UPDATE Pedido SET Estatus = 'Completado' WHERE idPedido = " & id_pedidos
                 Ejecutar_Query(query)
                 btnCancelarPedido.Enabled = False
+
+                Try
+                    Dim procedure = "Call recibirProductos(" & id_pedidos & ")"
+                    Ejecutar_Query(procedure)
+
+                Catch ex As Exception
+                    MsgBox("Error del Sistema 2, favor de reportar al administrador" & ex.Message)
+                End Try
 
                 cbProveedor_SelectedIndexChanged(sender, e)
                 MsgBox("Se recibieron todos los productos del pedido")
