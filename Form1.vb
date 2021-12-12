@@ -7,6 +7,7 @@
         obtenerNuevoIdCat()
         llenarTablaCategorias()
         llenarCBProveedores()
+        '
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -798,9 +799,9 @@
     Private Sub btnBorrarProductoPedido_Click(sender As Object, e As EventArgs) Handles btnBorrarProductoPedido.Click
         DetallesPedidoTable.Rows.Remove(DetallesPedidoTable.CurrentRow)
         btnActualizarProductoPedido.Enabled = False
-            btnBorrarProductoPedido.Enabled = False
-            txtcantidad.Clear()
-            txtNombreProductoPedido.Clear()
+        btnBorrarProductoPedido.Enabled = False
+        txtcantidad.Clear()
+        txtNombreProductoPedido.Clear()
 
     End Sub
 
