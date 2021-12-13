@@ -1333,27 +1333,4 @@
 
 
     End Sub
-
-    Private Sub bt_BorrarVta_Click(sender As Object, e As EventArgs) Handles bt_BorrarVta.Click
-
-        Dim fila = DG_Carrito.CurrentCell.RowIndex.ToString
-        DG_Carrito.Rows.RemoveAt(fila)
-
-        'Sumar una Columna
-        Dim Total As Single
-        Dim Col = 3
-        For Each row As DataGridViewRow In Me.DG_Carrito.Rows
-            Total += Val(row.Cells(Col).Value)
-        Next
-        Me.TB_SubTotalVta.Text = Total.ToString
-
-        TB_IvaVta.Text = Val(TB_SubTotalVta.Text) * 0.16
-        TB_TotalVta.Text = Val(TB_IvaVta.Text) + Val(TB_SubTotalVta.Text)
-
-    End Sub
-
-    Private Sub bt_Cancel_Click(sender As Object, e As EventArgs) Handles bt_Cancel.Click
-        'Borra todo el formulario
-
-    End Sub
 End Class
