@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim TabPage2 As System.Windows.Forms.TabPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
@@ -56,6 +56,11 @@ Partial Class Form1
         Me.Label8_Bienv = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox12 = New System.Windows.Forms.GroupBox()
+        Me.btnActivarDescuentos = New System.Windows.Forms.Button()
+        Me.DesactivarDescuentos = New System.Windows.Forms.Button()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.cbCategoriaProm = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
@@ -166,6 +171,8 @@ Partial Class Form1
         CType(Me.TableClientes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
@@ -301,6 +308,8 @@ Partial Class Form1
         Me.ImagenesButtons.Images.SetKeyName(4, "modificar.png")
         Me.ImagenesButtons.Images.SetKeyName(5, "ARCHIVO-iloveimg-resized.png")
         Me.ImagenesButtons.Images.SetKeyName(6, "vacio.png")
+        Me.ImagenesButtons.Images.SetKeyName(7, "LOGin (2).png")
+        Me.ImagenesButtons.Images.SetKeyName(8, "salir.png")
         '
         'btnAddCliente
         '
@@ -537,6 +546,7 @@ Partial Class Form1
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.TabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TabPage1.Controls.Add(Me.GroupBox12)
         Me.TabPage1.ImageIndex = 6
         Me.TabPage1.Location = New System.Drawing.Point(4, 37)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
@@ -546,6 +556,70 @@ Partial Class Form1
         Me.TabPage1.Size = New System.Drawing.Size(992, 619)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Inicio"
+        '
+        'GroupBox12
+        '
+        Me.GroupBox12.Controls.Add(Me.btnActivarDescuentos)
+        Me.GroupBox12.Controls.Add(Me.DesactivarDescuentos)
+        Me.GroupBox12.Controls.Add(Me.Label33)
+        Me.GroupBox12.Controls.Add(Me.cbCategoriaProm)
+        Me.GroupBox12.Font = New System.Drawing.Font("Comic Sans MS", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox12.Location = New System.Drawing.Point(610, 293)
+        Me.GroupBox12.Name = "GroupBox12"
+        Me.GroupBox12.Size = New System.Drawing.Size(360, 307)
+        Me.GroupBox12.TabIndex = 0
+        Me.GroupBox12.TabStop = False
+        Me.GroupBox12.Text = "Promociones"
+        '
+        'btnActivarDescuentos
+        '
+        Me.btnActivarDescuentos.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btnActivarDescuentos.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.btnActivarDescuentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnActivarDescuentos.ImageIndex = 7
+        Me.btnActivarDescuentos.ImageList = Me.ImagenesButtons
+        Me.btnActivarDescuentos.Location = New System.Drawing.Point(82, 150)
+        Me.btnActivarDescuentos.Name = "btnActivarDescuentos"
+        Me.btnActivarDescuentos.Padding = New System.Windows.Forms.Padding(4, 0, 0, 0)
+        Me.btnActivarDescuentos.Size = New System.Drawing.Size(189, 54)
+        Me.btnActivarDescuentos.TabIndex = 56
+        Me.btnActivarDescuentos.Text = "Activar"
+        Me.btnActivarDescuentos.UseVisualStyleBackColor = False
+        '
+        'DesactivarDescuentos
+        '
+        Me.DesactivarDescuentos.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.DesactivarDescuentos.Font = New System.Drawing.Font("Arial", 12.0!)
+        Me.DesactivarDescuentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.DesactivarDescuentos.ImageIndex = 8
+        Me.DesactivarDescuentos.ImageList = Me.ImagenesButtons
+        Me.DesactivarDescuentos.Location = New System.Drawing.Point(82, 228)
+        Me.DesactivarDescuentos.Name = "DesactivarDescuentos"
+        Me.DesactivarDescuentos.Padding = New System.Windows.Forms.Padding(4, 0, 8, 0)
+        Me.DesactivarDescuentos.Size = New System.Drawing.Size(189, 54)
+        Me.DesactivarDescuentos.TabIndex = 57
+        Me.DesactivarDescuentos.Text = "Desactivar"
+        Me.DesactivarDescuentos.UseVisualStyleBackColor = False
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.ForeColor = System.Drawing.Color.Black
+        Me.Label33.Location = New System.Drawing.Point(26, 47)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(308, 27)
+        Me.Label33.TabIndex = 55
+        Me.Label33.Text = "Activar o desactivar descuentos"
+        '
+        'cbCategoriaProm
+        '
+        Me.cbCategoriaProm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCategoriaProm.FormattingEnabled = True
+        Me.cbCategoriaProm.Location = New System.Drawing.Point(82, 89)
+        Me.cbCategoriaProm.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbCategoriaProm.Name = "cbCategoriaProm"
+        Me.cbCategoriaProm.Size = New System.Drawing.Size(189, 35)
+        Me.cbCategoriaProm.TabIndex = 54
         '
         'TabPage3
         '
@@ -1097,14 +1171,14 @@ Partial Class Form1
         Me.DataGridView1_prov.AllowUserToResizeColumns = False
         Me.DataGridView1_prov.AllowUserToResizeRows = False
         Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DataGridView1_prov.Location = New System.Drawing.Point(14, 283)
@@ -1725,6 +1799,9 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox12.ResumeLayout(False)
+        Me.GroupBox12.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
@@ -1886,4 +1963,9 @@ Partial Class Form1
     Friend WithEvents Label32 As Label
     Friend WithEvents TableProductos As DataGridView
     Friend WithEvents Bt_uppdctolist As Button
+    Friend WithEvents GroupBox12 As GroupBox
+    Friend WithEvents btnActivarDescuentos As Button
+    Friend WithEvents DesactivarDescuentos As Button
+    Friend WithEvents Label33 As Label
+    Friend WithEvents cbCategoriaProm As ComboBox
 End Class
