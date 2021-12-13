@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim TabPage2 As System.Windows.Forms.TabPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
@@ -243,6 +243,7 @@ Partial Class Form1
         Me.bt_addPdcto = New System.Windows.Forms.Button()
         Me.TB_NombreArtVta = New System.Windows.Forms.TextBox()
         Me.lb_desc_pdctovent = New System.Windows.Forms.Label()
+        Me.bt_Cancel = New System.Windows.Forms.Button()
         TabPage2 = New System.Windows.Forms.TabPage()
         TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -740,6 +741,7 @@ Partial Class Form1
         '
         'GroupBox_vta
         '
+        Me.GroupBox_vta.Controls.Add(Me.bt_Cancel)
         Me.GroupBox_vta.Controls.Add(Me.TB_NombreArtVta)
         Me.GroupBox_vta.Controls.Add(Me.lb_desc_pdctovent)
         Me.GroupBox_vta.Controls.Add(Me.bt_addPdcto)
@@ -799,17 +801,17 @@ Partial Class Form1
         '
         'bt_BorrarVta
         '
-        Me.bt_BorrarVta.BackColor = System.Drawing.Color.Crimson
-        Me.bt_BorrarVta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
-        Me.bt_BorrarVta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed
+        Me.bt_BorrarVta.BackColor = System.Drawing.Color.DarkOrange
+        Me.bt_BorrarVta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod
+        Me.bt_BorrarVta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Gold
         Me.bt_BorrarVta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bt_BorrarVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_BorrarVta.ForeColor = System.Drawing.Color.White
         Me.bt_BorrarVta.Location = New System.Drawing.Point(15, 541)
         Me.bt_BorrarVta.Name = "bt_BorrarVta"
-        Me.bt_BorrarVta.Size = New System.Drawing.Size(144, 42)
+        Me.bt_BorrarVta.Size = New System.Drawing.Size(187, 42)
         Me.bt_BorrarVta.TabIndex = 73
-        Me.bt_BorrarVta.Text = "BORRAR"
+        Me.bt_BorrarVta.Text = "BORRAR FILA"
         Me.bt_BorrarVta.UseVisualStyleBackColor = False
         '
         'bt_ConfirmVta
@@ -1544,14 +1546,14 @@ Partial Class Form1
         Me.DataGridView1_prov.AllowUserToResizeColumns = False
         Me.DataGridView1_prov.AllowUserToResizeRows = False
         Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DataGridView1_prov.Location = New System.Drawing.Point(159, 286)
@@ -2757,6 +2759,21 @@ Partial Class Form1
         Me.lb_desc_pdctovent.TabIndex = 83
         Me.lb_desc_pdctovent.Text = "Articulo"
         '
+        'bt_Cancel
+        '
+        Me.bt_Cancel.BackColor = System.Drawing.Color.Crimson
+        Me.bt_Cancel.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
+        Me.bt_Cancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed
+        Me.bt_Cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_Cancel.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_Cancel.ForeColor = System.Drawing.Color.White
+        Me.bt_Cancel.Location = New System.Drawing.Point(524, 541)
+        Me.bt_Cancel.Name = "bt_Cancel"
+        Me.bt_Cancel.Size = New System.Drawing.Size(142, 42)
+        Me.bt_Cancel.TabIndex = 85
+        Me.bt_Cancel.Text = "CANCELAR"
+        Me.bt_Cancel.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3033,4 +3050,5 @@ Partial Class Form1
     Friend WithEvents lb_IdPdcto As Label
     Friend WithEvents TB_NombreArtVta As TextBox
     Friend WithEvents lb_desc_pdctovent As Label
+    Friend WithEvents bt_Cancel As Button
 End Class
