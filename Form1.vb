@@ -1097,7 +1097,7 @@
         End If
     End Sub
 
-    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click
+    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click, Button8.Click, Button12.Click
         If txtBuscarPdcto.Text <> "" Then
             Dim NombrePdcto = txtBuscarPdcto.Text
             Dim sql = "Select * From Producto WHERE nombre LIKE '%" & NombrePdcto & "%'  OR Descripcion LIKE '%" & NombrePdcto & "%'"
@@ -1124,7 +1124,7 @@
             Conexion.Close()
 
         Else
-            'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
+            'MessageBox.Show("Se debe llenar los campos", " Campo vacio")
             btnNewPdcto_Click(sender, e)
         End If
     End Sub
@@ -1150,4 +1150,5 @@
 
         End If
     End Sub
+
 End Class
