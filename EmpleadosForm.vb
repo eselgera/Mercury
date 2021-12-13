@@ -18,6 +18,7 @@ Public Class EmpleadosForm
         txtCorreoEmpleado.Clear()
         txtTelefonoEmpleado.Clear()
         txtBuscarEmpleado.Clear()
+        txtSueldo.Clear()
         cbRol.SelectedIndex = -1
         cbEstatus.SelectedIndex = -1
         obtenerNuevoIdEmpleado()
@@ -25,7 +26,7 @@ Public Class EmpleadosForm
     End Sub
 
     Private Sub btnAgregarEmpleado_Click(sender As Object, e As EventArgs) Handles btnAgregarEmpleado.Click
-        If txtNombreEmpleado.Text.Trim.Length > 0 And txtApEmpleado.Text.Trim.Length > 0 And txtTelefonoEmpleado.Text.Trim.Length > 0 And txtCorreoEmpleado.Text.Trim.Length > 0 And txtUserEmpleado.Text.Trim.Length > 0 And txtPassEmpleado.Text.Trim.Length > 0 And cbEstatus.SelectedIndex <> -1 And cbRol.SelectedIndex <> -1 Then
+        If txtNombreEmpleado.Text.Trim.Length > 0 And txtApEmpleado.Text.Trim.Length > 0 And txtTelefonoEmpleado.Text.Trim.Length > 0 And txtCorreoEmpleado.Text.Trim.Length > 0 And txtUserEmpleado.Text.Trim.Length > 0 And txtPassEmpleado.Text.Trim.Length > 0 And txtSueldo.Text.Trim.Length > 0 And cbEstatus.SelectedIndex <> -1 And cbRol.SelectedIndex <> -1 Then
             Dim query As String
             Dim nombre = txtNombreEmpleado.Text
             Dim ap = txtApEmpleado.Text
@@ -35,11 +36,12 @@ Public Class EmpleadosForm
             Dim correo = txtCorreoEmpleado.Text
             Dim estatus = cbEstatus.SelectedValue
             Dim rol = cbRol.SelectedValue
+            Dim sueldo = txtSueldo.Text
             Dim mytimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
 
             Try
-                query = "INSERT INTO Empleado (Nombre,Apellidos, Telefono, Correo,Username, Password, UserEnable ,DateCreated, Rol_idRol) values
-                                        ('" & nombre & "','" & ap & "','" & tel & "','" & correo & "','" & user & "','" & pass & "','" & estatus & "','" & mytimestamp & "','" & rol & "')"
+                query = "INSERT INTO Empleado (Nombre,Apellidos, Telefono, Correo,Username, Password, UserEnable ,DateCreated, Suelddo, Rol_idRol) values
+                                        ('" & nombre & "','" & ap & "','" & tel & "','" & correo & "','" & user & "','" & pass & "','" & estatus & "','" & mytimestamp & "','" & sueldo & "','" & rol & "')"
                 Ejecutar_Query(query)
 
                 btnNewEmpleado_Click(sender, e)
@@ -54,7 +56,7 @@ Public Class EmpleadosForm
     End Sub
 
     Private Sub btnUpdateEmpleado_Click(sender As Object, e As EventArgs) Handles btnUpdateEmpleado.Click
-        If txtNombreEmpleado.Text.Trim.Length > 0 And txtApEmpleado.Text.Trim.Length > 0 And txtTelefonoEmpleado.Text.Trim.Length > 0 And txtCorreoEmpleado.Text.Trim.Length > 0 And txtUserEmpleado.Text.Trim.Length > 0 And txtPassEmpleado.Text.Trim.Length > 0 And cbEstatus.SelectedIndex <> -1 And cbRol.SelectedIndex <> -1 Then
+        If txtNombreEmpleado.Text.Trim.Length > 0 And txtApEmpleado.Text.Trim.Length > 0 And txtTelefonoEmpleado.Text.Trim.Length > 0 And txtCorreoEmpleado.Text.Trim.Length > 0 And txtUserEmpleado.Text.Trim.Length > 0 And txtPassEmpleado.Text.Trim.Length > 0 And txtSueldo.Text.Trim.Length > 0 And cbEstatus.SelectedIndex <> -1 And cbRol.SelectedIndex <> -1 Then
             Dim query As String
             Dim nombre = txtNombreEmpleado.Text
             Dim ap = txtApEmpleado.Text
@@ -64,6 +66,7 @@ Public Class EmpleadosForm
             Dim correo = txtCorreoEmpleado.Text
             Dim estatus = cbEstatus.SelectedValue
             Dim rol = cbRol.SelectedValue
+            Dim sueldo = txtSueldo.Text
 
             Try
                 query = "UPDATE Empleado SET
@@ -74,12 +77,13 @@ Public Class EmpleadosForm
                               Username ='" & user & "',
                               Password ='" & pass & "', 
                               UserEnable ='" & estatus & "',
-                              Rol_idRol ='" & rol & "' 
+                              Rol_idRol ='" & rol & "',
+                              Sueldo ='" & sueldo & "'
                               WHERE idEmpleado = '" & txtidEmpleado.Text & "'"
 
                 Ejecutar_Query(query)
                 btnNewEmpleado_Click(sender, e)
-                MsgBox("Cliente Actualizado")
+                MsgBox("Empleado Actualizado")
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
@@ -153,6 +157,7 @@ Public Class EmpleadosForm
             TableEmpleados.Columns(7).Visible = False
             TableEmpleados.Columns(8).Visible = False
             TableEmpleados.Columns(9).Visible = False
+            TableEmpleados.Columns(10).Visible = False
 
             TableEmpleados.Columns(6).Visible = False
             TableEmpleados.Columns(0).HeaderText = "ID"
@@ -220,6 +225,7 @@ Public Class EmpleadosForm
             txtPassEmpleado.Text = TableEmpleados.Rows(e.RowIndex).Cells("Password").FormattedValue.ToString()
             cbEstatus.SelectedIndex = TableEmpleados.Rows(e.RowIndex).Cells("UserEnable").FormattedValue.ToString()
             cbRol.SelectedValue = TableEmpleados.Rows(e.RowIndex).Cells("Rol_idRol").FormattedValue.ToString()
+            txtSueldo.Text = TableEmpleados.Rows(e.RowIndex).Cells("Sueldo").FormattedValue.ToString()
 
         End If
     End Sub
@@ -254,5 +260,16 @@ Public Class EmpleadosForm
             'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
             btnNewEmpleado_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub btnBONO_Click(sender As Object, e As EventArgs) Handles btnBONO.Click
+        Try
+            Dim SQL = "Call BonoEmpleadoDelMes() "
+            Ejecutar_Query(SQL)
+            MsgBox("Bono Salarial Aplicado")
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
     End Sub
 End Class
