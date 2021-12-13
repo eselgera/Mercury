@@ -15,6 +15,12 @@
         obtenerNuevoIdVenta()
         llenarCBClientes()
         llenarTablaPdctoVenta()
+
+        'Columnas Carrito de Ventas
+        DG_Carrito.Columns.Add("id", "idProducto")
+        DG_Carrito.Columns.Add("Desc", "Nombre")
+        DG_Carrito.Columns.Add("Cant", "Cantidad")
+        DG_Carrito.Columns.Add("Dinero", "Precio Total")
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -1266,7 +1272,7 @@
 
         Dim sql As String
         Dim lista As String
-        sql = "Select * From Producto"
+        sql = "SELECT idProducto, Nombre, Stock,  IF(DescuentoEnable = 0, Precio_Unitario, Precio_Descuento) as Precio, IF(DescuentoEnable = 0, 'Sin descuento', 'Con descuento') as Descuento FROM b8hrt3nyyisdb1zuqz9i.Producto"
 
         Try
             Dim Rsdatos = Seleccion_de_datos(sql)
@@ -1283,5 +1289,48 @@
 
     End Function
 
+    Private Sub DG_PdctoVta_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DG_PdctoVta.CellMouseClick
+        If (e.RowIndex > -1) Then
+            DG_PdctoVta.CurrentRow.Selected = True
+            Tb_IdPdcto.Text = DG_PdctoVta.Rows(e.RowIndex).Cells("idProducto").FormattedValue.ToString()
+            TB_NombreArtVta.Text = DG_PdctoVta.Rows(e.RowIndex).Cells("Nombre").FormattedValue.ToString()
+            Tb_PrecioPdcto.Text = DG_PdctoVta.Rows(e.RowIndex).Cells("Precio").FormattedValue.ToString()
+        End If
+    End Sub
 
+    Private Sub Tb_cantidadPdcto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Tb_cantidadPdcto.KeyPress
+        If Not IsNumeric(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub bt_addPdcto_Click(sender As Object, e As EventArgs) Handles bt_addPdcto.Click
+        If Tb_IdPdcto.Text.Trim.Length > 0 And TB_NombreArtVta.Text.Trim.Length > 0 And Tb_PrecioPdcto.Text.Trim.Length > 0 And Tb_cantidadPdcto.Text.Trim.Length > 0 Then
+
+            Dim PrecioTotalPrdctoCant = Val(Tb_cantidadPdcto.Text) * Val(Tb_PrecioPdcto.Text)
+            DG_Carrito.Rows.Add(Tb_IdPdcto.Text, TB_NombreArtVta.Text, Tb_cantidadPdcto.Text, PrecioTotalPrdctoCant)
+
+
+            Tb_IdPdcto.Text = ""
+            TB_NombreArtVta.Text = ""
+            Tb_PrecioPdcto.Text = ""
+            Tb_cantidadPdcto.Text = ""
+
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
+
+        'Sumar una Columna
+        Dim Total As Single
+        Dim Col = 3
+        For Each row As DataGridViewRow In Me.DG_Carrito.Rows
+            Total += Val(row.Cells(Col).Value)
+        Next
+        Me.TB_SubTotalVta.Text = Total.ToString
+
+        TB_IvaVta.Text = Val(TB_SubTotalVta.Text) * 0.16
+        TB_TotalVta.Text = Val(TB_IvaVta.Text) + Val(TB_SubTotalVta.Text)
+
+
+    End Sub
 End Class
