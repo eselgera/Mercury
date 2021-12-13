@@ -62,7 +62,27 @@ Partial Class Form1
         Me.Label100 = New System.Windows.Forms.Label()
         Me.cbCategoriaProm = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox_vta = New System.Windows.Forms.GroupBox()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.lb_AddItemsVta = New System.Windows.Forms.Label()
+        Me.bt_BorrarVta = New System.Windows.Forms.Button()
+        Me.bt_ConfirmVta = New System.Windows.Forms.Button()
+        Me.DG_Carrito = New System.Windows.Forms.DataGridView()
+        Me.DG_PdctoVta = New System.Windows.Forms.DataGridView()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.Lb_VtaHead = New System.Windows.Forms.Label()
+        Me.CB_IdClienteVta = New System.Windows.Forms.ComboBox()
+        Me.TB_EmpVta = New System.Windows.Forms.TextBox()
+        Me.TB_TotalVta = New System.Windows.Forms.TextBox()
+        Me.TB_IvaVta = New System.Windows.Forms.TextBox()
+        Me.TB_SubTotalVta = New System.Windows.Forms.TextBox()
+        Me.TB_IdVta = New System.Windows.Forms.TextBox()
+        Me.lb_IdEmpleadoVta = New System.Windows.Forms.Label()
+        Me.lb_IdClienteVta = New System.Windows.Forms.Label()
+        Me.lb_IvaVta = New System.Windows.Forms.Label()
+        Me.lb_SubtotalVta = New System.Windows.Forms.Label()
+        Me.lb_TotalVta = New System.Windows.Forms.Label()
+        Me.lb_IdVta = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.label26 = New System.Windows.Forms.Label()
         Me.label24 = New System.Windows.Forms.Label()
@@ -195,7 +215,7 @@ Partial Class Form1
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label33_pdcto = New System.Windows.Forms.Label()
         Me.txtBuscarPdcto = New System.Windows.Forms.TextBox()
         Me.Label32 = New System.Windows.Forms.Label()
         Me.TableProductos = New System.Windows.Forms.DataGridView()
@@ -212,6 +232,8 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.lb_IdEmpleado = New System.Windows.Forms.Label()
+        Me.lb_IdEmp = New System.Windows.Forms.Label()
         TabPage2 = New System.Windows.Forms.TabPage()
         TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -222,6 +244,10 @@ Partial Class Form1
         Me.TabPage1.SuspendLayout()
         Me.GroupBox123.SuspendLayout()
         Me.TabPage3.SuspendLayout()
+        Me.GroupBox_vta.SuspendLayout()
+        CType(Me.DG_Carrito, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DG_PdctoVta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage4.SuspendLayout()
         Me.GroupBox10.SuspendLayout()
         CType(Me.DetallesPedidoTable, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -544,6 +570,8 @@ Partial Class Form1
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.lb_IdEmp)
+        Me.Panel1.Controls.Add(Me.lb_IdEmpleado)
         Me.Panel1.Controls.Add(Me.Label9_Nombre)
         Me.Panel1.Controls.Add(Me.Label8_Bienv)
         Me.Panel1.Controls.Add(Me.TabControl1)
@@ -557,16 +585,16 @@ Partial Class Form1
         'Label9_Nombre
         '
         Me.Label9_Nombre.AutoSize = True
-        Me.Label9_Nombre.Location = New System.Drawing.Point(894, 4)
+        Me.Label9_Nombre.Location = New System.Drawing.Point(789, 4)
         Me.Label9_Nombre.Name = "Label9_Nombre"
-        Me.Label9_Nombre.Size = New System.Drawing.Size(102, 13)
+        Me.Label9_Nombre.Size = New System.Drawing.Size(56, 13)
         Me.Label9_Nombre.TabIndex = 3
-        Me.Label9_Nombre.Text = "nombre_del_usuario"
+        Me.Label9_Nombre.Text = "nomb user"
         '
         'Label8_Bienv
         '
         Me.Label8_Bienv.AutoSize = True
-        Me.Label8_Bienv.Location = New System.Drawing.Point(824, 4)
+        Me.Label8_Bienv.Location = New System.Drawing.Point(720, 4)
         Me.Label8_Bienv.Name = "Label8_Bienv"
         Me.Label8_Bienv.Size = New System.Drawing.Size(63, 13)
         Me.Label8_Bienv.TabIndex = 2
@@ -675,7 +703,7 @@ Partial Class Form1
         'TabPage3
         '
         Me.TabPage3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.TabPage3.Controls.Add(Me.GroupBox3)
+        Me.TabPage3.Controls.Add(Me.GroupBox_vta)
         Me.TabPage3.ImageIndex = 0
         Me.TabPage3.Location = New System.Drawing.Point(4, 37)
         Me.TabPage3.Name = "TabPage3"
@@ -683,15 +711,238 @@ Partial Class Form1
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Ventas"
         '
-        'GroupBox3
+        'GroupBox_vta
         '
-        Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(105, 46)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(788, 544)
-        Me.GroupBox3.TabIndex = 0
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Formulario de Ventas"
+        Me.GroupBox_vta.Controls.Add(Me.Label33)
+        Me.GroupBox_vta.Controls.Add(Me.lb_AddItemsVta)
+        Me.GroupBox_vta.Controls.Add(Me.bt_BorrarVta)
+        Me.GroupBox_vta.Controls.Add(Me.bt_ConfirmVta)
+        Me.GroupBox_vta.Controls.Add(Me.DG_Carrito)
+        Me.GroupBox_vta.Controls.Add(Me.DG_PdctoVta)
+        Me.GroupBox_vta.Controls.Add(Me.PictureBox4)
+        Me.GroupBox_vta.Controls.Add(Me.Lb_VtaHead)
+        Me.GroupBox_vta.Controls.Add(Me.CB_IdClienteVta)
+        Me.GroupBox_vta.Controls.Add(Me.TB_EmpVta)
+        Me.GroupBox_vta.Controls.Add(Me.TB_TotalVta)
+        Me.GroupBox_vta.Controls.Add(Me.TB_IvaVta)
+        Me.GroupBox_vta.Controls.Add(Me.TB_SubTotalVta)
+        Me.GroupBox_vta.Controls.Add(Me.TB_IdVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_IdEmpleadoVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_IdClienteVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_IvaVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_SubtotalVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_TotalVta)
+        Me.GroupBox_vta.Controls.Add(Me.lb_IdVta)
+        Me.GroupBox_vta.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox_vta.Location = New System.Drawing.Point(13, 3)
+        Me.GroupBox_vta.Name = "GroupBox_vta"
+        Me.GroupBox_vta.Size = New System.Drawing.Size(971, 599)
+        Me.GroupBox_vta.TabIndex = 0
+        Me.GroupBox_vta.TabStop = False
+        Me.GroupBox_vta.Text = "Formulario de Ventas"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(19, 349)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(70, 25)
+        Me.Label33.TabIndex = 75
+        Me.Label33.Text = "Carrito"
+        '
+        'lb_AddItemsVta
+        '
+        Me.lb_AddItemsVta.AutoSize = True
+        Me.lb_AddItemsVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_AddItemsVta.Location = New System.Drawing.Point(235, 157)
+        Me.lb_AddItemsVta.Name = "lb_AddItemsVta"
+        Me.lb_AddItemsVta.Size = New System.Drawing.Size(689, 25)
+        Me.lb_AddItemsVta.TabIndex = 74
+        Me.lb_AddItemsVta.Text = "Añadir Productos, Haga clik en los productos que desee ir agregando al carrito"
+        '
+        'bt_BorrarVta
+        '
+        Me.bt_BorrarVta.BackColor = System.Drawing.Color.Crimson
+        Me.bt_BorrarVta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red
+        Me.bt_BorrarVta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed
+        Me.bt_BorrarVta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_BorrarVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_BorrarVta.ForeColor = System.Drawing.Color.White
+        Me.bt_BorrarVta.Location = New System.Drawing.Point(15, 541)
+        Me.bt_BorrarVta.Name = "bt_BorrarVta"
+        Me.bt_BorrarVta.Size = New System.Drawing.Size(144, 42)
+        Me.bt_BorrarVta.TabIndex = 73
+        Me.bt_BorrarVta.Text = "BORRAR"
+        Me.bt_BorrarVta.UseVisualStyleBackColor = False
+        '
+        'bt_ConfirmVta
+        '
+        Me.bt_ConfirmVta.BackColor = System.Drawing.Color.Green
+        Me.bt_ConfirmVta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.bt_ConfirmVta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime
+        Me.bt_ConfirmVta.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_ConfirmVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_ConfirmVta.ForeColor = System.Drawing.Color.White
+        Me.bt_ConfirmVta.Location = New System.Drawing.Point(692, 541)
+        Me.bt_ConfirmVta.Name = "bt_ConfirmVta"
+        Me.bt_ConfirmVta.Size = New System.Drawing.Size(261, 42)
+        Me.bt_ConfirmVta.TabIndex = 72
+        Me.bt_ConfirmVta.Text = "CONFIRMAR VENTA"
+        Me.bt_ConfirmVta.UseVisualStyleBackColor = False
+        '
+        'DG_Carrito
+        '
+        Me.DG_Carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DG_Carrito.Location = New System.Drawing.Point(15, 377)
+        Me.DG_Carrito.Name = "DG_Carrito"
+        Me.DG_Carrito.Size = New System.Drawing.Size(599, 147)
+        Me.DG_Carrito.TabIndex = 71
+        '
+        'DG_PdctoVta
+        '
+        Me.DG_PdctoVta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DG_PdctoVta.Location = New System.Drawing.Point(206, 197)
+        Me.DG_PdctoVta.Name = "DG_PdctoVta"
+        Me.DG_PdctoVta.Size = New System.Drawing.Size(747, 151)
+        Me.DG_PdctoVta.TabIndex = 70
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(15, 74)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(161, 151)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox4.TabIndex = 69
+        Me.PictureBox4.TabStop = False
+        '
+        'Lb_VtaHead
+        '
+        Me.Lb_VtaHead.AutoSize = True
+        Me.Lb_VtaHead.Font = New System.Drawing.Font("Arial Narrow", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lb_VtaHead.Location = New System.Drawing.Point(29, 33)
+        Me.Lb_VtaHead.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Lb_VtaHead.Name = "Lb_VtaHead"
+        Me.Lb_VtaHead.Size = New System.Drawing.Size(105, 31)
+        Me.Lb_VtaHead.TabIndex = 68
+        Me.Lb_VtaHead.Text = "VENTAS"
+        '
+        'CB_IdClienteVta
+        '
+        Me.CB_IdClienteVta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CB_IdClienteVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CB_IdClienteVta.FormattingEnabled = True
+        Me.CB_IdClienteVta.Location = New System.Drawing.Point(408, 74)
+        Me.CB_IdClienteVta.Margin = New System.Windows.Forms.Padding(2)
+        Me.CB_IdClienteVta.Name = "CB_IdClienteVta"
+        Me.CB_IdClienteVta.Size = New System.Drawing.Size(418, 33)
+        Me.CB_IdClienteVta.TabIndex = 54
+        '
+        'TB_EmpVta
+        '
+        Me.TB_EmpVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_EmpVta.Location = New System.Drawing.Point(785, 22)
+        Me.TB_EmpVta.Name = "TB_EmpVta"
+        Me.TB_EmpVta.ReadOnly = True
+        Me.TB_EmpVta.Size = New System.Drawing.Size(168, 30)
+        Me.TB_EmpVta.TabIndex = 10
+        '
+        'TB_TotalVta
+        '
+        Me.TB_TotalVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_TotalVta.Location = New System.Drawing.Point(792, 494)
+        Me.TB_TotalVta.Name = "TB_TotalVta"
+        Me.TB_TotalVta.ReadOnly = True
+        Me.TB_TotalVta.Size = New System.Drawing.Size(161, 30)
+        Me.TB_TotalVta.TabIndex = 9
+        '
+        'TB_IvaVta
+        '
+        Me.TB_IvaVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_IvaVta.Location = New System.Drawing.Point(792, 454)
+        Me.TB_IvaVta.Name = "TB_IvaVta"
+        Me.TB_IvaVta.ReadOnly = True
+        Me.TB_IvaVta.Size = New System.Drawing.Size(161, 30)
+        Me.TB_IvaVta.TabIndex = 8
+        '
+        'TB_SubTotalVta
+        '
+        Me.TB_SubTotalVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_SubTotalVta.Location = New System.Drawing.Point(792, 413)
+        Me.TB_SubTotalVta.Name = "TB_SubTotalVta"
+        Me.TB_SubTotalVta.ReadOnly = True
+        Me.TB_SubTotalVta.Size = New System.Drawing.Size(161, 30)
+        Me.TB_SubTotalVta.TabIndex = 7
+        '
+        'TB_IdVta
+        '
+        Me.TB_IdVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_IdVta.Location = New System.Drawing.Point(251, 35)
+        Me.TB_IdVta.Name = "TB_IdVta"
+        Me.TB_IdVta.ReadOnly = True
+        Me.TB_IdVta.Size = New System.Drawing.Size(161, 30)
+        Me.TB_IdVta.TabIndex = 6
+        '
+        'lb_IdEmpleadoVta
+        '
+        Me.lb_IdEmpleadoVta.AutoSize = True
+        Me.lb_IdEmpleadoVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_IdEmpleadoVta.Location = New System.Drawing.Point(536, 22)
+        Me.lb_IdEmpleadoVta.Name = "lb_IdEmpleadoVta"
+        Me.lb_IdEmpleadoVta.Size = New System.Drawing.Size(243, 25)
+        Me.lb_IdEmpleadoVta.TabIndex = 5
+        Me.lb_IdEmpleadoVta.Text = "Venta a cargo del Usuario:"
+        '
+        'lb_IdClienteVta
+        '
+        Me.lb_IdClienteVta.AutoSize = True
+        Me.lb_IdClienteVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_IdClienteVta.Location = New System.Drawing.Point(213, 77)
+        Me.lb_IdClienteVta.Name = "lb_IdClienteVta"
+        Me.lb_IdClienteVta.Size = New System.Drawing.Size(181, 25)
+        Me.lb_IdClienteVta.TabIndex = 4
+        Me.lb_IdClienteVta.Text = "Seleccione Cliente:"
+        '
+        'lb_IvaVta
+        '
+        Me.lb_IvaVta.AutoSize = True
+        Me.lb_IvaVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_IvaVta.Location = New System.Drawing.Point(739, 457)
+        Me.lb_IvaVta.Name = "lb_IvaVta"
+        Me.lb_IvaVta.Size = New System.Drawing.Size(45, 25)
+        Me.lb_IvaVta.TabIndex = 3
+        Me.lb_IvaVta.Text = "IVA"
+        '
+        'lb_SubtotalVta
+        '
+        Me.lb_SubtotalVta.AutoSize = True
+        Me.lb_SubtotalVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_SubtotalVta.Location = New System.Drawing.Point(700, 416)
+        Me.lb_SubtotalVta.Name = "lb_SubtotalVta"
+        Me.lb_SubtotalVta.Size = New System.Drawing.Size(84, 25)
+        Me.lb_SubtotalVta.TabIndex = 2
+        Me.lb_SubtotalVta.Text = "Subtotal"
+        '
+        'lb_TotalVta
+        '
+        Me.lb_TotalVta.AutoSize = True
+        Me.lb_TotalVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_TotalVta.Location = New System.Drawing.Point(644, 497)
+        Me.lb_TotalVta.Name = "lb_TotalVta"
+        Me.lb_TotalVta.Size = New System.Drawing.Size(140, 25)
+        Me.lb_TotalVta.TabIndex = 1
+        Me.lb_TotalVta.Text = "Total de Venta"
+        '
+        'lb_IdVta
+        '
+        Me.lb_IdVta.AutoSize = True
+        Me.lb_IdVta.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_IdVta.Location = New System.Drawing.Point(212, 38)
+        Me.lb_IdVta.Name = "lb_IdVta"
+        Me.lb_IdVta.Size = New System.Drawing.Size(31, 25)
+        Me.lb_IdVta.TabIndex = 0
+        Me.lb_IdVta.Text = "ID"
         '
         'TabPage4
         '
@@ -1527,7 +1778,7 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.btnSearchPdcto)
         Me.GroupBox6.Controls.Add(Me.TextBox1)
         Me.GroupBox6.Controls.Add(Me.GroupBox11)
-        Me.GroupBox6.Controls.Add(Me.Label33)
+        Me.GroupBox6.Controls.Add(Me.Label33_pdcto)
         Me.GroupBox6.Controls.Add(Me.txtBuscarPdcto)
         Me.GroupBox6.Controls.Add(Me.Label32)
         Me.GroupBox6.Controls.Add(Me.TableProductos)
@@ -2231,16 +2482,16 @@ Partial Class Form1
         Me.TextBox13.Size = New System.Drawing.Size(80, 22)
         Me.TextBox13.TabIndex = 58
         '
-        'Label33
+        'Label33_pdcto
         '
-        Me.Label33.AutoSize = True
-        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.ForeColor = System.Drawing.Color.Black
-        Me.Label33.Location = New System.Drawing.Point(67, 339)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(50, 16)
-        Me.Label33.TabIndex = 42
-        Me.Label33.Text = "Buscar"
+        Me.Label33_pdcto.AutoSize = True
+        Me.Label33_pdcto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33_pdcto.ForeColor = System.Drawing.Color.Black
+        Me.Label33_pdcto.Location = New System.Drawing.Point(67, 339)
+        Me.Label33_pdcto.Name = "Label33_pdcto"
+        Me.Label33_pdcto.Size = New System.Drawing.Size(50, 16)
+        Me.Label33_pdcto.TabIndex = 42
+        Me.Label33_pdcto.Text = "Buscar"
         '
         'txtBuscarPdcto
         '
@@ -2371,6 +2622,24 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
+        'lb_IdEmpleado
+        '
+        Me.lb_IdEmpleado.AutoSize = True
+        Me.lb_IdEmpleado.Location = New System.Drawing.Point(932, 4)
+        Me.lb_IdEmpleado.Name = "lb_IdEmpleado"
+        Me.lb_IdEmpleado.Size = New System.Drawing.Size(39, 13)
+        Me.lb_IdEmpleado.TabIndex = 4
+        Me.lb_IdEmpleado.Text = "ID_xxx"
+        '
+        'lb_IdEmp
+        '
+        Me.lb_IdEmp.AutoSize = True
+        Me.lb_IdEmp.Location = New System.Drawing.Point(851, 4)
+        Me.lb_IdEmp.Name = "lb_IdEmp"
+        Me.lb_IdEmp.Size = New System.Drawing.Size(75, 13)
+        Me.lb_IdEmp.TabIndex = 5
+        Me.lb_IdEmp.Text = "ID de Usuario:"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2394,6 +2663,11 @@ Partial Class Form1
         Me.GroupBox123.ResumeLayout(False)
         Me.GroupBox123.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox_vta.ResumeLayout(False)
+        Me.GroupBox_vta.PerformLayout()
+        CType(Me.DG_Carrito, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DG_PdctoVta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
         Me.GroupBox10.ResumeLayout(False)
@@ -2464,7 +2738,7 @@ Partial Class Form1
     Friend WithEvents TabPage3 As TabPage
     Friend WithEvents TabPage4 As TabPage
     Friend WithEvents TabPage5 As TabPage
-    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents GroupBox_vta As GroupBox
     Friend WithEvents Label9_Nombre As Label
     Friend WithEvents Label8_Bienv As Label
     Friend WithEvents TabPage6 As TabPage
@@ -2599,7 +2873,7 @@ Partial Class Form1
     Friend WithEvents Label49 As Label
     Friend WithEvents Label48 As Label
     Friend WithEvents TextBox13 As TextBox
-    Friend WithEvents Label33 As Label
+    Friend WithEvents Label33_pdcto As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Label53 As Label
     Friend WithEvents PictureBox3 As PictureBox
@@ -2611,4 +2885,26 @@ Partial Class Form1
     Friend WithEvents DesactivarDescuentos As Button
     Friend WithEvents Label100 As Label
     Friend WithEvents cbCategoriaProm As ComboBox
+    Friend WithEvents lb_IdEmpleadoVta As Label
+    Friend WithEvents lb_IdClienteVta As Label
+    Friend WithEvents lb_IvaVta As Label
+    Friend WithEvents lb_SubtotalVta As Label
+    Friend WithEvents lb_TotalVta As Label
+    Friend WithEvents lb_IdVta As Label
+    Friend WithEvents TB_EmpVta As TextBox
+    Friend WithEvents TB_TotalVta As TextBox
+    Friend WithEvents TB_IvaVta As TextBox
+    Friend WithEvents TB_SubTotalVta As TextBox
+    Friend WithEvents TB_IdVta As TextBox
+    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents Lb_VtaHead As Label
+    Friend WithEvents CB_IdClienteVta As ComboBox
+    Friend WithEvents bt_ConfirmVta As Button
+    Friend WithEvents DG_Carrito As DataGridView
+    Friend WithEvents DG_PdctoVta As DataGridView
+    Friend WithEvents bt_BorrarVta As Button
+    Friend WithEvents Label33 As Label
+    Friend WithEvents lb_AddItemsVta As Label
+    Friend WithEvents lb_IdEmpleado As Label
+    Friend WithEvents lb_IdEmp As Label
 End Class

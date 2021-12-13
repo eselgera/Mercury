@@ -2,6 +2,7 @@
 
 Public Class Login
     Public Property Nombre As String
+    Public Property ID_Usario As String
     Public Property Acceso As String
 
     <DllImport("user32.DLL", EntryPoint:="ReleaseCapture")>
@@ -24,7 +25,7 @@ Public Class Login
 
         If TextBox1_user.Text <> "" And TextBox2_pass.Text <> "" Then
             Dim Usuario = TextBox1_user.Text
-            Dim sql = "Select Password, Nombre, Rol_idRol From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
+            Dim sql = "Select Password, Nombre, Rol_idRol, idEmpleado From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
 
             Try
                 Dim Rsdatos = Seleccion_de_datos(sql)
@@ -35,6 +36,7 @@ Public Class Login
                     pass = Rsdatos.Tables("DATOS").Rows(0).Item("Password")
                     Nombre = Rsdatos.Tables("DATOS").Rows(0).Item("Nombre")
                     Acceso = Rsdatos.Tables("DATOS").Rows(0).Item("Rol_idRol")
+                    ID_Usario = Rsdatos.Tables("DATOS").Rows(0).Item("idEmpleado")
                 End If
 
                 If pass = TextBox2_pass.Text Then
@@ -81,6 +83,8 @@ Public Class Login
         Dim Form = New Form1()
         Form.Show()
         Form.Label9_Nombre.Text = Nombre
+        Form.lb_IdEmpleado.Text = ID_Usario
+        Form.TB_EmpVta.Text = Nombre
 
         Select Case Acceso
             Case 1

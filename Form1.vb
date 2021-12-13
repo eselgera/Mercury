@@ -12,6 +12,9 @@
         llenarCBCat()
         llenarCBProveedor()
         llenarCBCatPromo()
+        obtenerNuevoIdVenta()
+        llenarCBClientes()
+        llenarTablaPdctoVenta()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -53,7 +56,7 @@
             lista = Rsdatos.Tables("DATOS").Rows.Count
             If lista <> 0 Then
                 NewID = Rsdatos.Tables("DATOS").Rows(0).Item("ID")
-                TextBox1_idprov.Text = NewID
+                lb_IdEmpleado.Text = NewID
             End If
 
             Conexion.Close()
@@ -1208,5 +1211,77 @@
         End Try
 
     End Function
+
+    Function obtenerNuevoIdVenta()
+
+        Dim sql As String
+        Dim lista As String
+        Dim NewID As String
+
+        Try
+            sql = "SELECT max(idVenta) + 1 as IDVenta FROM Venta"
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                NewID = Rsdatos.Tables("DATOS").Rows(0).Item("IDVenta").ToString
+                TB_IdVta.Text = NewID
+            End If
+
+            Conexion.Close()
+
+
+        Catch ex As Exception
+            MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarCBClientes()
+
+        Dim sql As String
+        sql = "Select * From Cliente"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                CB_IdClienteVta.DataSource = Rsdatos.Tables("DATOS")
+                CB_IdClienteVta.ValueMember = "idCliente"
+                CB_IdClienteVta.DisplayMember = "Nombre"
+                CB_IdClienteVta.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
+    Function llenarTablaPdctoVenta()
+
+        Dim sql As String
+        Dim lista As String
+        sql = "Select * From Producto"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+            lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                DG_PdctoVta.DataSource = Rsdatos.Tables(0)
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
+
 
 End Class
