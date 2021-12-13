@@ -157,7 +157,6 @@ Public Class EmpleadosForm
             TableEmpleados.Columns(7).Visible = False
             TableEmpleados.Columns(8).Visible = False
             TableEmpleados.Columns(9).Visible = False
-            TableEmpleados.Columns(10).Visible = False
 
             TableEmpleados.Columns(6).Visible = False
             TableEmpleados.Columns(0).HeaderText = "ID"

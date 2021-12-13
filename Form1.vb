@@ -912,7 +912,7 @@
         Dim NewID As String
 
         Try
-            sql = "SELECT max(idProducto) + 1 as IDPdcto FROM b8hrt3nyyisdb1zuqz9i.Producto"
+            sql = "SELECT max(idProducto) + 1 as IDPdcto FROM Producto"
             Dim Rsdatos = Seleccion_de_datos(sql)
 
             lista = Rsdatos.Tables("DATOS").Rows.Count
