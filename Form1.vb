@@ -633,6 +633,7 @@
         btnBorrarProductoPedido.Enabled = False
         btnActualizarProductoPedido.Enabled = False
         btnGuardarProductosPedido.Enabled = False
+        DetallesPedidoTable.Enabled = False
 
         txtcantidad.Clear()
         txtNombreProductoPedido.Clear()
@@ -648,6 +649,7 @@
                     btnEnviarPedido.Enabled = True
                     btnAgregarProductoPedido.Enabled = True
                     btnCancelarPedido.Enabled = True
+                    DetallesPedidoTable.Enabled = True
                 Case "Enviado"
                     btnCompletarPedido.Enabled = True
                     btnCancelarPedido.Enabled = True
@@ -743,6 +745,14 @@
                 query = "UPDATE Pedido SET Estatus = 'Completado' WHERE idPedido = " & id_pedidos
                 Ejecutar_Query(query)
                 btnCancelarPedido.Enabled = False
+
+                Try
+                    Dim procedure = "Call recibirProductos(" & id_pedidos & ")"
+                    Ejecutar_Query(procedure)
+
+                Catch ex As Exception
+                    MsgBox("Error del Sistema 2, favor de reportar al administrador" & ex.Message)
+                End Try
 
                 cbProveedor_SelectedIndexChanged(sender, e)
                 MsgBox("Se recibieron todos los productos del pedido")
@@ -1092,7 +1102,7 @@
         End If
     End Sub
 
-    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click
+    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click, Button8.Click, Button12.Click
         If txtBuscarPdcto.Text <> "" Then
             Dim NombrePdcto = txtBuscarPdcto.Text
             Dim sql = "Select * From Producto WHERE nombre LIKE '%" & NombrePdcto & "%'  OR Descripcion LIKE '%" & NombrePdcto & "%'"
@@ -1119,7 +1129,7 @@
             Conexion.Close()
 
         Else
-            'MessageBox.Show("Se debe escribir un nombre o correo para buscar algun cliente", " Campo vacio")
+            'MessageBox.Show("Se debe llenar los campos", " Campo vacio")
             btnNewPdcto_Click(sender, e)
         End If
     End Sub
@@ -1145,6 +1155,7 @@
 
         End If
     End Sub
+
     '---------------------------------- INICIO -------------------------------------------------------
     Private Sub btnActivarDescuentos_Click(sender As Object, e As EventArgs) Handles btnActivarDescuentos.Click
         If (cbCategoriaProm.SelectedIndex > -1) Then
@@ -1178,11 +1189,6 @@
 
         End If
     End Sub
-
-
-
-
-
 
 
 End Class
