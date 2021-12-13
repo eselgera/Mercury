@@ -11,6 +11,7 @@
         llenarTablaProducto()
         llenarCBCat()
         llenarCBProveedor()
+        llenarCBCatPromo()
     End Sub
 
     'Metodo para obtener el siguiente ID cliente por insertar
@@ -1150,5 +1151,62 @@
 
         End If
     End Sub
+    '---------------------------------- INICIO -------------------------------------------------------
+    Private Sub btnActivarDescuentos_Click(sender As Object, e As EventArgs) Handles btnActivarDescuentos.Click
+        If (cbCategoriaProm.SelectedIndex > -1) Then
+            Try
+                Dim query = "CALL Descuentos (" & cbCategoriaProm.SelectedValue & ", 'Activar')"
+                Ejecutar_Query(query)
+
+                MsgBox("Descuentos activados para los productos en la categoria " & cbCategoriaProm.SelectedText)
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+
+
+        End If
+    End Sub
+
+    Private Sub DesactivarDescuentos_Click(sender As Object, e As EventArgs) Handles DesactivarDescuentos.Click
+        If (cbCategoriaProm.SelectedIndex > -1) Then
+            Try
+                Dim query = "CALL Descuentos (" & cbCategoriaProm.SelectedValue & ", 'Desactivar')"
+
+                Ejecutar_Query(query)
+
+                MsgBox("Descuentos desactivados para los productos en la categoria " & cbCategoriaProm.SelectedText)
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+
+
+        End If
+    End Sub
+    Function llenarCBCatPromo()
+
+        Dim sql As String
+        sql = "Select * From Categoria"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                cbCategoriaProm.DataSource = Rsdatos.Tables("DATOS")
+                cbCategoriaProm.ValueMember = "idCategoria"
+                cbCategoriaProm.DisplayMember = "Nombre"
+                cbCategoriaProm.SelectedIndex = -1
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Function
 
 End Class
