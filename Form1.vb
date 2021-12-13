@@ -1380,6 +1380,7 @@
 
         If TB_IdVta.Text.Trim.Length > 0 And TB_EmpVta.Text.Trim.Length > 0 And CB_IdClienteVta.SelectedIndex <> -1 And TB_SubTotalVta.Text.Trim.Length > 0 And TB_IvaVta.Text.Trim.Length > 0 And TB_TotalVta.Text.Trim.Length > 0 Then
             Dim query As String
+            Dim query2 As String
             Dim totalvta = TB_TotalVta.Text
             Dim subtvta = TB_SubTotalVta.Text
             Dim ivavta = TB_IvaVta.Text
@@ -1391,8 +1392,16 @@
                 query = "INSERT INTO Venta (Total, Subtotal, IVA_Venta, FechaVenta, Cliente_idCliente, Empleado_idEmpleado) values
                                         ('" & totalvta & "','" & subtvta & "','" & ivavta & "','" & saledate & "','" & idClientVta & "','" & idEmpleadoVta & "')"
                 Ejecutar_Query(query)
+
+
+                For Each dr As DataGridViewRow In DG_Carrito.Rows
+                    query2 = " INSERT INTO DetallesVenta (Cantidad, ImporteTotal, Venta_idVenta,Producto_idProducto) VALUES (" &
+                dr.Cells("Cant").Value & "," & dr.Cells("Dinero").Value & "," & TB_IdVta.Text & " ," & dr.Cells("id").Value & ")"
+                    Ejecutar_Query(query2)
+                Next
+
                 bt_Cancel_Click(sender, e)
-                MsgBox("Venta registrado exitosamente")
+                MsgBox("Venta registrada exitosamente")
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
@@ -1400,6 +1409,9 @@
         Else
             MsgBox("Se deben llenar todos los campos")
         End If
+
+
+
 
     End Sub
 End Class
