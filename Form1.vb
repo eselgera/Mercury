@@ -1354,6 +1354,52 @@
 
     Private Sub bt_Cancel_Click(sender As Object, e As EventArgs) Handles bt_Cancel.Click
         'Borra todo el formulario
+        obtenerNuevoIdVenta()
+        llenarCBClientes()
+        llenarTablaPdctoVenta()
+
+        CB_IdClienteVta.SelectedIndex = -1
+
+
+        Tb_IdPdcto.Text = ""
+        TB_NombreArtVta.Text = ""
+        Tb_PrecioPdcto.Text = ""
+        Tb_cantidadPdcto.Text = ""
+
+        TB_SubTotalVta.Text = ""
+        TB_IvaVta.Text = ""
+        TB_TotalVta.Text = ""
+
+        DG_Carrito.Rows.Clear()
+
+        'MsgBox("Cancelar venta: Se limpiaron todos los campos")
+
+    End Sub
+
+    Private Sub bt_ConfirmVta_Click(sender As Object, e As EventArgs) Handles bt_ConfirmVta.Click
+
+        If TB_IdVta.Text.Trim.Length > 0 And TB_EmpVta.Text.Trim.Length > 0 And CB_IdClienteVta.SelectedIndex <> -1 And TB_SubTotalVta.Text.Trim.Length > 0 And TB_IvaVta.Text.Trim.Length > 0 And TB_TotalVta.Text.Trim.Length > 0 Then
+            Dim query As String
+            Dim totalvta = TB_TotalVta.Text
+            Dim subtvta = TB_SubTotalVta.Text
+            Dim ivavta = TB_IvaVta.Text
+            Dim saledate = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            Dim idClientVta = CB_IdClienteVta.SelectedValue
+            Dim idEmpleadoVta = lb_IdEmpleado.Text
+
+            Try
+                query = "INSERT INTO Venta (Total, Subtotal, IVA_Venta, FechaVenta, Cliente_idCliente, Empleado_idEmpleado) values
+                                        ('" & totalvta & "','" & subtvta & "','" & ivavta & "','" & saledate & "','" & idClientVta & "','" & idEmpleadoVta & "')"
+                Ejecutar_Query(query)
+                bt_Cancel_Click(sender, e)
+                MsgBox("Venta registrado exitosamente")
+
+            Catch ex As Exception
+                MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
+            End Try
+        Else
+            MsgBox("Se deben llenar todos los campos")
+        End If
 
     End Sub
 End Class
