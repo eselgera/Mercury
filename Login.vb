@@ -25,18 +25,25 @@ Public Class Login
 
         If TextBox1_user.Text <> "" And TextBox2_pass.Text <> "" Then
             Dim Usuario = TextBox1_user.Text
-            Dim sql = "Select Password, Nombre, Rol_idRol, idEmpleado From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
+            Dim sql = "Select Password, Nombre, Rol_idRol, idEmpleado, UserEnable From Empleado WHERE Username = '" & TextBox1_user.Text & "'"
 
             Try
                 Dim Rsdatos = Seleccion_de_datos(sql)
                 Dim lista = Rsdatos.Tables("DATOS").Rows.Count
                 Dim pass As String
+                Dim active_disable As Integer
 
                 If lista <> 0 Then
                     pass = Rsdatos.Tables("DATOS").Rows(0).Item("Password")
                     Nombre = Rsdatos.Tables("DATOS").Rows(0).Item("Nombre")
                     Acceso = Rsdatos.Tables("DATOS").Rows(0).Item("Rol_idRol")
                     ID_Usario = Rsdatos.Tables("DATOS").Rows(0).Item("idEmpleado")
+                    active_disable = Rsdatos.Tables("DATOS").Rows(0).Item("UserEnable")
+                End If
+
+                If active_disable = 0 Then
+                    MessageBox.Show("El usario esta deshabilitado ", " No podrá acceder")
+                    Return
                 End If
 
                 If pass = TextBox2_pass.Text Then
