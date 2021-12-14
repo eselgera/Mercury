@@ -1092,7 +1092,7 @@
                               Categoria_idCategoria ='" & cat & "' ,
                               Proveedor_idProveedor ='" & prov & "' 
                               WHERE idProducto = '" & txtidPdcto.Text & "'"
-                MsgBox("tu consulta es:  " & query)
+                'MsgBox("tu consulta es:  " & query)
                 Ejecutar_Query(query)
                 btnNewPdcto_Click(sender, e)
                 MsgBox("Producto Actualizado")
