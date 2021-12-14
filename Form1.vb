@@ -1167,7 +1167,7 @@
                 Dim query = "CALL Descuentos (" & cbCategoriaProm.SelectedValue & ", 'Activar')"
                 Ejecutar_Query(query)
 
-                MsgBox("Descuentos activados para los productos en la categoria " & cbCategoriaProm.SelectedText)
+                MsgBox("Descuentos activados para los productos en la categoria " & cbCategoriaProm.Text)
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
@@ -1184,7 +1184,7 @@
 
                 Ejecutar_Query(query)
 
-                MsgBox("Descuentos desactivados para los productos en la categoria " & cbCategoriaProm.SelectedText)
+                MsgBox("Descuentos desactivados para los productos en la categoria " & cbCategoriaProm.Text)
 
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
