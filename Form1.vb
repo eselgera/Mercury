@@ -1272,7 +1272,7 @@
 
         Dim sql As String
         Dim lista As String
-        sql = "SELECT idProducto, Nombre, Stock,  IF(DescuentoEnable = 0, Precio_Unitario, Precio_Descuento) as Precio, IF(DescuentoEnable = 0, 'Sin descuento', 'Con descuento') as Descuento FROM b8hrt3nyyisdb1zuqz9i.Producto"
+        sql = "SELECT idProducto, Nombre, Stock,  IF(DescuentoEnable = 0, Precio_Unitario, Precio_Descuento) as Precio, IF(DescuentoEnable = 0, 'Sin descuento', 'Con descuento') as Descuento FROM Producto"
 
         Try
             Dim Rsdatos = Seleccion_de_datos(sql)
