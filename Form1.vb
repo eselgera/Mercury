@@ -1107,7 +1107,7 @@
         End If
     End Sub
 
-    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click, Button8.Click, Button12.Click
+    Private Sub btnSearchPdcto_Click(sender As Object, e As EventArgs) Handles btnSearchPdcto.Click, Button12.Click
         If txtBuscarPdcto.Text <> "" Then
             Dim NombrePdcto = txtBuscarPdcto.Text
             Dim sql = "Select * From Producto WHERE nombre LIKE '%" & NombrePdcto & "%'  OR Descripcion LIKE '%" & NombrePdcto & "%'"

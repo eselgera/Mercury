@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim TabPage2 As System.Windows.Forms.TabPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
@@ -170,15 +170,11 @@ Partial Class Form1
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.Bt_uppdctolist = New System.Windows.Forms.Button()
-        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.CBactive = New System.Windows.Forms.ComboBox()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
         Me.txtCunitPdcto = New System.Windows.Forms.TextBox()
         Me.Label42 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
         Me.CBCat = New System.Windows.Forms.ComboBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.CBPdcto_Prov = New System.Windows.Forms.ComboBox()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -186,29 +182,22 @@ Partial Class Form1
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.TextBox6 = New System.Windows.Forms.TextBox()
         Me.txtidPdcto = New System.Windows.Forms.TextBox()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.TextBox5 = New System.Windows.Forms.TextBox()
         Me.txtPdescuentoPdcto = New System.Windows.Forms.TextBox()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.txtstockPdcto = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.txtDescPdcto = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.txtNombrePdcto = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.btnSearchPdcto = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.btnUpdatePdcto = New System.Windows.Forms.Button()
         Me.ComboBox6 = New System.Windows.Forms.ComboBox()
@@ -1756,14 +1745,14 @@ Partial Class Form1
         Me.DataGridView1_prov.AllowUserToResizeColumns = False
         Me.DataGridView1_prov.AllowUserToResizeRows = False
         Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DataGridView1_prov.Location = New System.Drawing.Point(159, 286)
@@ -1995,15 +1984,11 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.PictureBox1)
         Me.GroupBox6.Controls.Add(Me.Label53)
         Me.GroupBox6.Controls.Add(Me.Bt_uppdctolist)
-        Me.GroupBox6.Controls.Add(Me.ComboBox3)
         Me.GroupBox6.Controls.Add(Me.CBactive)
-        Me.GroupBox6.Controls.Add(Me.TextBox7)
         Me.GroupBox6.Controls.Add(Me.txtCunitPdcto)
         Me.GroupBox6.Controls.Add(Me.Label42)
         Me.GroupBox6.Controls.Add(Me.Label20)
-        Me.GroupBox6.Controls.Add(Me.ComboBox2)
         Me.GroupBox6.Controls.Add(Me.CBCat)
-        Me.GroupBox6.Controls.Add(Me.ComboBox1)
         Me.GroupBox6.Controls.Add(Me.CBPdcto_Prov)
         Me.GroupBox6.Controls.Add(Me.Label41)
         Me.GroupBox6.Controls.Add(Me.Label21)
@@ -2011,29 +1996,22 @@ Partial Class Form1
         Me.GroupBox6.Controls.Add(Me.Label23)
         Me.GroupBox6.Controls.Add(Me.Label39)
         Me.GroupBox6.Controls.Add(Me.Label25)
-        Me.GroupBox6.Controls.Add(Me.TextBox6)
         Me.GroupBox6.Controls.Add(Me.txtidPdcto)
         Me.GroupBox6.Controls.Add(Me.Label38)
         Me.GroupBox6.Controls.Add(Me.Label27)
-        Me.GroupBox6.Controls.Add(Me.TextBox5)
         Me.GroupBox6.Controls.Add(Me.txtPdescuentoPdcto)
         Me.GroupBox6.Controls.Add(Me.Label37)
         Me.GroupBox6.Controls.Add(Me.Label28)
-        Me.GroupBox6.Controls.Add(Me.TextBox4)
         Me.GroupBox6.Controls.Add(Me.txtstockPdcto)
         Me.GroupBox6.Controls.Add(Me.Label36)
         Me.GroupBox6.Controls.Add(Me.Label29)
-        Me.GroupBox6.Controls.Add(Me.TextBox3)
         Me.GroupBox6.Controls.Add(Me.txtDescPdcto)
         Me.GroupBox6.Controls.Add(Me.Label35)
         Me.GroupBox6.Controls.Add(Me.Label30)
-        Me.GroupBox6.Controls.Add(Me.TextBox2)
         Me.GroupBox6.Controls.Add(Me.txtNombrePdcto)
         Me.GroupBox6.Controls.Add(Me.Label34)
         Me.GroupBox6.Controls.Add(Me.Label31)
-        Me.GroupBox6.Controls.Add(Me.Button8)
         Me.GroupBox6.Controls.Add(Me.btnSearchPdcto)
-        Me.GroupBox6.Controls.Add(Me.TextBox1)
         Me.GroupBox6.Controls.Add(Me.GroupBox11)
         Me.GroupBox6.Controls.Add(Me.Label33_pdcto)
         Me.GroupBox6.Controls.Add(Me.txtBuscarPdcto)
@@ -2077,17 +2055,6 @@ Partial Class Form1
         Me.Bt_uppdctolist.Text = "Actualizar Listas"
         Me.Bt_uppdctolist.UseVisualStyleBackColor = True
         '
-        'ComboBox3
-        '
-        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox3.FormattingEnabled = True
-        Me.ComboBox3.Items.AddRange(New Object() {"SI", "NO"})
-        Me.ComboBox3.Location = New System.Drawing.Point(538, 247)
-        Me.ComboBox3.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox3.Name = "ComboBox3"
-        Me.ComboBox3.Size = New System.Drawing.Size(169, 21)
-        Me.ComboBox3.TabIndex = 64
-        '
         'CBactive
         '
         Me.CBactive.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -2098,14 +2065,6 @@ Partial Class Form1
         Me.CBactive.Name = "CBactive"
         Me.CBactive.Size = New System.Drawing.Size(169, 21)
         Me.CBactive.TabIndex = 64
-        '
-        'TextBox7
-        '
-        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(135, 297)
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox7.TabIndex = 49
         '
         'txtCunitPdcto
         '
@@ -2137,16 +2096,6 @@ Partial Class Form1
         Me.Label20.TabIndex = 62
         Me.Label20.Text = "Precio Unitario"
         '
-        'ComboBox2
-        '
-        Me.ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(538, 272)
-        Me.ComboBox2.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(169, 21)
-        Me.ComboBox2.TabIndex = 53
-        '
         'CBCat
         '
         Me.CBCat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -2156,18 +2105,6 @@ Partial Class Form1
         Me.CBCat.Name = "CBCat"
         Me.CBCat.Size = New System.Drawing.Size(169, 21)
         Me.CBCat.TabIndex = 53
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DisplayMember = "id"
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(538, 297)
-        Me.ComboBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(169, 21)
-        Me.ComboBox1.TabIndex = 55
-        Me.ComboBox1.ValueMember = "id"
         '
         'CBPdcto_Prov
         '
@@ -2247,16 +2184,6 @@ Partial Class Form1
         Me.Label25.TabIndex = 59
         Me.Label25.Text = "Descuento"
         '
-        'TextBox6
-        '
-        Me.TextBox6.Enabled = False
-        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(135, 189)
-        Me.TextBox6.Name = "TextBox6"
-        Me.TextBox6.ReadOnly = True
-        Me.TextBox6.Size = New System.Drawing.Size(80, 22)
-        Me.TextBox6.TabIndex = 58
-        '
         'txtidPdcto
         '
         Me.txtidPdcto.Enabled = False
@@ -2289,14 +2216,6 @@ Partial Class Form1
         Me.Label27.TabIndex = 57
         Me.Label27.Text = "ID"
         '
-        'TextBox5
-        '
-        Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(538, 189)
-        Me.TextBox5.Name = "TextBox5"
-        Me.TextBox5.Size = New System.Drawing.Size(169, 22)
-        Me.TextBox5.TabIndex = 50
-        '
         'txtPdescuentoPdcto
         '
         Me.txtPdescuentoPdcto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2326,14 +2245,6 @@ Partial Class Form1
         Me.Label28.Size = New System.Drawing.Size(140, 16)
         Me.Label28.TabIndex = 56
         Me.Label28.Text = "Precio con Descuento"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox4.Location = New System.Drawing.Point(135, 270)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox4.TabIndex = 48
         '
         'txtstockPdcto
         '
@@ -2365,14 +2276,6 @@ Partial Class Form1
         Me.Label29.TabIndex = 54
         Me.Label29.Text = "Stock"
         '
-        'TextBox3
-        '
-        Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(135, 243)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox3.TabIndex = 46
-        '
         'txtDescPdcto
         '
         Me.txtDescPdcto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2402,14 +2305,6 @@ Partial Class Form1
         Me.Label30.Size = New System.Drawing.Size(80, 16)
         Me.Label30.TabIndex = 52
         Me.Label30.Text = "Descripción"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(135, 216)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(230, 22)
-        Me.TextBox2.TabIndex = 45
         '
         'txtNombrePdcto
         '
@@ -2441,15 +2336,6 @@ Partial Class Form1
         Me.Label31.TabIndex = 47
         Me.Label31.Text = "Nombre"
         '
-        'Button8
-        '
-        Me.Button8.Location = New System.Drawing.Point(606, 334)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(101, 25)
-        Me.Button8.TabIndex = 44
-        Me.Button8.Text = "Buscar"
-        Me.Button8.UseVisualStyleBackColor = True
-        '
         'btnSearchPdcto
         '
         Me.btnSearchPdcto.Location = New System.Drawing.Point(606, 334)
@@ -2458,14 +2344,6 @@ Partial Class Form1
         Me.btnSearchPdcto.TabIndex = 44
         Me.btnSearchPdcto.Text = "Buscar"
         Me.btnSearchPdcto.UseVisualStyleBackColor = True
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(134, 337)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(425, 22)
-        Me.TextBox1.TabIndex = 63
         '
         'GroupBox11
         '
@@ -2852,13 +2730,13 @@ Partial Class Form1
         'EmpleadosToolStripMenuItem1
         '
         Me.EmpleadosToolStripMenuItem1.Name = "EmpleadosToolStripMenuItem1"
-        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(132, 22)
+        Me.EmpleadosToolStripMenuItem1.Size = New System.Drawing.Size(180, 22)
         Me.EmpleadosToolStripMenuItem1.Text = "Empleados"
         '
         'RolesToolStripMenuItem
         '
         Me.RolesToolStripMenuItem.Name = "RolesToolStripMenuItem"
-        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(132, 22)
+        Me.RolesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.RolesToolStripMenuItem.Text = "Roles"
         '
         'VentasToolStripMenuItem
@@ -3076,26 +2954,15 @@ Partial Class Form1
     Friend WithEvents Label32 As Label
     Friend WithEvents TableProductos As DataGridView
     Friend WithEvents Bt_uppdctolist As Button
-    Friend WithEvents ComboBox3 As ComboBox
-    Friend WithEvents TextBox7 As TextBox
     Friend WithEvents Label42 As Label
-    Friend WithEvents ComboBox2 As ComboBox
-    Friend WithEvents ComboBox1 As ComboBox
     Friend WithEvents Label41 As Label
     Friend WithEvents Label40 As Label
     Friend WithEvents Label39 As Label
-    Friend WithEvents TextBox6 As TextBox
     Friend WithEvents Label38 As Label
-    Friend WithEvents TextBox5 As TextBox
     Friend WithEvents Label37 As Label
-    Friend WithEvents TextBox4 As TextBox
     Friend WithEvents Label36 As Label
-    Friend WithEvents TextBox3 As TextBox
     Friend WithEvents Label35 As Label
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label34 As Label
-    Friend WithEvents Button8 As Button
-    Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox6 As ComboBox
     Friend WithEvents TextBox14 As TextBox
     Friend WithEvents Label43 As Label
