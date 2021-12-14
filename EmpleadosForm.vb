@@ -40,7 +40,7 @@ Public Class EmpleadosForm
             Dim mytimestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
 
             Try
-                query = "INSERT INTO Empleado (Nombre,Apellidos, Telefono, Correo,Username, Password, UserEnable ,DateCreated, Suelddo, Rol_idRol) values
+                query = "INSERT INTO Empleado (Nombre,Apellidos, Telefono, Correo,Username, Password, UserEnable ,DateCreated, Sueldo, Rol_idRol) values
                                         ('" & nombre & "','" & ap & "','" & tel & "','" & correo & "','" & user & "','" & pass & "','" & estatus & "','" & mytimestamp & "','" & sueldo & "','" & rol & "')"
                 Ejecutar_Query(query)
 
