@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim TabPage2 As System.Windows.Forms.TabPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
@@ -364,7 +364,7 @@ Partial Class Form1
         Me.GroupBox2.Controls.Add(Me.btnUpdateCliente)
         Me.GroupBox2.Controls.Add(Me.btnAddCliente)
         Me.GroupBox2.Controls.Add(Me.btnNewCliente)
-        Me.GroupBox2.Location = New System.Drawing.Point(583, 55)
+        Me.GroupBox2.Location = New System.Drawing.Point(620, 53)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(170, 225)
         Me.GroupBox2.TabIndex = 15
@@ -430,7 +430,7 @@ Partial Class Form1
         '
         Me.txtidCliente.Enabled = False
         Me.txtidCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtidCliente.Location = New System.Drawing.Point(110, 37)
+        Me.txtidCliente.Location = New System.Drawing.Point(147, 35)
         Me.txtidCliente.Name = "txtidCliente"
         Me.txtidCliente.ReadOnly = True
         Me.txtidCliente.Size = New System.Drawing.Size(80, 22)
@@ -469,7 +469,7 @@ Partial Class Form1
         'txtCorreoCliente
         '
         Me.txtCorreoCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorreoCliente.Location = New System.Drawing.Point(110, 222)
+        Me.txtCorreoCliente.Location = New System.Drawing.Point(147, 220)
         Me.txtCorreoCliente.Name = "txtCorreoCliente"
         Me.txtCorreoCliente.Size = New System.Drawing.Size(424, 22)
         Me.txtCorreoCliente.TabIndex = 4
@@ -488,7 +488,7 @@ Partial Class Form1
         'txtDireccionCliente
         '
         Me.txtDireccionCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDireccionCliente.Location = New System.Drawing.Point(110, 184)
+        Me.txtDireccionCliente.Location = New System.Drawing.Point(147, 182)
         Me.txtDireccionCliente.Name = "txtDireccionCliente"
         Me.txtDireccionCliente.Size = New System.Drawing.Size(424, 22)
         Me.txtDireccionCliente.TabIndex = 3
@@ -507,7 +507,7 @@ Partial Class Form1
         'txtApMatCliente
         '
         Me.txtApMatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtApMatCliente.Location = New System.Drawing.Point(110, 147)
+        Me.txtApMatCliente.Location = New System.Drawing.Point(147, 145)
         Me.txtApMatCliente.Name = "txtApMatCliente"
         Me.txtApMatCliente.Size = New System.Drawing.Size(424, 22)
         Me.txtApMatCliente.TabIndex = 2
@@ -526,7 +526,7 @@ Partial Class Form1
         'txtApPatCliente
         '
         Me.txtApPatCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtApPatCliente.Location = New System.Drawing.Point(110, 109)
+        Me.txtApPatCliente.Location = New System.Drawing.Point(147, 107)
         Me.txtApPatCliente.Name = "txtApPatCliente"
         Me.txtApPatCliente.Size = New System.Drawing.Size(424, 22)
         Me.txtApPatCliente.TabIndex = 1
@@ -545,7 +545,7 @@ Partial Class Form1
         'txtNombreCliente
         '
         Me.txtNombreCliente.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombreCliente.Location = New System.Drawing.Point(110, 72)
+        Me.txtNombreCliente.Location = New System.Drawing.Point(147, 70)
         Me.txtNombreCliente.Name = "txtNombreCliente"
         Me.txtNombreCliente.Size = New System.Drawing.Size(424, 22)
         Me.txtNombreCliente.TabIndex = 0
@@ -1745,14 +1745,14 @@ Partial Class Form1
         Me.DataGridView1_prov.AllowUserToResizeColumns = False
         Me.DataGridView1_prov.AllowUserToResizeRows = False
         Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DataGridView1_prov.Location = New System.Drawing.Point(159, 286)

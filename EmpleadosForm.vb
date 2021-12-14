@@ -266,6 +266,7 @@ Public Class EmpleadosForm
             Dim SQL = "Call BonoEmpleadoDelMes() "
             Ejecutar_Query(SQL)
             MsgBox("Bono Salarial Aplicado")
+            llenarTablaEmpleados()
 
         Catch ex As Exception
             MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
