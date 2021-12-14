@@ -771,8 +771,6 @@
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
             Conexion.Close()
-        Else
-            'MsgBox("Error del Sistema")
         End If
     End Sub
 
@@ -1172,8 +1170,6 @@
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
-
-
         End If
     End Sub
 
@@ -1181,7 +1177,6 @@
         If (cbCategoriaProm.SelectedIndex > -1) Then
             Try
                 Dim query = "CALL Descuentos (" & cbCategoriaProm.SelectedValue & ", 'Desactivar')"
-
                 Ejecutar_Query(query)
 
                 MsgBox("Descuentos desactivados para los productos en la categoria " & cbCategoriaProm.Text)
@@ -1189,8 +1184,6 @@
             Catch ex As Exception
                 MsgBox("Error del Sistema, favor de reportar al administrador" & ex.Message)
             End Try
-
-
         End If
     End Sub
     Function llenarCBCatPromo()
