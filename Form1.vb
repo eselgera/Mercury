@@ -1414,4 +1414,76 @@
 
 
     End Sub
+
+    Private Sub bt_Report1_Click(sender As Object, e As EventArgs) Handles bt_Report1.Click
+
+        Dim sql = "Select * FROM ProductoMasVendidosMes"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                DG_Reportes.DataSource = Rsdatos.Tables("DATOS")
+                DG_Reportes.Columns(0).Width = 400
+                DG_Reportes.Columns(1).Width = 250
+                DG_Reportes.Columns(1).HeaderText = "Cantidad de Productos Vendidos"
+
+
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub bt_reporte2_Click(sender As Object, e As EventArgs) Handles bt_reporte2.Click
+        Dim sql = "Select * FROM CantidadDeVentasXProducto"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                DG_Reportes.DataSource = Rsdatos.Tables("DATOS")
+                DG_Reportes.Columns(0).Width = 200
+                DG_Reportes.Columns(1).Width = 500
+                DG_Reportes.Columns(2).Width = 100
+                DG_Reportes.Columns(2).HeaderText = "Stock Actual"
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub bt_reporte3_Click(sender As Object, e As EventArgs) Handles bt_reporte3.Click
+        Dim sql = "Select * FROM EmpleadoDelMes"
+
+        Try
+            Dim Rsdatos = Seleccion_de_datos(sql)
+
+
+            Dim lista = Rsdatos.Tables("DATOS").Rows.Count
+            If lista <> 0 Then
+                DG_Reportes.DataSource = Rsdatos.Tables("DATOS")
+                DG_Reportes.Columns(0).Width = 200
+                DG_Reportes.Columns(1).Width = 300
+                DG_Reportes.Columns(2).Width = 200
+                DG_Reportes.Columns(2).HeaderText = "Stock Actual"
+
+            End If
+            Conexion.Close()
+
+        Catch ex As Exception
+            MsgBox("Error de inicio de sesión, favor de reportar al administrador" & ex.Message)
+        End Try
+    End Sub
 End Class

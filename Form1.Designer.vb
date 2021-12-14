@@ -25,7 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Dim TabPage2 As System.Windows.Forms.TabPage
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ImagenesGrandes = New System.Windows.Forms.ImageList(Me.components)
@@ -118,6 +118,13 @@ Partial Class Form1
         Me.cbProveedor = New System.Windows.Forms.ComboBox()
         Me.label22 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.GB_Reportes = New System.Windows.Forms.GroupBox()
+        Me.pb_reportesimg = New System.Windows.Forms.PictureBox()
+        Me.lb_reportes = New System.Windows.Forms.Label()
+        Me.bt_reporte3 = New System.Windows.Forms.Button()
+        Me.bt_reporte2 = New System.Windows.Forms.Button()
+        Me.bt_Report1 = New System.Windows.Forms.Button()
+        Me.DG_Reportes = New System.Windows.Forms.DataGridView()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
@@ -244,13 +251,6 @@ Partial Class Form1
         Me.VentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PedidosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReportesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DG_Reportes = New System.Windows.Forms.DataGridView()
-        Me.GB_Reportes = New System.Windows.Forms.GroupBox()
-        Me.bt_Report1 = New System.Windows.Forms.Button()
-        Me.bt_reporte2 = New System.Windows.Forms.Button()
-        Me.bt_reporte3 = New System.Windows.Forms.Button()
-        Me.pb_reportesimg = New System.Windows.Forms.PictureBox()
-        Me.lb_reportes = New System.Windows.Forms.Label()
         TabPage2 = New System.Windows.Forms.TabPage()
         TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -271,6 +271,9 @@ Partial Class Form1
         Me.GroupBox9.SuspendLayout()
         CType(Me.PedidosTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage5.SuspendLayout()
+        Me.GB_Reportes.SuspendLayout()
+        CType(Me.pb_reportesimg, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DG_Reportes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -287,9 +290,6 @@ Partial Class Form1
         Me.GroupBox11.SuspendLayout()
         CType(Me.TableProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.DG_Reportes, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GB_Reportes.SuspendLayout()
-        CType(Me.pb_reportesimg, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'TabPage2
@@ -1425,6 +1425,99 @@ Partial Class Form1
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "Reportes"
         '
+        'GB_Reportes
+        '
+        Me.GB_Reportes.Controls.Add(Me.pb_reportesimg)
+        Me.GB_Reportes.Controls.Add(Me.lb_reportes)
+        Me.GB_Reportes.Controls.Add(Me.bt_reporte3)
+        Me.GB_Reportes.Controls.Add(Me.bt_reporte2)
+        Me.GB_Reportes.Controls.Add(Me.bt_Report1)
+        Me.GB_Reportes.Controls.Add(Me.DG_Reportes)
+        Me.GB_Reportes.Location = New System.Drawing.Point(15, 17)
+        Me.GB_Reportes.Name = "GB_Reportes"
+        Me.GB_Reportes.Size = New System.Drawing.Size(951, 587)
+        Me.GB_Reportes.TabIndex = 1
+        Me.GB_Reportes.TabStop = False
+        Me.GB_Reportes.Text = "Reportes"
+        '
+        'pb_reportesimg
+        '
+        Me.pb_reportesimg.Image = CType(resources.GetObject("pb_reportesimg.Image"), System.Drawing.Image)
+        Me.pb_reportesimg.Location = New System.Drawing.Point(410, 48)
+        Me.pb_reportesimg.Name = "pb_reportesimg"
+        Me.pb_reportesimg.Size = New System.Drawing.Size(138, 94)
+        Me.pb_reportesimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pb_reportesimg.TabIndex = 69
+        Me.pb_reportesimg.TabStop = False
+        '
+        'lb_reportes
+        '
+        Me.lb_reportes.AutoSize = True
+        Me.lb_reportes.Font = New System.Drawing.Font("Arial Narrow", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lb_reportes.Location = New System.Drawing.Point(411, 16)
+        Me.lb_reportes.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lb_reportes.Name = "lb_reportes"
+        Me.lb_reportes.Size = New System.Drawing.Size(137, 31)
+        Me.lb_reportes.TabIndex = 68
+        Me.lb_reportes.Text = "REPORTES"
+        '
+        'bt_reporte3
+        '
+        Me.bt_reporte3.BackColor = System.Drawing.Color.DarkCyan
+        Me.bt_reporte3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
+        Me.bt_reporte3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
+        Me.bt_reporte3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_reporte3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_reporte3.ForeColor = System.Drawing.Color.White
+        Me.bt_reporte3.Location = New System.Drawing.Point(713, 529)
+        Me.bt_reporte3.Name = "bt_reporte3"
+        Me.bt_reporte3.Size = New System.Drawing.Size(224, 41)
+        Me.bt_reporte3.TabIndex = 3
+        Me.bt_reporte3.Text = "Empleado del Mes"
+        Me.bt_reporte3.UseVisualStyleBackColor = False
+        '
+        'bt_reporte2
+        '
+        Me.bt_reporte2.BackColor = System.Drawing.Color.DarkCyan
+        Me.bt_reporte2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
+        Me.bt_reporte2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
+        Me.bt_reporte2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_reporte2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_reporte2.ForeColor = System.Drawing.Color.White
+        Me.bt_reporte2.Location = New System.Drawing.Point(354, 529)
+        Me.bt_reporte2.Name = "bt_reporte2"
+        Me.bt_reporte2.Size = New System.Drawing.Size(224, 41)
+        Me.bt_reporte2.TabIndex = 2
+        Me.bt_reporte2.Text = "Rendimiento de Productos"
+        Me.bt_reporte2.UseVisualStyleBackColor = False
+        '
+        'bt_Report1
+        '
+        Me.bt_Report1.BackColor = System.Drawing.Color.DarkCyan
+        Me.bt_Report1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
+        Me.bt_Report1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
+        Me.bt_Report1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bt_Report1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_Report1.ForeColor = System.Drawing.Color.White
+        Me.bt_Report1.Location = New System.Drawing.Point(6, 529)
+        Me.bt_Report1.Name = "bt_Report1"
+        Me.bt_Report1.Size = New System.Drawing.Size(224, 41)
+        Me.bt_Report1.TabIndex = 1
+        Me.bt_Report1.Text = "Productos mas Vendidos"
+        Me.bt_Report1.UseVisualStyleBackColor = False
+        '
+        'DG_Reportes
+        '
+        Me.DG_Reportes.AllowUserToAddRows = False
+        Me.DG_Reportes.AllowUserToDeleteRows = False
+        Me.DG_Reportes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DG_Reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DG_Reportes.Location = New System.Drawing.Point(10, 170)
+        Me.DG_Reportes.Name = "DG_Reportes"
+        Me.DG_Reportes.ReadOnly = True
+        Me.DG_Reportes.Size = New System.Drawing.Size(931, 327)
+        Me.DG_Reportes.TabIndex = 0
+        '
         'TabPage6
         '
         Me.TabPage6.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -1663,14 +1756,14 @@ Partial Class Form1
         Me.DataGridView1_prov.AllowUserToResizeColumns = False
         Me.DataGridView1_prov.AllowUserToResizeRows = False
         Me.DataGridView1_prov.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.InfoText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.InfoText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaption
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1_prov.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1_prov.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1_prov.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DataGridView1_prov.Location = New System.Drawing.Point(159, 286)
@@ -2786,99 +2879,6 @@ Partial Class Form1
         Me.ReportesToolStripMenuItem.Size = New System.Drawing.Size(65, 20)
         Me.ReportesToolStripMenuItem.Text = "Reportes"
         '
-        'DG_Reportes
-        '
-        Me.DG_Reportes.AllowUserToAddRows = False
-        Me.DG_Reportes.AllowUserToDeleteRows = False
-        Me.DG_Reportes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.DG_Reportes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DG_Reportes.Location = New System.Drawing.Point(10, 170)
-        Me.DG_Reportes.Name = "DG_Reportes"
-        Me.DG_Reportes.ReadOnly = True
-        Me.DG_Reportes.Size = New System.Drawing.Size(931, 327)
-        Me.DG_Reportes.TabIndex = 0
-        '
-        'GB_Reportes
-        '
-        Me.GB_Reportes.Controls.Add(Me.pb_reportesimg)
-        Me.GB_Reportes.Controls.Add(Me.lb_reportes)
-        Me.GB_Reportes.Controls.Add(Me.bt_reporte3)
-        Me.GB_Reportes.Controls.Add(Me.bt_reporte2)
-        Me.GB_Reportes.Controls.Add(Me.bt_Report1)
-        Me.GB_Reportes.Controls.Add(Me.DG_Reportes)
-        Me.GB_Reportes.Location = New System.Drawing.Point(15, 17)
-        Me.GB_Reportes.Name = "GB_Reportes"
-        Me.GB_Reportes.Size = New System.Drawing.Size(951, 587)
-        Me.GB_Reportes.TabIndex = 1
-        Me.GB_Reportes.TabStop = False
-        Me.GB_Reportes.Text = "Reportes"
-        '
-        'bt_Report1
-        '
-        Me.bt_Report1.BackColor = System.Drawing.Color.DarkCyan
-        Me.bt_Report1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
-        Me.bt_Report1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
-        Me.bt_Report1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_Report1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_Report1.ForeColor = System.Drawing.Color.White
-        Me.bt_Report1.Location = New System.Drawing.Point(6, 529)
-        Me.bt_Report1.Name = "bt_Report1"
-        Me.bt_Report1.Size = New System.Drawing.Size(224, 41)
-        Me.bt_Report1.TabIndex = 1
-        Me.bt_Report1.Text = "Reporte1"
-        Me.bt_Report1.UseVisualStyleBackColor = False
-        '
-        'bt_reporte2
-        '
-        Me.bt_reporte2.BackColor = System.Drawing.Color.DarkCyan
-        Me.bt_reporte2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
-        Me.bt_reporte2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
-        Me.bt_reporte2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_reporte2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_reporte2.ForeColor = System.Drawing.Color.White
-        Me.bt_reporte2.Location = New System.Drawing.Point(354, 529)
-        Me.bt_reporte2.Name = "bt_reporte2"
-        Me.bt_reporte2.Size = New System.Drawing.Size(224, 41)
-        Me.bt_reporte2.TabIndex = 2
-        Me.bt_reporte2.Text = "Reporte2"
-        Me.bt_reporte2.UseVisualStyleBackColor = False
-        '
-        'bt_reporte3
-        '
-        Me.bt_reporte3.BackColor = System.Drawing.Color.DarkCyan
-        Me.bt_reporte3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Turquoise
-        Me.bt_reporte3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.MediumTurquoise
-        Me.bt_reporte3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bt_reporte3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bt_reporte3.ForeColor = System.Drawing.Color.White
-        Me.bt_reporte3.Location = New System.Drawing.Point(713, 529)
-        Me.bt_reporte3.Name = "bt_reporte3"
-        Me.bt_reporte3.Size = New System.Drawing.Size(224, 41)
-        Me.bt_reporte3.TabIndex = 3
-        Me.bt_reporte3.Text = "Reporte3"
-        Me.bt_reporte3.UseVisualStyleBackColor = False
-        '
-        'pb_reportesimg
-        '
-        Me.pb_reportesimg.Image = CType(resources.GetObject("pb_reportesimg.Image"), System.Drawing.Image)
-        Me.pb_reportesimg.Location = New System.Drawing.Point(410, 48)
-        Me.pb_reportesimg.Name = "pb_reportesimg"
-        Me.pb_reportesimg.Size = New System.Drawing.Size(138, 94)
-        Me.pb_reportesimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pb_reportesimg.TabIndex = 69
-        Me.pb_reportesimg.TabStop = False
-        '
-        'lb_reportes
-        '
-        Me.lb_reportes.AutoSize = True
-        Me.lb_reportes.Font = New System.Drawing.Font("Arial Narrow", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_reportes.Location = New System.Drawing.Point(411, 16)
-        Me.lb_reportes.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.lb_reportes.Name = "lb_reportes"
-        Me.lb_reportes.Size = New System.Drawing.Size(137, 31)
-        Me.lb_reportes.TabIndex = 68
-        Me.lb_reportes.Text = "REPORTES"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2914,6 +2914,10 @@ Partial Class Form1
         Me.GroupBox9.ResumeLayout(False)
         CType(Me.PedidosTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage5.ResumeLayout(False)
+        Me.GB_Reportes.ResumeLayout(False)
+        Me.GB_Reportes.PerformLayout()
+        CType(Me.pb_reportesimg, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DG_Reportes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
@@ -2935,10 +2939,6 @@ Partial Class Form1
         CType(Me.TableProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.DG_Reportes, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GB_Reportes.ResumeLayout(False)
-        Me.GB_Reportes.PerformLayout()
-        CType(Me.pb_reportesimg, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
